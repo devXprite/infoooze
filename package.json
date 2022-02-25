@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "node index.js",
+    "start": "node index.js",
     "check": "prettier --check .",
     "fix": "prettier --write ."
   },
@@ -17,18 +17,15 @@
     "colors": "^1.4.0",
     "figlet": "^1.5.2",
     "gradient-string": "^2.0.0",
-    "inquirer": "^8.2.0",
+    "lodash": "^4.17.21",
     "nanospinner": "^1.0.0",
-    "pre-commit": "^1.2.2",
     "prompt-sync": "^4.2.0",
     "request": "^2.88.2",
     "system-sleep": "^1.3.7"
   },
   "devDependencies": {
-    "prettier": "2.5.1",
-    "pre-commit": "^1.2.2"
+    "pre-commit": "^1.2.2",
+    "prettier": "2.5.1"
   },
-  "pre-commit": [
-   
-  ]
+  "pre-commit": []
 }
