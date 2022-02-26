@@ -2,7 +2,7 @@ import chalk from 'chalk';
 import colors from 'colors';
 import chalkAnimation from 'chalk-animation';
 
-import { banner } from './src/banner.js';
+import { home } from './src/home.js';
 
 const sleep = (ms = 1000) => new Promise((r) => setTimeout(r, ms));
 
@@ -13,7 +13,4 @@ async function welcome() {
 }
 
 await welcome();
-await banner();
-
-// import { tmp } from './src/tmp.js';
-// tmp();
+await home();

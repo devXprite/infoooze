@@ -1,7 +1,7 @@
 {
   "name": "dhanush",
   "version": "1.0.0",
-  "description": "",
+  "description": "A OSINT famework",
   "main": "index.js",
   "type": "module",
   "scripts": {
@@ -9,7 +9,6 @@
     "check": "prettier --check .",
     "fix": "prettier --write ."
   },
-  "author": "",
   "license": "MIT",
   "dependencies": {
     "chalk": "^5.0.0",
@@ -27,5 +26,10 @@
     "pre-commit": "^1.2.2",
     "prettier": "2.5.1"
   },
-  "pre-commit": []
+  "pre-commit": [],
+  "engines": {
+    "node": ">=14.16.1",
+    "npm": ">= 7.24.2"
+  },
+  "engineStrict": true
 }

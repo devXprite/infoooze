@@ -4,6 +4,7 @@ import PromptSync from 'prompt-sync';
 
 import userrecon from './userrecon.js';
 import mailfinder from './mailfinder.js';
+import useragent from './useragent.js';
 
 var i = 1;
 const prompt = PromptSync();
@@ -27,6 +28,10 @@ const takeOption = () => {
       mailfinder();
       break;
 
+    case '3':
+      useragent();
+      break;
+
     case 'exit':
       console.log('bye!'.cyan);
       break;
@@ -37,7 +42,7 @@ const takeOption = () => {
   }
 };
 
-export async function banner() {
+export async function home() {
   console.clear();
   chalkAnimation.neon(
     `
@@ -67,9 +72,10 @@ export async function banner() {
   );
   await list('Userrecon', 'username reconnaissance');
   await list('Mailfinder ', 'find email with specific name');
+  await list('Useragent ', 'find browser info');
 
   console.log('\n');
   takeOption();
 }
 
-export default banner;
+export default home;

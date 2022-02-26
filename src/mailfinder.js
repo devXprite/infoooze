@@ -11,7 +11,7 @@ export async function mailfinder() {
 
   const domainList = ['gmail.com', 'yahoo.com', 'hotmail.com', 'outlook.com'];
   const keysList = ['Bearer0c6ad1fd-f753-4628-8c0a-7968e722c6c7'];
-  
+
   domainList.forEach(async (domain) => {
     let email = `${username}@${domain}`;
     try {
@@ -37,7 +37,7 @@ export async function mailfinder() {
         },
       );
     } catch (error) {
-      console.log('somehing went wrong!');
+      console.log('something went wrong!');
     }
     await sleep(500);
   });
