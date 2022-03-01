@@ -96,9 +96,9 @@ export async function userrecon() {
             if (response.statusCode == 200) {
               console.log(
                 '['.cyan +
-                  chalk.green(response.statusCode) +
+                  chalk.greenBright(response.statusCode) +
                   '] '.cyan +
-                  url.green,
+                  chalk.greenBright(url),
               );
             } else {
               console.log(

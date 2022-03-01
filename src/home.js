@@ -4,6 +4,7 @@ import chalkAnimation from 'chalk-animation';
 import userrecon from './userrecon.js';
 import mailfinder from './mailfinder.js';
 import useragent from './useragent.js';
+import whois from './whois.js';
 
 import { sleep, input } from './common.js';
 
@@ -30,6 +31,10 @@ const takeOption = async () => {
 
     case '3':
       useragent();
+      break;
+
+    case '4':
+      whois();
       break;
 
     case 'exit':
@@ -74,7 +79,7 @@ export async function home() {
   await list('Userrecon', 'username reconnaissance');
   await list('Mailfinder ', 'find email with specific name');
   await list('Useragent ', 'find browser info');
-  // await list('Website ', 'find websie info');
+  await list('Website', 'find websie info');
 
   console.log('\n');
   takeOption();
