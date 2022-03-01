@@ -1,12 +1,10 @@
 import request from 'request';
 import chalk from 'chalk';
-import PromptSync from 'prompt-sync';
 
-const prompt = PromptSync();
+import { sleep, input } from './common.js';
 
 export async function userrecon() {
-  // console.log(' --------------------');
-  var username = prompt(` ${'>'.cyan} ${'Your Username'.bold} : `);
+  var username = await input('Your Username');
 
   var urlList = [
     `https://facebook.com/${username}`,
@@ -82,8 +80,8 @@ export async function userrecon() {
     `http://www.zone-h.org/archive/notifier=${username}`,
   ];
 
-  urlList.forEach((url) => {
-    try {
+  urlList.forEach((url, index) => {
+    setTimeout(() => {
       request(
         {
           url: url,
@@ -114,9 +112,7 @@ export async function userrecon() {
           }
         },
       );
-    } catch (error) {
-      console.log('Somehing Went Wrong!');
-    }
+    }, index * 500);
   });
 }
 

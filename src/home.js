@@ -1,14 +1,14 @@
 import chalk from 'chalk';
 import chalkAnimation from 'chalk-animation';
-import PromptSync from 'prompt-sync';
 
 import userrecon from './userrecon.js';
 import mailfinder from './mailfinder.js';
 import useragent from './useragent.js';
 
+import { sleep, input } from './common.js';
+
 var i = 1;
-const prompt = PromptSync();
-const sleep = (ms = 1000) => new Promise((r) => setTimeout(r, ms));
+
 const list = async (name, description) => {
   await sleep(300);
   console.log(
@@ -18,8 +18,8 @@ const list = async (name, description) => {
   );
 };
 
-const takeOption = () => {
-  var selectedOption = prompt(` ${'>'.cyan} ${'Your Option'.bold} : `);
+const takeOption = async () => {
+  var selectedOption = await input('Your Option ');
   switch (selectedOption) {
     case '1':
       userrecon();
@@ -43,6 +43,7 @@ const takeOption = () => {
 };
 
 export async function home() {
+  i = 1;
   console.clear();
   chalkAnimation.neon(
     `
@@ -73,6 +74,7 @@ export async function home() {
   await list('Userrecon', 'username reconnaissance');
   await list('Mailfinder ', 'find email with specific name');
   await list('Useragent ', 'find browser info');
+  // await list('Website ', 'find websie info');
 
   console.log('\n');
   takeOption();

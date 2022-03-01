@@ -1,12 +1,10 @@
 import request from 'request';
 import chalk from 'chalk';
-import PromptSync from 'prompt-sync';
 
-const prompt = PromptSync();
-const sleep = (ms = 1000) => new Promise((r) => setTimeout(r, ms));
+import { sleep, input } from './common.js';
 
 export async function mailfinder() {
-  var username = prompt(` ${'>'.cyan} ${'Your Username'.bold} : `);
+  var username = await input('Your Username');
   username.replace(' ', '');
 
   const domainList = ['gmail.com', 'yahoo.com', 'hotmail.com', 'outlook.com'];
