@@ -2,7 +2,7 @@ import chalk from 'chalk';
 import colors from 'colors';
 import chalkAnimation from 'chalk-animation';
 
-import { home } from './src/home.js';
+import home from './src/home.js';
 
 const sleep = (ms = 1000) => new Promise((r) => setTimeout(r, ms));
 

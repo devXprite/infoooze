@@ -6,6 +6,7 @@ import mailfinder from './mailfinder.js';
 import useragent from './useragent.js';
 import whois from './whois.js';
 import IPlookup from './IPlookup.js';
+import portScanner from './portScanner.js';
 
 import { sleep, input } from './common.js';
 
@@ -42,6 +43,10 @@ const takeOption = async () => {
       IPlookup();
       break;
 
+    case '6':
+      portScanner();
+      break;
+
     case 'exit':
       console.log('bye!'.cyan);
       break;
@@ -54,8 +59,8 @@ const takeOption = async () => {
   }
 };
 
-export async function home() {
-  i = 1;
+const home = async () => {
+  var i = 1;
   console.clear();
   chalkAnimation.neon(
     `
@@ -88,9 +93,10 @@ export async function home() {
   await list('Useragent ', 'find browser info');
   await list('Domain info', "find doamin's whois info");
   await list('IP Lookup', 'find IP info');
+  await list('Ports Scan', 'find open ports');
 
   console.log('\n');
   takeOption();
-}
+};
 
 export default home;
