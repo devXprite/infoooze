@@ -62,7 +62,7 @@ const takeOption = async () => {
   }
 };
 
-const home = async (i = 1) => {
+const home = async (animationDelay = 1500, i = 1) => {
   console.clear();
   chalkAnimation.neon(
     `
@@ -80,12 +80,12 @@ const home = async (i = 1) => {
       \\_______________________/
       
     `,
-    '2',
+    '2'
   );
 
-  await sleep(2000);
+  await sleep(animationDelay);
   console.log(`      A tool by ${'7ORP3DO'.cyan} & ${'Biswajeet'.cyan} `);
-  await sleep(1000);
+  await sleep(animationDelay);
 
   console.log(
     '' + ' Choose number or type exit fir exiting '.bgWhite.black + '\n\n',
@@ -93,9 +93,10 @@ const home = async (i = 1) => {
   await list(i++, 'Userrecon', 'username reconnaissance');
   await list(i++, 'Mailfinder ', 'find email with specific name');
   await list(i++, 'Useragent ', 'find browser info');
-  await list(i++, 'Whois info', "find doamin's whois info");
+  await list(i++, 'Whoislookup', "find doamin's whois info");
   await list(i++, 'IP Lookup', 'find IP info');
   await list(i++, 'Ports Scan', 'find open ports');
+  await list(i++, 'Domain Age', 'find website Age')
   await list(i++, 'Header Info', 'find website headers');
 
   console.log('\n');

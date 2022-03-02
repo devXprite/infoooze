@@ -31,7 +31,7 @@
   },
   "pre-commit": [],
   "engines": {
-    "node": ">=14.16.1",
+    "node": ">=14.0.0",
     "npm": ">= 7.24.2"
   },
   "engineStrict": true

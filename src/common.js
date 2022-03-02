@@ -27,16 +27,16 @@ const list = async (counter, key, value, bool) => {
   }
 
   if (typeof value == 'string' && value.includes('REDACTED')) {
-    value = chalk.redBright(value);
+    value = chalk.hex("#FFA500")(value);
   }
 
   key = sentenceCase(key);
 
-  await sleep(200);
+  await sleep(300);
   console.log(
-    chalk.greenBright('[') +
-      chalk.cyan(counter) +
-      chalk.greenBright('] ') +
+    chalk.white('[') +
+      chalk.hex("#FFA500")(counter) +
+      chalk.white('] ') +
       chalk.cyan(key + ' : ') +
       chalk.greenBright(value),
   );
@@ -44,7 +44,7 @@ const list = async (counter, key, value, bool) => {
 
 const goBack = async () => {
   prompt('\npress enter to go back...'.cyan.italic);
-  home();
+  home(500);
 };
 
 const input = async (text) => {
