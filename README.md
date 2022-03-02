@@ -64,7 +64,6 @@
 
 
 <!-- ABOUT THE PROJECT -->
-# repo_name
 ## About repo_name
 
 <!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
@@ -91,12 +90,12 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 
 
 <!-- GETTING STARTED -->
-# Getting Started
+## Getting Started
 
 This is an example of how you may give instructions on setting up your project locally.
 To get a local copy up and running follow these simple steps.
 
-## Prerequisites
+### Prerequisites
 You need **NodeJs v14.x.x** to run this tool. You can install NodeJs on
 
 * Linux
@@ -108,9 +107,33 @@ You need **NodeJs v14.x.x** to run this tool. You can install NodeJs on
   pkg install nodejs-lts python
   ```
 
-## Installation on [Linux](https://wikipedia.org/wiki/Linux) [![alt tag](./images/OS-Linux-icon.png)](https://en.wikipedia.org/wiki/Linux)
+### Installation on [Linux](https://wikipedia.org/wiki/Linux) [![alt tag](./images/OS-Linux-icon.png)](https://en.wikipedia.org/wiki/Linux)
 
-### Using GIT
+* #### Using GIT
+
+  ```sh
+  git clone https://github.com/7ORP3DO/repo_name.git
+  cd repo_name
+  npm install
+  npm start
+  ```
+
+* #### Using NPM
+  This package is published on NPM so you can install it directly using [NPM](http://npm.com)
+
+  ```sh
+  npm install repo_name -g
+  ```
+
+* #### Using NPX
+  run without install it locally.
+
+  ```sh
+  npx repo_name
+  ```
+
+### Installation on [Android](https://wikipedia.org/wiki/Android) [![alt tag](./images/android-icon.png)](https://en.wikipedia.org/wiki/Android)
+
 
 ```sh
 git clone https://github.com/7ORP3DO/repo_name.git
@@ -119,31 +142,7 @@ npm install
 npm start
 ```
 
-### Using NPM
-This package is published on NPM so you can install it directly using [NPM](http://npm.com)
-
-```sh
-npm install repo_name -g
-```
-
-### Using NPX
-run without install it locally.
-
-```sh
-npx repo_name
-```
-
-## Installation on [Android](https://wikipedia.org/wiki/Android) [![alt tag](./images/android-icon.png)](https://en.wikipedia.org/wiki/Android)
-
-
-```sh
-git clone https://github.com/7ORP3DO/repo_name.git
-cd repo_name
-npm install
-npm start
-```
-
-## Installation on [Windows ](https://wikipedia.org/wiki/Microsoft_Windows)[![alt tag](./images/Windows-icon.png)](https://en.wikipedia.org/wiki/Microsoft_Windows)
+### Installation on [Windows ](https://wikipedia.org/wiki/Microsoft_Windows)[![alt tag](./images/Windows-icon.png)](https://en.wikipedia.org/wiki/Microsoft_Windows)
 
 1. Download and install NodeJs from here.
 2. Download repo_name zip file from here.
@@ -209,6 +208,13 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
+<!-- ACKNOWLEDGMENTS -->
+## Acknowledgments
+*Special thanks to [Biswajeet Ray](https://instagram.com/biswajeetray7) for pushing me to keep working.*
+
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
 
 <!-- CONTACT -->
 ## Contact
@@ -221,14 +227,7 @@ Project Link: [https://github.com/7orp3do/repo_name](https://github.com/7orp3do/
 
 
 
-<!-- ACKNOWLEDGMENTS -->
-<!-- ## Acknowledgments
 
-* []()
-* []()
-* []()
-
-<p align="right">(<a href="#top">back to top</a>)</p> -->
 
 
 
