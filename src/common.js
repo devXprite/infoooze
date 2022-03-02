@@ -1,6 +1,7 @@
 import chalk from 'chalk';
 import fs from 'fs';
 import home from './home.js';
+import { sentenceCase } from 'sentence-case';
 import PromptSync from 'prompt-sync';
 import moment from 'moment';
 
@@ -21,13 +22,15 @@ const saveTo = (path, content) => {
 const list = async (counter, key, value, bool) => {
   var value = value || chalk.redBright('n/a');
 
-  if (value.includes('REDACTED')) {
-    value = chalk.redBright(value);
-  }
-
   if (bool) {
     value = bool == true ? 'Yes' : 'No';
   }
+
+  if (typeof value == 'string' && value.includes('REDACTED')) {
+    value = chalk.redBright(value);
+  }
+
+  key = sentenceCase(key);
 
   await sleep(200);
   console.log(

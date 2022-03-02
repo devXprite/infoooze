@@ -5,6 +5,7 @@ import userrecon from './userrecon.js';
 import mailfinder from './mailfinder.js';
 import useragent from './useragent.js';
 import whois from './whois.js';
+import IPlookup from './IPlookup.js';
 
 import { sleep, input } from './common.js';
 
@@ -37,10 +38,16 @@ const takeOption = async () => {
       whois();
       break;
 
+    case '5':
+      IPlookup();
+      break;
+
     case 'exit':
       console.log('bye!'.cyan);
       break;
-
+    case '00':
+      console.log('bye!'.cyan);
+      break;
     default:
       takeOption();
       break;
@@ -79,7 +86,8 @@ export async function home() {
   await list('Userrecon', 'username reconnaissance');
   await list('Mailfinder ', 'find email with specific name');
   await list('Useragent ', 'find browser info');
-  await list('Website', 'find websie info');
+  await list('Domain info', "find doamin's whois info");
+  await list('IP Lookup', 'find IP info');
 
   console.log('\n');
   takeOption();
