@@ -4,7 +4,7 @@ import chalk from 'chalk';
 
 import { list, goBack, input } from './common.js';
 
-const IPlookup = async () => {
+const IPlookup = async (i = 1) => {
   var ip = await input('Your IP');
   console.log('\n');
 
@@ -20,7 +20,6 @@ const IPlookup = async () => {
     async function (error, response) {
       if (!error && response.statusCode == 200) {
         let IPData = response.body;
-        var i = 1;
         for (var key in IPData) {
           await list(i++, key, IPData[key]);
         }

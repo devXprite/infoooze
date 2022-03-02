@@ -29,29 +29,23 @@ const portsList = {
 };
 
 async function checkPort(port, website) {
-  portscanner.checkPortStatus(
-    port,
-    'indiancybertroops.org',
-    function (error, status) {
-      if (!error) {
-        if (status == 'open') {
-          console.log(
-            ` ${chalk.cyan('-')} ${chalk.greenBright(
-              port,
-            )} \t${chalk.greenBright(status)} \t${chalk.greenBright(
-              portsList[port],
-            )}`,
-          );
-        } else {
-          console.log(
-            ` ${chalk.cyan('-')} ${chalk.redBright(port)} \t${chalk.redBright(
-              status,
-            )} \t${chalk.redBright(portsList[port])}`,
-          );
-        }
+  portscanner.checkPortStatus(port, website, function (error, status) {
+    if (!error) {
+      if (status == 'open') {
+        console.log(
+          ` ${chalk.cyan('-')} ${chalk.greenBright(port)} \t${chalk.greenBright(
+            status,
+          )} \t${chalk.greenBright(portsList[port])}`,
+        );
+      } else {
+        console.log(
+          ` ${chalk.cyan('-')} ${chalk.redBright(port)} \t${chalk.redBright(
+            status,
+          )} \t${chalk.redBright(portsList[port])}`,
+        );
       }
-    },
-  );
+    }
+  });
 }
 
 const portScanner = async (i = 0) => {

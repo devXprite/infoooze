@@ -7,15 +7,14 @@ import useragent from './useragent.js';
 import whois from './whois.js';
 import IPlookup from './IPlookup.js';
 import portScanner from './portScanner.js';
+import headerLookup from './headerLookup.js';
 
 import { sleep, input } from './common.js';
 
-var i = 1;
-
-const list = async (name, description) => {
+var list = async (counter, name, description) => {
   await sleep(300);
   console.log(
-    ` ${chalk.cyan(i++)} ${chalk.whiteBright(name)} \t ${chalk.blackBright(
+    ` ${chalk.cyan(counter)} ${chalk.whiteBright(name)} \t ${chalk.blackBright(
       description,
     )}`,
   );
@@ -47,6 +46,10 @@ const takeOption = async () => {
       portScanner();
       break;
 
+    case '7':
+      headerLookup();
+      break;
+
     case 'exit':
       console.log('bye!'.cyan);
       break;
@@ -59,8 +62,7 @@ const takeOption = async () => {
   }
 };
 
-const home = async () => {
-  var i = 1;
+const home = async (i = 1) => {
   console.clear();
   chalkAnimation.neon(
     `
@@ -88,12 +90,13 @@ const home = async () => {
   console.log(
     '' + ' Choose number or type exit fir exiting '.bgWhite.black + '\n\n',
   );
-  await list('Userrecon', 'username reconnaissance');
-  await list('Mailfinder ', 'find email with specific name');
-  await list('Useragent ', 'find browser info');
-  await list('Domain info', "find doamin's whois info");
-  await list('IP Lookup', 'find IP info');
-  await list('Ports Scan', 'find open ports');
+  await list(i++, 'Userrecon', 'username reconnaissance');
+  await list(i++, 'Mailfinder ', 'find email with specific name');
+  await list(i++, 'Useragent ', 'find browser info');
+  await list(i++, 'Whois info', "find doamin's whois info");
+  await list(i++, 'IP Lookup', 'find IP info');
+  await list(i++, 'Ports Scan', 'find open ports');
+  await list(i++, 'Header Info', 'find website headers');
 
   console.log('\n');
   takeOption();
