@@ -26,6 +26,7 @@
     "prettier": "2.5.1"
   },
   "pre-commit": [],
+  "bin": "./index.js",
   "engines": {
     "node": ">=14.0.0",
     "npm": ">= 7.24.2"

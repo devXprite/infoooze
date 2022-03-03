@@ -7,6 +7,7 @@ import useragent from './useragent.js';
 import instaRecon from './instarecon.js';
 import whois from './whois.js';
 import IPlookup from './IPlookup.js';
+import dnsLookup from './DNSLookup.js';
 import portScanner from './portScanner.js';
 import headerLookup from './headerLookup.js';
 
@@ -58,6 +59,10 @@ const takeOption = async () => {
       headerLookup();
       break;
 
+    case '10':
+      dnsLookup();
+      break;
+
     case 'exit':
       console.log('bye!'.cyan);
       break;
@@ -107,6 +112,10 @@ const home = async (animationDelay = 1500, i = 1) => {
   await list(i++, 'Ports Scan', 'find open ports');
   await list(i++, 'Domain Age', 'find website Age');
   await list(i++, 'Header Info', 'find website headers');
+  await list(i++, 'DNS Lookup', 'domain name system lookup');
+  console.log('');
+  await list('00', 'exit', 'exit and close tool');
+
 
   console.log('\n');
   takeOption();

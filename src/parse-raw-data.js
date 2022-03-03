@@ -1,13 +1,15 @@
-const os = require('os'),
-  log = console.log.bind(console),
-  changeCase = require('change-case'),
-  htmlEntities = require('html-entities').XmlEntities;
+//   htmlEntities = require('html-entities').XmlEntities;
+
+import os from 'os';
+import { decode } from 'html-entities';
+
+const log = console.log.bind(console);
 
 const DELIMITER = ':';
 
 var stripHTMLEntitites = function (rawData) {
-  var entities = new htmlEntities();
-  return entities.decode(rawData);
+  // var entities = new htmlEntities();
+  return decode(rawData);
 };
 
 //Checks whether a delimiter followed by a space common in this result
@@ -40,7 +42,7 @@ var parseRawData = function (rawData) {
 
       // 'Greater than' since lines often have more than one colon, eg values with URLs
       if (lineParts.length >= 2) {
-        var key = changeCase.camelCase(lineParts[0]),
+        var key = lineParts[0],
           value = lineParts.splice(1).join(DELIMITER).trim();
 
         // If multiple lines use the same key, combine the values
@@ -56,4 +58,4 @@ var parseRawData = function (rawData) {
   return result;
 };
 
-module.exports = parseRawData;
+export default parseRawData;

@@ -40,8 +40,10 @@ const list = async (counter, key, value) => {
 };
 
 const goBack = async () => {
-  prompt('\npress enter to go back...'.cyan.italic);
-  home(500);
+  setTimeout(() => {
+    prompt('\npress enter to go back...'.cyan.italic);
+    home(500);
+  }, 1000);
 };
 
 const input = async (text) => {
