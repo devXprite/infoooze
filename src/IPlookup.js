@@ -2,7 +2,7 @@ import request from 'request';
 import Colors from 'colors';
 import chalk from 'chalk';
 
-import { list, goBack, input } from './common.js';
+import { list, goBack, input, errorMsg } from './common.js';
 
 const IPlookup = async (i = 1) => {
   var ip = await input('Your IP');
@@ -24,7 +24,7 @@ const IPlookup = async (i = 1) => {
           await list(i++, key, IPData[key]);
         }
       } else {
-        console.log(chalk.redBright('Something went wrong!'));
+        errorMsg();
       }
       goBack();
     },

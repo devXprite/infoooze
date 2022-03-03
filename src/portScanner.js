@@ -54,7 +54,7 @@ const portScanner = async (i = 0) => {
 
   Object.keys(portsList).forEach((port, index) => {
     setTimeout(() => {
-      checkPort(port, 'torpedo.rf.gd');
+      checkPort(port, website);
     }, index * 500);
   });
 

@@ -1,9 +1,10 @@
 import chalk from 'chalk';
 import chalkAnimation from 'chalk-animation';
 
-import userrecon from './userrecon.js';
+import userrecon from './userRecon.js';
 import mailfinder from './mailfinder.js';
 import useragent from './useragent.js';
+import instaRecon from './instarecon.js';
 import whois from './whois.js';
 import IPlookup from './IPlookup.js';
 import portScanner from './portScanner.js';
@@ -39,14 +40,21 @@ const takeOption = async () => {
       break;
 
     case '5':
-      IPlookup();
+      instaRecon();
       break;
 
     case '6':
-      portScanner();
+      IPlookup();
       break;
 
     case '7':
+      portScanner();
+      break;
+    case '8':
+      domainAge();
+      break;
+
+    case '9':
       headerLookup();
       break;
 
@@ -80,7 +88,7 @@ const home = async (animationDelay = 1500, i = 1) => {
       \\_______________________/
       
     `,
-    '2'
+    '2',
   );
 
   await sleep(animationDelay);
@@ -94,9 +102,10 @@ const home = async (animationDelay = 1500, i = 1) => {
   await list(i++, 'Mailfinder ', 'find email with specific name');
   await list(i++, 'Useragent ', 'find browser info');
   await list(i++, 'Whoislookup', "find doamin's whois info");
+  await list(i++, 'InstaRecon', 'find Instagram users info');
   await list(i++, 'IP Lookup', 'find IP info');
   await list(i++, 'Ports Scan', 'find open ports');
-  await list(i++, 'Domain Age', 'find website Age')
+  await list(i++, 'Domain Age', 'find website Age');
   await list(i++, 'Header Info', 'find website headers');
 
   console.log('\n');

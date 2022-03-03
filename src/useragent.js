@@ -1,7 +1,7 @@
 import request from 'request';
 import chalk from 'chalk';
 
-import { list, goBack, input } from './common.js';
+import { list, goBack, input, errorMsg } from './common.js';
 
 export async function useragent() {
   var useragent = await input('Your UserAgent');
@@ -25,22 +25,22 @@ export async function useragent() {
           await list(i++, 'OS Code', data.os.code);
           await list(i++, 'OS family', data.os.family);
           await list(i++, 'OS family vendor', data.os.family_vendor);
-          await list(i++, 'Is Mobile', data.device.is_mobile_device, 'bool');
+          await list(i++, 'Is Mobile', data.device.is_mobile_device);
           await list(i++, 'Device Type', data.device.type);
           await list(i++, 'Device brand', data.device.brand);
           await list(i++, 'Browser', data.browser.name);
           await list(i++, 'Browser Version', data.browser.version);
           await list(i++, 'Browser Engine', data.browser.engine);
-          await list(i++, 'Crawler', data.crawler.is_crawler, 'bool');
+          await list(i++, 'Crawler', data.crawler.is_crawler);
           await list(i++, 'Category', data.crawler.category);
         } else {
-          console.log(chalk.redBright('Something went wrong!'));
+          errorMsg();
         }
         goBack();
       },
     );
   } catch (error) {
-    console.log(chalk.redBright('Something went wrong!'));
+    errorMsg();
   }
 }
 

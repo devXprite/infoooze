@@ -19,23 +19,20 @@ const saveTo = (path, content) => {
   }
 };
 
-const list = async (counter, key, value, bool) => {
-  var value = value || chalk.redBright('n/a');
-
-  if (bool) {
-    value = bool == true ? 'Yes' : 'No';
+const list = async (counter, key, value) => {
+  counter = counter <= 9 ? '0' + counter : counter;
+  if (typeof value == 'boolean') {
+    value = value ? 'Yes' : 'No';
   }
 
-  if (typeof value == 'string' && value.includes('REDACTED')) {
-    value = chalk.hex("#FFA500")(value);
-  }
+  value = value || chalk.redBright('n/a');
 
   key = sentenceCase(key);
 
   await sleep(300);
   console.log(
     chalk.white('[') +
-      chalk.hex("#FFA500")(counter) +
+      chalk.hex('#FFA500')(counter) +
       chalk.white('] ') +
       chalk.cyan(key + ' : ') +
       chalk.greenBright(value),
@@ -51,4 +48,14 @@ const input = async (text) => {
   return prompt(` ${'>'.cyan} ${text.bold} : `);
 };
 
-export { list, sleep, goBack, input, currentTimeStamp, saveTo };
+const errorMsg = async (
+  msg = 'Something went wrong! Please check your internet.',
+) => {
+  console.log(
+    chalk.white('[') +
+      chalk.redBright('!') +
+      chalk.white('] ') +
+      chalk.hex('#FFA500')(msg),
+  );
+};
+export { list, sleep, goBack, input, currentTimeStamp, saveTo, errorMsg };

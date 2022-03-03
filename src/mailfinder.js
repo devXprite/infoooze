@@ -1,7 +1,7 @@
 import request from 'request';
 import chalk from 'chalk';
 
-import { sleep, input } from './common.js';
+import { sleep, input, errorMsg } from './common.js';
 
 export async function mailfinder() {
   var username = await input('Your Username');
@@ -35,7 +35,7 @@ export async function mailfinder() {
         },
       );
     } catch (error) {
-      console.log('something went wrong!');
+      errorMsg();
     }
     await sleep(500);
   });
