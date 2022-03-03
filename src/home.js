@@ -2,12 +2,12 @@ import chalk from 'chalk';
 import chalkAnimation from 'chalk-animation';
 
 import userrecon from './userRecon.js';
-import mailfinder from './mailfinder.js';
-import useragent from './useragent.js';
-import instaRecon from './instarecon.js';
-import whois from './whois.js';
-import IPlookup from './IPlookup.js';
-import dnsLookup from './DNSLookup.js';
+import mailfinder from './mailFinder.js';
+import useragent from './userAgent.js';
+import instaRecon from './instaRecon.js';
+import whois from './whoIs.js';
+import IPlookup from './ipLookup.js';
+import dnsLookup from './dnsLookup.js';
 import portScanner from './portScanner.js';
 import headerLookup from './headerLookup.js';
 
