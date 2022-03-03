@@ -1,0 +1,7 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "formulahendry.code-runner",
+    "esbenp.prettier-vscode"
+  ]
+}

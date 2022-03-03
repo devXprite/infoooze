@@ -116,7 +116,6 @@ const home = async (animationDelay = 1500, i = 1) => {
   console.log('');
   await list('00', 'exit', 'exit and close tool');
 
-
   console.log('\n');
   takeOption();
 };

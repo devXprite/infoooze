@@ -3,8 +3,8 @@ import chalk from 'chalk';
 
 import { list, goBack, input, errorMsg } from './common.js';
 
-export async function instaRecon(i = 1) {
-  var username = await input('Your Username');
+export async function instaRecon(username, i = 1) {
+  var username = username || (await input('Your Username'));
   console.log('\n');
 
   request(

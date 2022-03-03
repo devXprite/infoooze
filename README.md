@@ -85,7 +85,7 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 
 | Linux | Termux | Windows | Mac |
 | ----- | ------ | ------- | --- |
-| ✔     | ✔      | ✔       | ❔  |
+| ✔     | ✔      | ✔       | ❔   |
 
 ✔ Tested  
 ❔ - Not tested
@@ -163,8 +163,44 @@ node index.js
 
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+After installing you can run by just typing osint_tool.
 
+### Options:
+
+
+| Short Form | Long Form     | Description                        |
+| ---------- | ------------- | ---------------------------------- |
+| -D         | --DNSLookup   | domain name system lookup          |
+| -H         | --HeaderInfo  | find website headers               |
+| -I         | --IPLookup    | find IP info                       |
+| -M         | --Mailfinder  | find email with specelse ific name |
+| -P         | --PortsScan   | find open ports                    |
+| -U         | --Userrecon   | username reconnaissance            |
+| -W         | --Whoislookup | find doamin's whois info           |
+| -d         | --domainAge   | find website Age                   |
+| -h         | --help        | Output usage information           |
+| -i         | --instaRecon  | find Instagram users info          |
+| -u         | --useragent   | find browser info                  |
+| -v         | --version     | Output the version number          |
+
+### Examples
+
+* To list all the basic options and switches use -h switch:  
+  ```sh
+  tool_name -h
+  ```
+* To Get Instagram User Info:  
+  ```sh
+  tool_name -i indian_cyber_ops
+  ```
+* To Get Domain's Whois Information:  
+  ```sh
+  tool_name -W google.com
+  ```
+* To Get IP To Information::  
+  ```sh
+  tool_name -I 8.8.8.8
+  ```
 _For more examples, please refer to the [Documentation](https://example.com)_
 
 <p align="right">(<a href="#top">back to top</a>)</p>
