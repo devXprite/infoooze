@@ -3,10 +3,9 @@ import chalk from 'chalk';
 
 import { list, goBack, input, errorMsg } from './common.js';
 
-export async function useragent() {
-  var useragent = await input('Your UserAgent');
+export async function useragent(useragent, showHome = false, i = 1) {
+  useragent = useragent || (await input('Your UserAgent'));
   var key = 'a6f7ff508268b5e184b6ea2b8daeaab8';
-  console.log('\n');
 
   try {
     request(
@@ -18,7 +17,6 @@ export async function useragent() {
       async function (error, response) {
         if (!error && response.statusCode == 200) {
           let data = response.body;
-          var i = 1;
 
           await list(i++, 'Type', data.type);
           await list(i++, 'OS Name', data.os.name);

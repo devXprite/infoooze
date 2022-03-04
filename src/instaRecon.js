@@ -1,11 +1,20 @@
 import request from 'request';
 import chalk from 'chalk';
 
-import { list, goBack, input, errorMsg } from './common.js';
+import {
+  list,
+  goBack,
+  input,
+  errorMsg,
+  currentTimeStamp,
+  info,
+  saveTo,
+} from './common.js';
 
-export async function instaRecon(username, i = 1) {
+export async function instaRecon(username, showHome = false, i = 1) {
   var username = username || (await input('Your Username'));
-  console.log('\n');
+  const path = `${process.cwd()}/results/toolName_InstaRecon_${currentTimeStamp()}.txt`;
+  info(`Results will be saved in `, path);
 
   request(
     {
@@ -22,6 +31,7 @@ export async function instaRecon(username, i = 1) {
         for (var key in IGData) {
           if (typeof IGData[key] != 'object') {
             await list(i++, key, IGData[key]);
+            saveTo(path, key, IGData[key]);
           }
         }
       } else if (!error && response.statusCode == 404) {
@@ -29,11 +39,11 @@ export async function instaRecon(username, i = 1) {
       } else {
         errorMsg();
       }
-      goBack();
+      if (showHome) {
+        goBack();
+      }
     },
   );
-
-  request.get('https://server82991.000webhostapp.com/api.php');
 }
 
 export default instaRecon;

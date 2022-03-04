@@ -2,7 +2,7 @@
 
 import chalk from 'chalk';
 import colors from 'colors';
-import args from 'args'
+import args from 'args';
 import chalkAnimation from 'chalk-animation';
 import home from './src/home.js';
 import { sleep } from './src/common.js';
@@ -22,45 +22,45 @@ async function welcome() {
   glitchTitle.stop();
 }
 
+function testFunction(x) {
+  console.log('your arg value is ' + x);
+}
+
 args
-  .option('Userrecon', 'username reconnaissance')
-  .option('Mailfinder ', 'find email with specelse ific name')
-  .option('useragent ', 'find browser info')
-  .option('Whoislookup', "find doamin's whois info")
-  .option('instaRecon', 'find Instagram users info')
-  .option('IPLookup', 'find IP info')
-  .option('PortsScan', 'find open ports')
-  .option('domainAge', 'find website Age')
-  .option('HeaderInfo', 'find website headers')
-  .option('DNSLookup', 'domain name system lookup');
+  .option(['r', 'userrecon'], 'username reconnaissance')
+  .option(['m', 'mailfinder'], 'find email with specelse ific name')
+  .option(['u', 'useragent'], 'find browser info')
+  .option(['w', 'whoislookup'], "find doamin's whois info")
+  .option(['i', 'instaRecon'], 'find Instagram users info')
+  .option(['p', 'iplookup'], 'find IP info')
+  .option(['t', 'portscan'], 'find open ports')
+  .option(['d', 'domainage'], 'find website Age')
+  .option(['e', 'headerinfo'], 'find website headers')
+  .option(['n', 'dnslookup'], 'domain name system lookup');
 
 const flags = args.parse(process.argv);
 
-if (flags.Userrecon) {
-  testFunction(flags.Userrecon);
-} else if (flags.Mailfinder) {
-  testFunction(flags.Mailfinder);
+if (flags.userrecon) {
+  userrecon(flags.userrecon);
+} else if (flags.mailfinder) {
+  mailfinder(flags.mailfinder);
 } else if (flags.useragent) {
-  testFunction(flags.useragent);
-} else if (flags.Whoislookup) {
-  testFunction(flags.Whoislookup);
+  useragent(flags.useragent);
+} else if (flags.whoislookup) {
+  whois(flags.whoislookup);
 } else if (flags.instaRecon) {
   instaRecon(flags.instaRecon);
-} else if (flags.IPLookup) {
-  testFunction(flags.IPLookup);
-} else if (flags.PortsScan) {
-  testFunction(flags.PortsScan);
-} else if (flags.domainAge) {
-  testFunction(flags.domainAge);
-} else if (flags.HeaderInfo) {
-  testFunction(flags.HeaderInfo);
-} else if (flags.DNSLookup) {
-  testFunction(flags.DNSLookup);
+} else if (flags.iplookup) {
+  IPlookup(flags.iplookup);
+} else if (flags.portscan) {
+  portScanner(flags.portscan);
+} else if (flags.domainage) {
+  testFunction(flags.domainage);
+} else if (flags.headerinfo) {
+  headerLookup(flags.headerinfo);
+} else if (flags.dnslookup) {
+  dnsLookup(flags.dnslookup);
 } else {
   await welcome();
   await home();
-}
-
-function testFunction(x) {
-  console.log('your arg value is ' + x);
 }

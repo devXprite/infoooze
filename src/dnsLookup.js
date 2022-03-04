@@ -1,11 +1,20 @@
 import request from 'request';
 import chalk from 'chalk';
 
-import { list, goBack, input, errorMsg } from './common.js';
+import {
+  list,
+  goBack,
+  input,
+  errorMsg,
+  currentTimeStamp,
+  info,
+  saveTo,
+} from './common.js';
 
-const dnsLookup = async (i = 1) => {
-  var website = await input('Your Website');
-  console.log('\n');
+const dnsLookup = async (website, showHome = false, i = 1) => {
+  var website = website || (await input('Your Website'));
+  const path = `${process.cwd()}/results/toolName_dnsLookup_${currentTimeStamp()}.txt`;
+  info(`Results will be saved in `, path);
 
   request(
     {
@@ -19,11 +28,14 @@ const dnsLookup = async (i = 1) => {
 
         dnsData.split('\n').forEach(async function (e) {
           list(i++, e.split(' : ')[0], e.split(' : ')[1]);
+          saveTo(path, e.split(' : ')[0], e.split(' : ')[1]);
         });
       } else {
         errorMsg();
       }
-      goBack();
+      if (showHome) {
+        goBack();
+      }
     },
   );
 };

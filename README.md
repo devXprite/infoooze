@@ -68,18 +68,16 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 
 ## Features
 
-| No  | Name        | Discription                   |
-| --- | ----------- | ----------------------------- |
-| 1   | userrecon   | username reconnaissance       |
-| 2   | Mailfinder  | find email with specific name |
-| 3   | Useragent   | find useragent info           |
-| 4   | whoislookup | identify who is on domain     |
-| 5   | InstaRecon  | find Instagram users info     |
-| 6   | IP Lookup   | find IP info                  |
-| 7   | Ports Scan  | find open ports on website    |
-| 8   | Header Info | find website headers          |
-| 9   | Domain Age  | find website Age              |
-| 10  | DNS Lookup  | domain name system lookup     |
+ 1. userrecon   
+ 2. Mailfinder  
+ 3. Useragent   
+ 4. whoislookup 
+ 5. InstaRecon  
+ 6. IP Lookup   
+ 7. Ports Scan  
+ 8. Header Info 
+ 9. Domain Age  
+ 10. DNS Lookup  
 
 ## Support
 
@@ -99,7 +97,7 @@ To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
 
-You need **NodeJs v14.x.x** to run this tool. You can install NodeJs
+You need **NodeJs** only to run this tool. You can install NodeJs
 
 - On Linux
   ```sh
@@ -109,17 +107,9 @@ You need **NodeJs v14.x.x** to run this tool. You can install NodeJs
   ```sh
   pkg install nodejs-lts python
   ```
+***Note:** You will need at least version 14.X.X of Node.*
 
 ### Installation on [Linux](https://wikipedia.org/wiki/Linux) [![alt tag](./images/OS-Linux-icon.png)](https://en.wikipedia.org/wiki/Linux)
-
-- #### Using GIT
-
-  ```sh
-  git clone https://github.com/7ORP3DO/osint_tool.git
-  cd osint_tool
-  npm install
-  npm start
-  ```
 
 - #### Using NPM
 
@@ -128,6 +118,17 @@ You need **NodeJs v14.x.x** to run this tool. You can install NodeJs
   ```sh
   npm install osint_tool -g
   ```
+
+- #### Using GIT
+
+  ```sh
+  git clone https://github.com/7ORP3DO/osint_tool.git
+  cd osint_tool
+  npm install
+  npm install -g
+  osint_tool
+  ```
+
 
 - #### Using NPX
 
@@ -164,19 +165,21 @@ node index.js
 ## Usage
 
 After installing you can run by just typing osint_tool.
+```sh
+osint_tool
+```
 
 ### Options:
 
-
 | Short Form | Long Form     | Description                        |
 | ---------- | ------------- | ---------------------------------- |
-| -D         | --DNSLookup   | domain name system lookup          |
-| -H         | --HeaderInfo  | find website headers               |
-| -I         | --IPLookup    | find IP info                       |
-| -M         | --Mailfinder  | find email with specelse ific name |
-| -P         | --PortsScan   | find open ports                    |
-| -U         | --Userrecon   | username reconnaissance            |
-| -W         | --Whoislookup | find doamin's whois info           |
+| -n         | --DNSLookup   | domain name system lookup          |
+| -e         | --HeaderInfo  | find website headers               |
+| -p         | --IPLookup    | find IP info                       |
+| -m         | --Mailfinder  | find email with specelse ific name |
+| -t         | --PortsScan   | find open ports                    |
+| -r         | --Userrecon   | username reconnaissance            |
+| -w         | --Whoislookup | find doamin's whois info           |
 | -d         | --domainAge   | find website Age                   |
 | -h         | --help        | Output usage information           |
 | -i         | --instaRecon  | find Instagram users info          |
@@ -185,23 +188,23 @@ After installing you can run by just typing osint_tool.
 
 ### Examples
 
-* To list all the basic options and switches use -h switch:  
+- To list all the basic options and switches use -h switch:
   ```sh
   tool_name -h
   ```
-* To Get Instagram User Info:  
+- To Get Instagram User Info:
   ```sh
   tool_name -i indian_cyber_ops
   ```
-* To Get Domain's Whois Information:  
+- To Get Domain's Whois Information:
   ```sh
   tool_name -W google.com
   ```
-* To Get IP To Information::  
+- To Get IP Information::
   ```sh
   tool_name -I 8.8.8.8
   ```
-_For more examples, please refer to the [Documentation](https://example.com)_
+  _For more examples, please refer to the [Documentation](https://example.com)_
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 

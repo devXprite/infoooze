@@ -11,9 +11,16 @@ const sleep = (ms = 1000) => new Promise((r) => setTimeout(r, ms));
 
 const currentTimeStamp = () => moment().format('DDMMYYYYHHmmss');
 
-const saveTo = (path, content) => {
+const saveTo = (path, content, content2) => {
   try {
-    fs.appendFileSync(path, `\n${content}`);
+    if (!fs.existsSync('./results')) {
+      fs.mkdirSync('./results');
+    }
+    if (content2) {
+      fs.appendFileSync(path, `\n${content} : ${content2}`);
+    } else {
+      fs.appendFileSync(path, `\n${content}`);
+    }
   } catch (error) {
     /* n/a */
   }
@@ -60,4 +67,15 @@ const errorMsg = async (
       chalk.hex('#FFA500')(msg),
   );
 };
-export { list, sleep, goBack, input, currentTimeStamp, saveTo, errorMsg };
+
+const info = async (msg, path = '') => {
+  console.log(
+    chalk.white('\n[') +
+      chalk.cyan('!') +
+      chalk.white('] ') +
+      chalk.cyan(msg) +
+      chalk.hex('#FFA500')(path),
+  );
+  console.log('\n');
+};
+export { list, sleep, goBack, input, currentTimeStamp, saveTo, errorMsg, info };

@@ -1,10 +1,10 @@
 import request from 'request';
 import chalk from 'chalk';
 
-import { sleep, input } from './common.js';
+import { sleep, input, currentTimeStamp, info, saveTo } from './common.js';
 
-export async function userrecon() {
-  var username = await input('Your Username');
+export async function userrecon(username, showHome = false) {
+  username = username || (await input('Your Username'));
 
   var urlList = [
     `https://facebook.com/${username}`,
@@ -108,7 +108,6 @@ export async function userrecon() {
                   url.brightRed,
               );
             }
-            // fs.appendFileSync(fileNameToSaveProxy, `${proxy}\n`);
           }
         },
       );

@@ -1,12 +1,11 @@
 import request from 'request';
 import chalk from 'chalk';
 
-import { sleep, input, errorMsg } from './common.js';
+import { list, goBack, input, errorMsg } from './common.js';
 
-export async function mailfinder() {
-  var username = await input('Your Username');
+export async function mailfinder(username, showHome = false) {
+  username = username || (await input('Your Username'));
   username.replace(' ', '');
-
   const domainList = ['gmail.com', 'yahoo.com', 'hotmail.com', 'outlook.com'];
   const keysList = ['Bearer0c6ad1fd-f753-4628-8c0a-7968e722c6c7'];
 

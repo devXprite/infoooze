@@ -103,16 +103,17 @@ const home = async (animationDelay = 1500, i = 1) => {
   console.log(
     '' + ' Choose number or type exit fir exiting '.bgWhite.black + '\n\n',
   );
-  await list(i++, 'Userrecon', 'username reconnaissance');
-  await list(i++, 'Mailfinder ', 'find email with specific name');
-  await list(i++, 'Useragent ', 'find browser info');
-  await list(i++, 'Whoislookup', "find doamin's whois info");
-  await list(i++, 'InstaRecon', 'find Instagram users info');
-  await list(i++, 'IP Lookup', 'find IP info');
-  await list(i++, 'Ports Scan', 'find open ports');
-  await list(i++, 'Domain Age', 'find website Age');
-  await list(i++, 'Header Info', 'find website headers');
-  await list(i++, 'DNS Lookup', 'domain name system lookup');
+  await list(i++, 'Userrecon', 'username reconnaissance', true);
+  await list(i++, 'Mailfinder ', 'find email with specific name', true);
+  await list(i++, 'Useragent ', 'find browser info', true);
+  await list(i++, 'Whoislookup', "find doamin's whois info", true);
+  await list(i++, 'InstaRecon', 'find Instagram users info', true);
+  await list(i++, 'IP Lookup', 'find IP info', true);
+  await list(i++, 'Ports Scan', 'find open ports', true);
+  await list(i++, 'Domain Age', 'find website Age', true);
+  await list(i++, 'Header Info', 'find website headers', true);
+  await list(i++, 'DNS Lookup', 'domain name system lookup', true);
+  await list(i++, 'Git Recon', 'find github user info', true);
   console.log('');
   await list('00', 'exit', 'exit and close tool');
 
