@@ -15,6 +15,7 @@ import IPlookup from './src/ipLookup.js';
 import dnsLookup from './src/dnsLookup.js';
 import portScanner from './src/portScanner.js';
 import headerLookup from './src/headerLookup.js';
+import urlExpander from './src/urlExpander.js';
 
 async function welcome() {
   const glitchTitle = chalkAnimation.glitch('Welcome to Dhanush!\n');
@@ -36,7 +37,8 @@ args
   .option(['t', 'portscan'], 'find open ports')
   .option(['d', 'domainage'], 'find website Age')
   .option(['e', 'headerinfo'], 'find website headers')
-  .option(['n', 'dnslookup'], 'domain name system lookup');
+  .option(['n', 'dnslookup'], 'domain name system lookup')
+  .option(['l', 'urlexpand'], 'long url of shorten URL');
 
 const flags = args.parse(process.argv);
 
@@ -58,6 +60,8 @@ if (flags.userrecon) {
   testFunction(flags.domainage);
 } else if (flags.headerinfo) {
   headerLookup(flags.headerinfo);
+} else if (flags.urlexpand) {
+  urlExpander(flags.urlexpand);
 } else if (flags.dnslookup) {
   dnsLookup(flags.dnslookup);
 } else {

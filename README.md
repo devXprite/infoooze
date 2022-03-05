@@ -31,34 +31,31 @@
 </div>
 
 <!-- TABLE OF CONTENTS -->
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#Installation on">Installation on</a></li>
-      </ul>
-    </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
-  </ol>
-</details>
+
+## 📚 Table of Content
+
+1. [About osint_tool](#-about-osint_tool)
+   - [Features](#-features)
+   - [Support](#-support)
+2. [Getting Started](#-getting-started)
+   - [Prerequisites](#prerequisites)
+   - [Installation on Linux](#-getting-started)
+     - [Using NPM](#using-npm)
+     - [Using GIT](#using-git)
+     - [Using NPX](#using-npx)
+   - [Installation on Android](#-getting-started)
+   - [Installation on Windows](#-getting-started)
+3. [Usage](#-usage)
+   - [Options](#options)
+   - [Examples](#examples)
+4. [Contributing](#-contributing)
+5. [License](#-license)
+6. [Acknowledgments](#-acknowledgments)
+7. [Contact](#-contact)
 
 <!-- ABOUT THE PROJECT -->
 
-## About osint_tool
+## ✨ About osint_tool
 
 <!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
 
@@ -66,20 +63,21 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 
 <!-- <p align="right">(<a href="#top">back to top</a>)</p> -->
 
-## Features
+## 💡 Features
 
- 1. userrecon   
- 2. Mailfinder  
- 3. Useragent   
- 4. whoislookup 
- 5. InstaRecon  
- 6. IP Lookup   
- 7. Ports Scan  
- 8. Header Info 
- 9. Domain Age  
- 10. DNS Lookup  
+1.  userrecon
+2.  Mailfinder
+3.  Useragent
+4.  whoislookup
+5.  InstaRecon
+6.  IP Lookup
+7.  Ports Scan
+8.  Header Info
+9.  Domain Age
+10. DNS Lookup
+11. Expand URL
 
-## Support
+## 🔨 Support
 
 | Linux | Termux | Windows | Mac |
 | ----- | ------ | ------- | --- |
@@ -90,7 +88,7 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 
 <!-- GETTING STARTED -->
 
-## Getting Started
+## 🚀 Getting Started
 
 This is an example of how you may give instructions on setting up your project locally.
 To get a local copy up and running follow these simple steps.
@@ -107,7 +105,7 @@ You need **NodeJs** only to run this tool. You can install NodeJs
   ```sh
   pkg install nodejs-lts python
   ```
-***Note:** You will need at least version 14.X.X of Node.*
+  **\*Note:** You will need at least version 14.X.X of Node.\*
 
 ### Installation on [Linux](https://wikipedia.org/wiki/Linux) [![alt tag](./images/OS-Linux-icon.png)](https://en.wikipedia.org/wiki/Linux)
 
@@ -129,7 +127,6 @@ You need **NodeJs** only to run this tool. You can install NodeJs
   osint_tool
   ```
 
-
 - #### Using NPX
 
   run without install it locally.
@@ -140,11 +137,10 @@ You need **NodeJs** only to run this tool. You can install NodeJs
 
 ### Installation on [Android](https://wikipedia.org/wiki/Android) [![alt tag](./images/android-icon.png)](https://en.wikipedia.org/wiki/Android)
 
+Installation Process is same as Linux
+
 ```sh
-git clone https://github.com/7ORP3DO/osint_tool.git
-cd osint_tool
-npm install
-npm start
+npm install tool_name -g
 ```
 
 ### Installation on [Windows ](https://wikipedia.org/wiki/Microsoft_Windows)[![alt tag](./images/Windows-icon.png)](https://en.wikipedia.org/wiki/Microsoft_Windows)
@@ -162,12 +158,15 @@ node index.js
 
 <!-- USAGE EXAMPLES -->
 
-## Usage
+## 🚀 Usage
 
 After installing you can run by just typing osint_tool.
+
 ```sh
-osint_tool
+osint_tool [options] [value]
 ```
+
+### Commands:
 
 ### Options:
 
@@ -184,6 +183,7 @@ osint_tool
 | -h         | --help        | Output usage information           |
 | -i         | --instaRecon  | find Instagram users info          |
 | -u         | --useragent   | find browser info                  |
+| -l         | --urlexpand   | long url of shorten URL            |
 | -v         | --version     | Output the version number          |
 
 ### Examples
@@ -222,7 +222,7 @@ See the [open issues](https://github.com/7orp3do/osint_tool/issues) for a full l
 
 <!-- CONTRIBUTING -->
 
-## Contributing
+## 🤝 Contributing
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
@@ -239,29 +239,27 @@ Don't forget to give the project a star! Thanks again!
 
 <!-- LICENSE -->
 
-## License
+## 📝 License
 
 Distributed under the MIT License. See `LICENSE.txt` for more information.
 
-<p align="right">(<a href="#top">back to top</a>)</p>
-
 <!-- ACKNOWLEDGMENTS -->
 
-## Acknowledgments
+## 👍 Acknowledgments
 
 _Special thanks to [Biswajeet Ray](https://instagram.com/biswajeetray7) for pushing me to keep working._
 
-<p align="right">(<a href="#top">back to top</a>)</p>
-
 <!-- CONTACT -->
 
-## Contact
+## 📧 Contact
 
-Prateek Singh - [@bhps82](https://twitter.com/bhps82) - bhps82@gmail.com
+- Twitter: [@bhps82](https://twitter.com/bhps82)
+- Github: [@7ORP3DO](https://twitter.com/bhps82)
 
-Project Link: [https://github.com/7orp3do/osint_tool](https://github.com/7orp3do/osint_tool)
+<!-- ## 🎨 Release History
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+- 🔖 1.0.0
+  - 🚧 Work in progress -->
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->

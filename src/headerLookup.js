@@ -9,13 +9,12 @@ import {
   saveTo,
 } from './common.js';
 
-const headerLookup = async (i = 1) => {
-  var website = await input('Your Website');
-  const path = `${process.cwd()}/results/toolName_InstaRecon_${currentTimeStamp()}.txt`;
+const headerLookup = async (website, showHome = false, i = 1) => {
+  website = website || (await input('Your Website'));
+  const path = `${process.cwd()}/results/toolName_HeaderLookup_${currentTimeStamp()}.txt`;
   info(`Results will be saved in `, path);
-  if (!website.includes('://')) {
-    website = 'http://' + website;
-  }
+  website = !website.includes('://') ? 'http://' + website : website;
+
   console.log('\n');
   request(website, async (error, response, body) => {
     if (error) {

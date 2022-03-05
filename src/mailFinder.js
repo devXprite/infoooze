@@ -2,6 +2,7 @@ import request from 'request';
 import chalk from 'chalk';
 
 import { list, goBack, input, errorMsg } from './common.js';
+import key from './secret.js';
 
 export async function mailfinder(username, showHome = false) {
   username = username || (await input('Your Username'));
@@ -16,7 +17,7 @@ export async function mailfinder(username, showHome = false) {
         {
           url: `https://isitarealemail.com/api/email/validate?email=${email}`,
           headers: {
-            Authorization: 'Bearer0c6ad1fd-f753-4628-8c0a-7968e722c6c7',
+            Authorization: key('em')
           },
           timeout: 5000,
           json: true,

@@ -36,7 +36,7 @@ const list = async (counter, key, value) => {
 
   key = sentenceCase(key);
 
-  await sleep(300);
+  await sleep(250);
   console.log(
     chalk.white('[') +
       chalk.hex('#FFA500')(counter) +

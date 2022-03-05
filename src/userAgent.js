@@ -2,22 +2,22 @@ import request from 'request';
 import chalk from 'chalk';
 
 import { list, goBack, input, errorMsg } from './common.js';
+import key from './secret.js';
 
 export async function useragent(useragent, showHome = false, i = 1) {
   useragent = useragent || (await input('Your UserAgent'));
-  var key = 'a6f7ff508268b5e184b6ea2b8daeaab8';
 
-  try {
-    request(
-      {
-        url: `http://api.userstack.com/detect?access_key=${key}&format=1&ua=${useragent}`,
-        timeout: 5000,
-        json: true,
-      },
-      async function (error, response) {
-        if (!error && response.statusCode == 200) {
-          let data = response.body;
+  request(
+    {
+      url: `http://api.userstack.com/detect?access_key=${key('ua')}&format=1&ua=${useragent}`,
+      timeout: 5000,
+      json: true,
+    },
+    async function (error, response) {
+      if (!error && response.statusCode == 200) {
+        let data = response.body;
 
+        try {
           await list(i++, 'Type', data.type);
           await list(i++, 'OS Name', data.os.name);
           await list(i++, 'OS Code', data.os.code);
@@ -31,15 +31,17 @@ export async function useragent(useragent, showHome = false, i = 1) {
           await list(i++, 'Browser Engine', data.browser.engine);
           await list(i++, 'Crawler', data.crawler.is_crawler);
           await list(i++, 'Category', data.crawler.category);
-        } else {
+        } catch (error) {
           errorMsg();
         }
+      } else {
+        errorMsg();
+      }
+      if (showHome) {
         goBack();
-      },
-    );
-  } catch (error) {
-    errorMsg();
-  }
+      }
+    },
+  );
 }
 
 export default useragent;
