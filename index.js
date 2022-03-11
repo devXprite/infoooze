@@ -18,7 +18,7 @@ import headerLookup from './src/headerLookup.js';
 import urlExpander from './src/urlExpander.js';
 
 async function welcome() {
-  const glitchTitle = chalkAnimation.glitch('Welcome to Dhanush!\n');
+  const glitchTitle = chalkAnimation.glitch('Welcome to Infoooze\n');
   await sleep(3000);
   glitchTitle.stop();
 }

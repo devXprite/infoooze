@@ -81,7 +81,7 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 
 | Linux | Termux | Windows | Mac |
 | ----- | ------ | ------- | --- |
-| ✔     | ✔      | ✔       | ❔   |
+| ✔     | ✔      | ✔       | ❔  |
 
 ✔ Tested  
 ❔ - Not tested
@@ -166,8 +166,6 @@ After installing you can run by just typing osint_tool.
 osint_tool [options] [value]
 ```
 
-### Commands:
-
 ### Options:
 
 | Short Form | Long Form     | Description                        |
@@ -245,9 +243,9 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 <!-- ACKNOWLEDGMENTS -->
 
-## 👍 Acknowledgments
+<!-- ## 👍 Acknowledgments
 
-_Special thanks to [Biswajeet Ray](https://instagram.com/biswajeetray7) for pushing me to keep working._
+_Special thanks to [Biswajeet Ray](https://instagram.com/biswajeetray7) for pushing me to keep working._ -->
 
 <!-- CONTACT -->
 

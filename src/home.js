@@ -1,6 +1,6 @@
 import chalk from 'chalk';
 import chalkAnimation from 'chalk-animation';
-
+import EasyTable from 'easy-table';
 import userrecon from './userRecon.js';
 import mailfinder from './mailFinder.js';
 import useragent from './userAgent.js';
@@ -14,41 +14,31 @@ import urlExpander from './urlExpander.js';
 
 import { sleep, input } from './common.js';
 
-var list = async (counter, name, description) => {
-  await sleep(200);
-  counter = counter <= 9 ? '0' + counter : counter;
-  console.log(
-    ` ${chalk.cyan(counter)} ${chalk.whiteBright(name)} \t ${chalk.blackBright(
-      description,
-    )}`,
-  );
-};
-
 const takeOption = async () => {
   var option = await input('Your Option ');
 
   if (option == '1' || option == '01') {
-    userrecon();
+    userrecon(null, true);
   } else if (option == '2' || option == '02') {
-    mailfinder();
+    mailfinder(null, true);
   } else if (option == '3' || option == '03') {
-    useragent();
+    useragent(null, true);
   } else if (option == '4' || option == '04') {
-    whois();
+    whois(null, true);
   } else if (option == '5' || option == '05') {
-    instaRecon();
+    instaRecon(null, true);
   } else if (option == '6' || option == '06') {
-    IPlookup();
+    IPlookup(null, true);
   } else if (option == '7' || option == '07') {
-    portScanner();
+    portScanner(null, true);
   } else if (option == '8' || option == '08') {
-    domainAge();
+    domainAge(null, true);
   } else if (option == '9' || option == '09') {
-    headerLookup();
+    headerLookup(null, true);
   } else if (option == '10') {
-    dnsLookup();
+    dnsLookup(null, true);
   } else if (option == '12') {
-    urlExpander();
+    urlExpander(null, true);
   } else if (option == 'exit' || option == '00' || option == '0') {
     console.log('bye!'.cyan);
   } else {
@@ -56,50 +46,62 @@ const takeOption = async () => {
   }
 };
 
-const home = async (animationDelay = 1500, i = 1) => {
+const home = async (animationDelay = 2000, i = 1) => {
   console.clear();
   chalkAnimation.neon(
     `
-         |.---------------.|
-         ||               ||
-         ||   -._ .-.     ||
-         ||   -._| | |    ||
-         ||   -._|"|"|    ||
-         ||   -._|.-.|    ||
-         ||_______________||
-         /.-.-.-.-.-.-.-.-.\\
-        /.-.-.-.-.-.-.-.-.-.\\
-       /.-.-.-.-.-.-.-.-.-.-.\\
-      /______/__________\\___o_\\ 
-      \\_______________________/
-      
-    `,
+    _____        __                         
+   |_   _|      / _|                        
+     | |  _ __ | |_ ___   ___   ___ _______ 
+     | | | '_ \\|  _/ _ \\ / _ \\ / _ \\_  / _ \\
+    _| |_| | | | || (_) | (_) | (_) / /  __/
+   |_____|_| |_|_| \\___/ \\___/ \\___/___\\___|`,
     '2',
   );
 
   await sleep(animationDelay);
-  console.log(`      A tool by ${'7ORP3DO'.cyan} & ${'Biswajeet'.cyan} `);
-  await sleep(animationDelay);
+  // console.log(chalk.hex('#FFA500')('\t     A OSINT based tool\n\n'));
+  console.log('\n\n');
+  await sleep(500);
 
-  console.log(
-    '' + ' Choose number or type exit fir exiting '.bgWhite.black + '\n\n',
+  var optionsData = [
+    ['User Recon', 'username reconnaissance'],
+    ['Mail Finder ', 'find email with specific name'],
+    ['Useragent', 'find browser info'],
+    ['Whoislookup', "find doamin's whois info"],
+    ['InstaRecon', 'find Instagram users info'],
+    ['IP Lookup', 'find IP info'],
+    ['Ports Scan', 'find open ports'],
+    ['Domain Age', 'find website Age'],
+    ['Header Info', 'find website headers'],
+    ['DNS Lookup', 'domain name system lookup'],
+    ['Git Recon', 'find github user info'],
+    ['Expand Url', 'long url of shorten urls'],
+  ];
+
+  var table = new EasyTable();
+
+  optionsData.forEach((details, index) => {
+    table.cell(
+      chalk.whiteBright('No'),
+      chalk.cyan(index < 9 ? '0' + (index + 1) : index + 1),
+    );
+    table.cell(chalk.whiteBright('Name'), details[0]);
+    table.cell(chalk.whiteBright('Description'), chalk.gray(details[1]));
+    table.newRow();
+  });
+
+  table.newRow();
+  table.cell(chalk.whiteBright('No'), chalk.cyan('00'));
+  table.cell(chalk.whiteBright('Name'), 'exit');
+  table.cell(
+    chalk.whiteBright('Description'),
+    chalk.gray('close and exit from tool'),
   );
-  await list(i++, 'Userrecon', 'username reconnaissance', true);
-  await list(i++, 'Mailfinder ', 'find email with specific name', true);
-  await list(i++, 'Useragent ', 'find browser info', true);
-  await list(i++, 'Whoislookup', "find doamin's whois info", true);
-  await list(i++, 'InstaRecon', 'find Instagram users info', true);
-  await list(i++, 'IP Lookup', 'find IP info', true);
-  await list(i++, 'Ports Scan', 'find open ports', true);
-  await list(i++, 'Domain Age', 'find website Age', true);
-  await list(i++, 'Header Info', 'find website headers', true);
-  await list(i++, 'DNS Lookup', 'domain name system lookup', true);
-  await list(i++, 'Git Recon', 'find github user info', true);
-  await list(i++, 'Expand Url', 'long url of shorten urls', true);
-  console.log('');
-  await list('00', 'exit', 'exit and close tool');
+  table.newRow();
 
-  console.log('\n');
+  console.log(table.toString());
+
   takeOption();
 };
 

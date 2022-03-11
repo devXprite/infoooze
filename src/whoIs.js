@@ -21,7 +21,9 @@ const whois = async (website, showHome = false, i = 1) => {
       saveTo(path, key, whoisData[key]);
     }
   }
-  goBack();
+  if (showHome) {
+    goBack();
+  }
 };
 
 export default whois;

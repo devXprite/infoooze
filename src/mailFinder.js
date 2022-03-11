@@ -17,7 +17,7 @@ export async function mailfinder(username, showHome = false) {
         {
           url: `https://isitarealemail.com/api/email/validate?email=${email}`,
           headers: {
-            Authorization: key('em')
+            Authorization: key('em'),
           },
           timeout: 5000,
           json: true,

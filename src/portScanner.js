@@ -1,13 +1,6 @@
 import portscanner from 'portscanner';
 import chalk from 'chalk';
-import {
-  goBack,
-  input,
-  errorMsg,
-  currentTimeStamp,
-  info,
-  saveTo,
-} from './common.js';
+import { goBack, input, errorMsg } from './common.js';
 
 const portsList = {
   21: 'FTP',
@@ -64,10 +57,11 @@ const portScanner = async (website, showHome = false, i = 0) => {
       checkPort(port, website);
     }, index * 500);
   });
-
-  setTimeout(() => {
-    goBack();
-  }, Object.keys(portsList).length * 500 + 2000);
+  if (showHome) {
+    setTimeout(() => {
+      goBack();
+    }, Object.keys(portsList).length * 500 + 2000);
+  }
 };
 
 export default portScanner;

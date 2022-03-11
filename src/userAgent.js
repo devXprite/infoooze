@@ -9,7 +9,9 @@ export async function useragent(useragent, showHome = false, i = 1) {
 
   request(
     {
-      url: `http://api.userstack.com/detect?access_key=${key('ua')}&format=1&ua=${useragent}`,
+      url: `http://api.userstack.com/detect?access_key=${key(
+        'ua',
+      )}&format=1&ua=${useragent}`,
       timeout: 5000,
       json: true,
     },

@@ -1,5 +1,5 @@
 {
-  "name": "dhanush",
+  "name": "infoooze",
   "version": "1.0.0",
   "description": "A OSINT famework",
   "main": "index.js",
@@ -15,9 +15,11 @@
     "chalk": "^5.0.0",
     "chalk-animation": "^1.6.0",
     "colors": "^1.4.0",
+    "easy-table": "^1.2.0",
     "has-flag": "^5.0.1",
     "lodash": "^4.17.21",
     "moment": "^2.29.1",
+    "pkginfo": "^0.4.1",
     "portscanner": "^2.2.0",
     "prompt-sync": "^4.2.0",
     "request": "^2.88.2",
