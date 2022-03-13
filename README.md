@@ -10,23 +10,23 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/7orp3do/osint_tool">
+  <a href="https://github.com/7orp3do/infoooze">
     <img src="https://raw.githubusercontent.com/othneildrew/Best-README-Template/master/images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-<h3 align="center">osint_tool</h3>
+<h3 align="center">Infoooze</h3>
 
   <p align="center">
     This is a OSINT tool
     <br />
-    <a href="https://github.com/7orp3do/osint_tool"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/7orp3do/infoooze"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/7orp3do/osint_tool">View Demo</a>
+    <a href="https://github.com/7orp3do/infoooze">View Demo</a>
     ·
-    <a href="https://github.com/7orp3do/osint_tool/issues">Report Bug</a>
+    <a href="https://github.com/7orp3do/infoooze/issues">Report Bug</a>
     ·
-    <a href="https://github.com/7orp3do/osint_tool/issues">Request Feature</a>
+    <a href="https://github.com/7orp3do/infoooze/issues">Request Feature</a>
   </p>
 </div>
 
@@ -34,7 +34,7 @@
 
 ## 📚 Table of Content
 
-1. [About osint_tool](#-about-osint_tool)
+1. [About infoooze](#-about-infoooze)
    - [Features](#-features)
    - [Support](#-support)
 2. [Getting Started](#-getting-started)
@@ -55,7 +55,7 @@
 
 <!-- ABOUT THE PROJECT -->
 
-## ✨ About osint_tool
+## ✨ About infoooze
 
 <!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
 
@@ -75,7 +75,8 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 8.  Header Info
 9.  Domain Age
 10. DNS Lookup
-11. Expand URL
+11. Git Recon
+12. Expand URL
 
 ## 🔨 Support
 
@@ -99,13 +100,14 @@ You need **NodeJs** only to run this tool. You can install NodeJs
 
 - On Linux
   ```sh
-  sudo apt-get install nodejs python
+  sudo su
+  apt-get install nodejs python
   ```
 - On Termux
   ```sh
   pkg install nodejs-lts python
   ```
-  **\*Note:** You will need at least version 14.X.X of Node.\*
+  > _You will need at least version 14.X.X of Node._
 
 ### Installation on [Linux](https://wikipedia.org/wiki/Linux) [![alt tag](./images/OS-Linux-icon.png)](https://en.wikipedia.org/wiki/Linux)
 
@@ -114,17 +116,17 @@ You need **NodeJs** only to run this tool. You can install NodeJs
   This package is published on NPM so you can install it directly using [NPM](http://npm.com)
 
   ```sh
-  npm install osint_tool -g
+  sudo su
+  npm install infoooze -g
   ```
 
 - #### Using GIT
 
   ```sh
-  git clone https://github.com/7ORP3DO/osint_tool.git
-  cd osint_tool
+  git clone https://github.com/7ORP3DO/infoooze.git
+  cd infoooze
   npm install
-  npm install -g
-  osint_tool
+  node index.js
   ```
 
 - #### Using NPX
@@ -132,7 +134,7 @@ You need **NodeJs** only to run this tool. You can install NodeJs
   run without install it locally.
 
   ```sh
-  npx osint_tool
+  npx infoooze
   ```
 
 ### Installation on [Android](https://wikipedia.org/wiki/Android) [![alt tag](./images/android-icon.png)](https://en.wikipedia.org/wiki/Android)
@@ -140,14 +142,14 @@ You need **NodeJs** only to run this tool. You can install NodeJs
 Installation Process is same as Linux
 
 ```sh
-npm install tool_name -g
+npm install infoooze -g
 ```
 
 ### Installation on [Windows ](https://wikipedia.org/wiki/Microsoft_Windows)[![alt tag](./images/Windows-icon.png)](https://en.wikipedia.org/wiki/Microsoft_Windows)
 
 1. Download and install NodeJs from here.
-2. Download osint_tool zip file from here.
-3. Open osint_tool folder and type following commands :
+2. Download infoooze zip file from here.
+3. Open infoooze folder and type following commands :
 
 ```bash
 npm install
@@ -160,16 +162,16 @@ node index.js
 
 ## 🚀 Usage
 
-After installing you can run by just typing osint_tool.
+After installing you can run by just typing infoooze.
 
 ```sh
-osint_tool [options] [value]
+infoooze [options] [value]
 ```
 
 ### Options:
 
 | Short Form | Long Form     | Description                        |
-| ---------- | ------------- | ---------------------------------- |
+| :--------- | :------------ | :--------------------------------- |
 | -n         | --DNSLookup   | domain name system lookup          |
 | -e         | --HeaderInfo  | find website headers               |
 | -p         | --IPLookup    | find IP info                       |
@@ -179,6 +181,7 @@ osint_tool [options] [value]
 | -w         | --Whoislookup | find doamin's whois info           |
 | -d         | --domainAge   | find website Age                   |
 | -h         | --help        | Output usage information           |
+| -g         | --gitrecon    | find github user info              |
 | -i         | --instaRecon  | find Instagram users info          |
 | -u         | --useragent   | find browser info                  |
 | -l         | --urlexpand   | long url of shorten URL            |
@@ -187,20 +190,22 @@ osint_tool [options] [value]
 ### Examples
 
 - To list all the basic options and switches use -h switch:
+
   ```sh
-  tool_name -h
+  infoooze -h
   ```
+
 - To Get Instagram User Info:
   ```sh
-  tool_name -i indian_cyber_ops
+  infoooze -i indian_cyber_ops
   ```
 - To Get Domain's Whois Information:
   ```sh
-  tool_name -W google.com
+  infoooze -W google.com
   ```
-- To Get IP Information::
+- To Get IP Information:
   ```sh
-  tool_name -I 8.8.8.8
+  infoooze -I 8.8.8.8
   ```
   _For more examples, please refer to the [Documentation](https://example.com)_
 
@@ -214,7 +219,7 @@ osint_tool [options] [value]
 - [ ] Feature 3
     - [ ] Nested Feature
 
-See the [open issues](https://github.com/7orp3do/osint_tool/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/7orp3do/infoooze/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#top">back to top</a>)</p> -->
 
@@ -262,16 +267,49 @@ _Special thanks to [Biswajeet Ray](https://instagram.com/biswajeetray7) for push
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-[contributors-shield]: https://img.shields.io/github/contributors/7orp3do/osint_tool.svg?style=for-the-badge
-[contributors-url]: https://github.com/7orp3do/osint_tool/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/7orp3do/osint_tool.svg?style=for-the-badge
-[forks-url]: https://github.com/7orp3do/osint_tool/network/members
-[stars-shield]: https://img.shields.io/github/stars/7orp3do/osint_tool.svg?style=for-the-badge
-[stars-url]: https://github.com/7orp3do/osint_tool/stargazers
-[issues-shield]: https://img.shields.io/github/issues/7orp3do/osint_tool.svg?style=for-the-badge
-[issues-url]: https://github.com/7orp3do/osint_tool/issues
-[license-shield]: https://img.shields.io/github/license/7orp3do/osint_tool.svg?style=for-the-badge
-[license-url]: https://github.com/7orp3do/osint_tool/blob/master/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/7orp3do/infoooze.svg?style=for-the-badge
+[contributors-url]: https://github.com/7orp3do/infoooze/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/7orp3do/infoooze.svg?style=for-the-badge
+[forks-url]: https://github.com/7orp3do/infoooze/network/members
+[stars-shield]: https://img.shields.io/github/stars/7orp3do/infoooze.svg?style=for-the-badge
+[stars-url]: https://github.com/7orp3do/infoooze/stargazers
+[issues-shield]: https://img.shields.io/github/issues/7orp3do/infoooze.svg?style=for-the-badge
+[issues-url]: https://github.com/7orp3do/infoooze/issues
+[license-shield]: https://img.shields.io/github/license/7orp3do/infoooze.svg?style=for-the-badge
+[license-url]: https://github.com/7orp3do/infoooze/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/bhps82
 [product-screenshot]: images/screenshot.png
+
+<!-- <details>
+    <summary>
+      View Output
+    </summary>
+
+  ```sh
+    $ infoooze -h
+
+    Usage: index.js [options] [command]
+
+    Commands:
+      help     Display help
+      version  Display version
+
+    Options:
+      -n, --dnslookup    domain name system lookup
+      -d, --domainage    find website Age
+      -g, --gitrecon     find github user info
+      -e, --headerinfo   find website headers
+      -h, --help         Output usage information
+      -i, --instaRecon   find Instagram users info
+      -p, --iplookup     find IP info
+      -m, --mailfinder   find email with specelse ific name
+      -t, --portscan     find open ports
+      -l, --urlexpand    long url of shorten URL
+      -u, --useragent    find browser info
+      -r, --userrecon    username reconnaissance
+      -v, --version      Output the version number
+      -w, --whoislookup  find doamin's whois info
+
+  ```
+  </details> -->

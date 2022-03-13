@@ -6,20 +6,32 @@
   "type": "module",
   "scripts": {
     "start": "node index.js",
+    "help": "node index.js -h",
     "check": "prettier --check .",
     "fix": "prettier --write ."
   },
   "license": "MIT",
+  "author": {
+    "name": "Prateek Singh",
+    "email": "bhps82@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/7orp3do/infoooze.git"
+  },
+  "homepage": "https://7orp3do.github.io/infoooze/",
+  "keywords": [
+    "OSINT",
+    "NodeJs"
+  ],
   "dependencies": {
     "args": "^5.0.1",
     "chalk": "^5.0.0",
     "chalk-animation": "^1.6.0",
     "colors": "^1.4.0",
     "easy-table": "^1.2.0",
-    "has-flag": "^5.0.1",
     "lodash": "^4.17.21",
     "moment": "^2.29.1",
-    "pkginfo": "^0.4.1",
     "portscanner": "^2.2.0",
     "prompt-sync": "^4.2.0",
     "request": "^2.88.2",

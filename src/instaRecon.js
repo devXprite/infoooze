@@ -13,7 +13,7 @@ import {
 
 export async function instaRecon(username, showHome = false, i = 1) {
   var username = username || (await input('Your Username'));
-  const path = `${process.cwd()}/results/toolName_InstaRecon_${currentTimeStamp()}.txt`;
+  const path = `${process.cwd()}/results/infoooze_InstaRecon_${currentTimeStamp()}.txt`;
   info(`Results will be saved in `, path);
 
   request(

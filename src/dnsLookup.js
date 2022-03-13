@@ -13,7 +13,7 @@ import {
 
 const dnsLookup = async (website, showHome = false, i = 1) => {
   var website = website || (await input('Your Website'));
-  const path = `${process.cwd()}/results/toolName_dnsLookup_${currentTimeStamp()}.txt`;
+  const path = `${process.cwd()}/results/infoooze_dnsLookup_${currentTimeStamp()}.txt`;
   info(`Results will be saved in `, path);
 
   request(

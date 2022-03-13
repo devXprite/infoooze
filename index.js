@@ -16,6 +16,7 @@ import dnsLookup from './src/dnsLookup.js';
 import portScanner from './src/portScanner.js';
 import headerLookup from './src/headerLookup.js';
 import urlExpander from './src/urlExpander.js';
+import gitRecon from './src/gitRecon.js';
 
 async function welcome() {
   const glitchTitle = chalkAnimation.glitch('Welcome to Infoooze\n');
@@ -38,6 +39,7 @@ args
   .option(['d', 'domainage'], 'find website Age')
   .option(['e', 'headerinfo'], 'find website headers')
   .option(['n', 'dnslookup'], 'domain name system lookup')
+  .option(['g', 'gitrecon'], 'find github user info')
   .option(['l', 'urlexpand'], 'long url of shorten URL');
 
 const flags = args.parse(process.argv);
@@ -62,6 +64,8 @@ if (flags.userrecon) {
   headerLookup(flags.headerinfo);
 } else if (flags.urlexpand) {
   urlExpander(flags.urlexpand);
+} else if (flags.gitrecon) {
+  gitRecon(flags.gitrecon);
 } else if (flags.dnslookup) {
   dnsLookup(flags.dnslookup);
 } else {

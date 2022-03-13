@@ -11,7 +11,7 @@ import {
 const whois = async (website, showHome = false, i = 1) => {
   website = website || (await input('Your Website'));
 
-  const path = `${process.cwd()}/results/toolName_whois_${currentTimeStamp()}.txt`;
+  const path = `${process.cwd()}/results/infoooze_whois_${currentTimeStamp()}.txt`;
   info(`Results will be saved in `, path);
 
   var whoisData = await whoisJson(website);

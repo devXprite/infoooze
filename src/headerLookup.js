@@ -11,7 +11,7 @@ import {
 
 const headerLookup = async (website, showHome = false, i = 1) => {
   website = website || (await input('Your Website'));
-  const path = `${process.cwd()}/results/toolName_HeaderLookup_${currentTimeStamp()}.txt`;
+  const path = `${process.cwd()}/results/infoooze_HeaderLookup_${currentTimeStamp()}.txt`;
   info(`Results will be saved in `, path);
   website = !website.includes('://') ? 'http://' + website : website;
 
