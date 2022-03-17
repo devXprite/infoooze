@@ -1,18 +1,22 @@
-import chalk from 'chalk';
-import chalkAnimation from 'chalk-animation';
-import EasyTable from 'easy-table';
-import userrecon from './userRecon.js';
-import mailfinder from './mailFinder.js';
-import useragent from './userAgent.js';
-import instaRecon from './instaRecon.js';
-import whois from './whoIs.js';
-import IPlookup from './ipLookup.js';
-import dnsLookup from './dnsLookup.js';
-import portScanner from './portScanner.js';
-import headerLookup from './headerLookup.js';
-import urlExpander from './urlExpander.js';
+const chalk = require('chalk');
+const chalkAnimation = require('chalk-animation');
+const EasyTable = require('easy-table');
+const open = require('open');
+const userrecon = require('./userRecon.js');
+const mailfinder = require('./mailFinder.js');
+const useragent = require('./userAgent.js');
+const instaRecon = require('./instaRecon.js');
+const whois = require('./whoIs.js');
+const IPlookup = require('./ipLookup.js');
+const dnsLookup = require('./dnsLookup.js');
+const portScanner = require('./portScanner.js');
+const headerLookup = require('./headerLookup.js');
+const urlExpander = require('./urlExpander.js');
 
-import { sleep, input } from './common.js';
+const { sleep, input } = require('./common.js');
+const gitRecon = require('./gitRecon.js');
+const pkginfo = require('pkginfo')(module, 'version');
+const version = module.exports.version;
 
 const takeOption = async () => {
   var option = await input('Your Option ');
@@ -37,10 +41,12 @@ const takeOption = async () => {
     headerLookup(null, true);
   } else if (option == '10') {
     dnsLookup(null, true);
+  } else if (option == '11') {
+    gitRecon(null, true);
   } else if (option == '12') {
     urlExpander(null, true);
   } else if (option == 'exit' || option == '00' || option == '0') {
-    console.log('bye!'.cyan);
+    console.log(chalk.cyan('bye!'));
   } else {
     takeOption();
   }
@@ -96,7 +102,7 @@ const home = async (animationDelay = 2000, i = 1) => {
   table.cell(chalk.whiteBright('Name'), 'exit');
   table.cell(
     chalk.whiteBright('Description'),
-    chalk.gray('close and exit from tool'),
+    chalk.gray('close and exit tool'),
   );
   table.newRow();
 
@@ -105,4 +111,23 @@ const home = async (animationDelay = 2000, i = 1) => {
   takeOption();
 };
 
-export default home;
+const banner = () => {
+  console.log(
+    chalk.hex('#FFA500')(`
+  _____        __                         
+ |_   _|      / _|                        
+   | |  _ __ | |_ ___   ___   ___ _______ 
+   | | | '_ \\|  _/ _ \\ / _ \\ / _ \\_  / _ \\
+  _| |_| | | | || (_) | (_) | (_) / /  __/
+ |_____|_| |_|_| \\___/ \\___/ \\___/___\\___|
+                                    ${chalk.greenBright('v' + version)}
+ `),
+  );
+};
+
+module.exports = banner;
+module.exports = {
+  banner,
+  home,
+};
+// module.exports = home;

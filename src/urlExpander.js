@@ -1,5 +1,5 @@
-import request from 'request';
-import { goBack, input, errorMsg, info, list } from './common.js';
+const request = require('request');
+const { goBack, input, errorMsg, info, list } = require('./common.js');
 
 const urlExpander = async (website, showHome = false) => {
   website = website || (await input('Your Short Url'));
@@ -27,4 +27,4 @@ const urlExpander = async (website, showHome = false) => {
   );
 };
 
-export default urlExpander;
+module.exports = urlExpander;

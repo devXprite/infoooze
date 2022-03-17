@@ -1,7 +1,7 @@
-import request from 'request';
-import chalk from 'chalk';
+const request = require('request');
+const chalk = require('chalk');
 
-import {
+const {
   list,
   goBack,
   input,
@@ -9,7 +9,7 @@ import {
   currentTimeStamp,
   info,
   saveTo,
-} from './common.js';
+} = require('./common.js');
 
 const dnsLookup = async (website, showHome = false, i = 1) => {
   var website = website || (await input('Your Website'));
@@ -40,4 +40,4 @@ const dnsLookup = async (website, showHome = false, i = 1) => {
   );
 };
 
-export default dnsLookup;
+module.exports = dnsLookup;

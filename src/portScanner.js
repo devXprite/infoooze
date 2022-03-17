@@ -1,6 +1,6 @@
-import portscanner from 'portscanner';
-import chalk from 'chalk';
-import { goBack, input, errorMsg } from './common.js';
+const portscanner = require('portscanner');
+const chalk = require('chalk');
+const { goBack, input, errorMsg } = require('./common.js');
 
 const portsList = {
   21: 'FTP',
@@ -64,4 +64,4 @@ const portScanner = async (website, showHome = false, i = 0) => {
   }
 };
 
-export default portScanner;
+module.exports = portScanner;

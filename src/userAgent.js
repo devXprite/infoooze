@@ -1,10 +1,10 @@
-import request from 'request';
-import chalk from 'chalk';
+const request = require('request');
+const chalk = require('chalk');
 
-import { list, goBack, input, errorMsg } from './common.js';
-import key from './secret.js';
+const { list, goBack, input, errorMsg } = require('./common.js');
+const key = require('./secret.js');
 
-export async function useragent(useragent, showHome = false, i = 1) {
+async function useragent(useragent, showHome = false, i = 1) {
   useragent = useragent || (await input('Your UserAgent'));
 
   request(
@@ -46,4 +46,4 @@ export async function useragent(useragent, showHome = false, i = 1) {
   );
 }
 
-export default useragent;
+module.exports = useragent;

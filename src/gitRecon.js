@@ -1,7 +1,7 @@
-import request from 'request';
-import chalk from 'chalk';
+const request = require('request');
+const chalk = require('chalk');
 
-import {
+const {
   list,
   goBack,
   input,
@@ -9,7 +9,7 @@ import {
   currentTimeStamp,
   info,
   saveTo,
-} from './common.js';
+} = require('./common.js');
 
 const headersList = {
   Accept: '*/*',
@@ -47,4 +47,4 @@ const gitRecon = async (username, showHome = false, i = 1) => {
   );
 };
 
-export default gitRecon;
+module.exports = gitRecon;

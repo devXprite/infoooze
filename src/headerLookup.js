@@ -1,5 +1,5 @@
-import request from 'request';
-import {
+const request = require('request');
+const {
   list,
   goBack,
   input,
@@ -7,7 +7,7 @@ import {
   currentTimeStamp,
   info,
   saveTo,
-} from './common.js';
+} = require('./common.js');
 
 const headerLookup = async (website, showHome = false, i = 1) => {
   website = website || (await input('Your Website'));
@@ -30,4 +30,4 @@ const headerLookup = async (website, showHome = false, i = 1) => {
   });
 };
 
-export default headerLookup;
+module.exports = headerLookup;

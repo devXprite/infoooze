@@ -1,8 +1,7 @@
-import request from 'request';
-import Colors from 'colors';
-import chalk from 'chalk';
+const request = require('request');
+const chalk = require('chalk');
 
-import {
+const {
   list,
   goBack,
   input,
@@ -10,7 +9,7 @@ import {
   currentTimeStamp,
   info,
   saveTo,
-} from './common.js';
+} = require('./common.js');
 
 const IPlookup = async (ip, showHome = false, i = 1) => {
   ip = ip || (await input('Your IP'));
@@ -42,4 +41,4 @@ const IPlookup = async (ip, showHome = false, i = 1) => {
   );
 };
 
-export default IPlookup;
+module.exports = IPlookup;

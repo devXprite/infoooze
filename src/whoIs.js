@@ -1,12 +1,16 @@
-import whoisJson from 'whois-json';
-import {
+// const > const
+// = require( > = require(
+// ; > );
+
+const whoisJson = require('whois-json');
+const {
   list,
-  goBack,
   input,
   info,
+  goBack,
   currentTimeStamp,
   saveTo,
-} from './common.js';
+} = require('./common.js');
 
 const whois = async (website, showHome = false, i = 1) => {
   website = website || (await input('Your Website'));
@@ -26,4 +30,4 @@ const whois = async (website, showHome = false, i = 1) => {
   }
 };
 
-export default whois;
+module.exports = whois;

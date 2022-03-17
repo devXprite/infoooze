@@ -1,10 +1,10 @@
-import request from 'request';
-import chalk from 'chalk';
+const request = require('request');
+const chalk = require('chalk');
 
-import { list, goBack, input, errorMsg } from './common.js';
-import key from './secret.js';
+const { list, goBack, input, errorMsg } = require('./common.js');
+const key = require('./secret.js');
 
-export async function mailfinder(username, showHome = false) {
+async function mailfinder(username, showHome = false) {
   username = username || (await input('Your Username'));
   username.replace(' ', '');
   const domainList = ['gmail.com', 'yahoo.com', 'hotmail.com', 'outlook.com'];
@@ -41,4 +41,4 @@ export async function mailfinder(username, showHome = false) {
   });
 }
 
-export default mailfinder;
+module.exports = mailfinder;

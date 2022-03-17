@@ -117,7 +117,7 @@ You need **NodeJs** only to run this tool. You can install NodeJs
 
   ```sh
   sudo su
-  npm install infoooze -g
+  npm install -g -s infoooze
   ```
 
 - #### Using GIT
@@ -142,7 +142,7 @@ You need **NodeJs** only to run this tool. You can install NodeJs
 Installation Process is same as Linux
 
 ```sh
-npm install infoooze -g
+ npm install -g -s infoooze
 ```
 
 ### Installation on [Windows ](https://wikipedia.org/wiki/Microsoft_Windows)[![alt tag](./images/Windows-icon.png)](https://en.wikipedia.org/wiki/Microsoft_Windows)

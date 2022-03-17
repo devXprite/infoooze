@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A OSINT famework",
   "main": "index.js",
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
     "start": "node index.js",
     "help": "node index.js -h",
@@ -26,12 +26,13 @@
   ],
   "dependencies": {
     "args": "^5.0.1",
-    "chalk": "^5.0.0",
+    "chalk": "^4.1.0",
     "chalk-animation": "^1.6.0",
-    "colors": "^1.4.0",
     "easy-table": "^1.2.0",
     "lodash": "^4.17.21",
     "moment": "^2.29.1",
+    "open": "^8.4.0",
+    "pkginfo": "^0.4.1",
     "portscanner": "^2.2.0",
     "prompt-sync": "^4.2.0",
     "request": "^2.88.2",
@@ -44,8 +45,7 @@
   "pre-commit": [],
   "bin": "./index.js",
   "engines": {
-    "node": ">=14.0.0",
-    "npm": ">= 7.24.2"
+    "node": ">=8.0.0"
   },
   "engineStrict": true
 }

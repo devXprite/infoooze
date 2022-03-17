@@ -1,22 +1,21 @@
 #!/usr/bin/env node
 
-import chalk from 'chalk';
-import colors from 'colors';
-import args from 'args';
-import chalkAnimation from 'chalk-animation';
-import home from './src/home.js';
-import { sleep } from './src/common.js';
-import userrecon from './src/userRecon.js';
-import mailfinder from './src/mailFinder.js';
-import useragent from './src/userAgent.js';
-import instaRecon from './src/instaRecon.js';
-import whois from './src/whoIs.js';
-import IPlookup from './src/ipLookup.js';
-import dnsLookup from './src/dnsLookup.js';
-import portScanner from './src/portScanner.js';
-import headerLookup from './src/headerLookup.js';
-import urlExpander from './src/urlExpander.js';
-import gitRecon from './src/gitRecon.js';
+const chalk = require('chalk');
+const args = require('args');
+const chalkAnimation = require('chalk-animation');
+const { home, banner } = require('./src/home');
+const { sleep } = require('./src/common');
+const userrecon = require('./src/userRecon');
+const mailfinder = require('./src/mailFinder');
+const useragent = require('./src/userAgent');
+const instaRecon = require('./src/instaRecon');
+const whois = require('./src/whoIs');
+const IPlookup = require('./src/ipLookup');
+const dnsLookup = require('./src/dnsLookup');
+const portScanner = require('./src/portScanner');
+const headerLookup = require('./src/headerLookup');
+const urlExpander = require('./src/urlExpander');
+const gitRecon = require('./src/gitRecon');
 
 async function welcome() {
   const glitchTitle = chalkAnimation.glitch('Welcome to Infoooze\n');
@@ -45,30 +44,44 @@ args
 const flags = args.parse(process.argv);
 
 if (flags.userrecon) {
+  banner();
   userrecon(flags.userrecon);
 } else if (flags.mailfinder) {
+  banner();
   mailfinder(flags.mailfinder);
 } else if (flags.useragent) {
+  banner();
   useragent(flags.useragent);
 } else if (flags.whoislookup) {
+  banner();
   whois(flags.whoislookup);
 } else if (flags.instaRecon) {
+  banner();
   instaRecon(flags.instaRecon);
 } else if (flags.iplookup) {
+  banner();
   IPlookup(flags.iplookup);
 } else if (flags.portscan) {
+  banner();
   portScanner(flags.portscan);
 } else if (flags.domainage) {
+  banner();
   testFunction(flags.domainage);
 } else if (flags.headerinfo) {
+  banner();
   headerLookup(flags.headerinfo);
 } else if (flags.urlexpand) {
+  banner();
   urlExpander(flags.urlexpand);
 } else if (flags.gitrecon) {
+  banner();
   gitRecon(flags.gitrecon);
 } else if (flags.dnslookup) {
+  banner();
   dnsLookup(flags.dnslookup);
 } else {
-  await welcome();
-  await home();
+  (async function () {
+    await welcome();
+    await home();
+  })();
 }

@@ -1,13 +1,12 @@
-import chalk from 'chalk';
-import fs from 'fs';
-import home from './home.js';
-import { sentenceCase } from 'sentence-case';
-import PromptSync from 'prompt-sync';
-import moment from 'moment';
+const chalk = require('chalk');
+const fs = require('fs');
+const { sentenceCase } = require('sentence-case');
+const PromptSync = require('prompt-sync');
+const moment = require('moment');
 
 const prompt = PromptSync();
 
-const sleep = (ms = 1000) => new Promise((r) => setTimeout(r, ms));
+const sleep = async (ms = 1000) => new Promise((r) => setTimeout(r, ms));
 
 const currentTimeStamp = () => moment().format('DDMMYYYYHHmmss');
 
@@ -47,14 +46,12 @@ const list = async (counter, key, value) => {
 };
 
 const goBack = async () => {
-  setTimeout(() => {
-    prompt('\npress enter to go back...'.cyan.italic);
-    home(500);
-  }, 1000);
+  await prompt(chalk.cyan.italic('\npress enter to go back...'));
+  require('./home').home();
 };
 
 const input = async (text) => {
-  return prompt(` ${'>'.cyan} ${text.bold} : `);
+  return prompt(` ${chalk.cyanBright('>')} ${chalk.bold(text)} : `);
 };
 
 const errorMsg = async (
@@ -78,4 +75,14 @@ const info = async (msg, path = '') => {
   );
   console.log('\n');
 };
-export { list, sleep, goBack, input, currentTimeStamp, saveTo, errorMsg, info };
+
+module.exports = {
+  list,
+  sleep,
+  goBack,
+  input,
+  currentTimeStamp,
+  saveTo,
+  errorMsg,
+  info,
+};

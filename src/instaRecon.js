@@ -1,7 +1,8 @@
-import request from 'request';
-import chalk from 'chalk';
+const request = require('request');
+const chalk = require('chalk');
+const open = require('open');
 
-import {
+const {
   list,
   goBack,
   input,
@@ -9,9 +10,9 @@ import {
   currentTimeStamp,
   info,
   saveTo,
-} from './common.js';
+} = require('./common.js');
 
-export async function instaRecon(username, showHome = false, i = 1) {
+async function instaRecon(username, showHome = false, i = 1) {
   var username = username || (await input('Your Username'));
   const path = `${process.cwd()}/results/infoooze_InstaRecon_${currentTimeStamp()}.txt`;
   info(`Results will be saved in `, path);
@@ -34,6 +35,10 @@ export async function instaRecon(username, showHome = false, i = 1) {
             saveTo(path, key, IGData[key]);
           }
         }
+        var showDP = await input('View Profile Picture? [Y/N]');
+        if (showDP == 'y' || showDP == 'Y') {
+          open(IGData['profile_pic_url_hd']);
+        }
       } else if (!error && response.statusCode == 404) {
         errorMsg('User not found.');
       } else {
@@ -46,4 +51,4 @@ export async function instaRecon(username, showHome = false, i = 1) {
   );
 }
 
-export default instaRecon;
+module.exports = instaRecon;

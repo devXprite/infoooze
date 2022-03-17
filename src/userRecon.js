@@ -1,9 +1,9 @@
-import request from 'request';
-import chalk from 'chalk';
+const request = require('request');
+const chalk = require('chalk');
 
-import { sleep, input, currentTimeStamp, info, saveTo } from './common.js';
+const { sleep, input, currentTimeStamp, info, saveTo } = require('./common.js');
 
-export async function userrecon(username, showHome = false) {
+async function userrecon(username, showHome = false) {
   username = username || (await input('Your Username'));
 
   var urlList = [
@@ -115,4 +115,4 @@ export async function userrecon(username, showHome = false) {
   });
 }
 
-export default userrecon;
+module.exports = userrecon;
