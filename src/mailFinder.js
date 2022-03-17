@@ -1,14 +1,19 @@
 const request = require('request');
 const chalk = require('chalk');
 
-const { list, goBack, input, errorMsg } = require('./common.js');
+const { list, goBack, input, errorMsg, sleep } = require('./common.js');
 const key = require('./secret.js');
 
 async function mailfinder(username, showHome = false) {
   username = username || (await input('Your Username'));
   username.replace(' ', '');
-  const domainList = ['gmail.com', 'yahoo.com', 'hotmail.com', 'outlook.com'];
-  const keysList = ['Bearer0c6ad1fd-f753-4628-8c0a-7968e722c6c7'];
+  const domainList = [
+    'gmail.com',
+    'yahoo.com',
+    'hotmail.com',
+    'outlook.com',
+    'yandex.com',
+  ];
 
   domainList.forEach(async (domain) => {
     let email = `${username}@${domain}`;
@@ -25,10 +30,18 @@ async function mailfinder(username, showHome = false) {
         (error, response) => {
           if (!error && response.statusCode == 200) {
             if (response.body.status == 'valid') {
-              console.log('['.cyan + '+'.green + '] '.cyan + email.green);
+              console.log(
+                chalk.cyan('[') +
+                  chalk.greenBright('+') +
+                  chalk.cyan('] ') +
+                  chalk.greenBright(email),
+              );
             } else {
               console.log(
-                '['.cyan + '+'.brightRed + '] '.cyan + email.brightRed,
+                chalk.cyan('[') +
+                  chalk.redBright('+') +
+                  chalk.cyan('] ') +
+                  chalk.redBright(email),
               );
             }
           }

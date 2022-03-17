@@ -11,17 +11,13 @@
 <br />
 <div align="center">
   <a href="https://github.com/7orp3do/infoooze">
-    <img src="https://raw.githubusercontent.com/othneildrew/Best-README-Template/master/images/logo.png" alt="Logo" width="80" height="80">
+    <img src="./images/logo-dark.png#gh-dark-mode-only" alt="Logo" height="120px">
+    <img src="./images/logo-light.png#gh-light-mode-only" alt="Logo" height="120px">
   </a>
 
 <h3 align="center">Infoooze</h3>
 
   <p align="center">
-    This is a OSINT tool
-    <br />
-    <a href="https://github.com/7orp3do/infoooze"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
     <a href="https://github.com/7orp3do/infoooze">View Demo</a>
     ·
     <a href="https://github.com/7orp3do/infoooze/issues">Report Bug</a>
@@ -65,11 +61,11 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 
 ## 💡 Features
 
-1.  userrecon
+1.  User Recon
 2.  Mailfinder
-3.  Useragent
-4.  whoislookup
-5.  InstaRecon
+3.  UserAgent Lookup
+4.  Whois Lookup
+5.  Insta Recon
 6.  IP Lookup
 7.  Ports Scan
 8.  Header Info
@@ -77,12 +73,13 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 10. DNS Lookup
 11. Git Recon
 12. Expand URL
+13. Instagram DP Viwer
 
 ## 🔨 Support
 
 | Linux | Termux | Windows | Mac |
 | ----- | ------ | ------- | --- |
-| ✔     | ✔      | ✔       | ❔  |
+| ✔     | ✔      | ✔       | ❔   |
 
 ✔ Tested  
 ❔ - Not tested
@@ -107,9 +104,8 @@ You need **NodeJs** only to run this tool. You can install NodeJs
   ```sh
   pkg install nodejs-lts python
   ```
-  > _You will need at least version 14.X.X of Node._
 
-### Installation on [Linux](https://wikipedia.org/wiki/Linux) [![alt tag](./images/OS-Linux-icon.png)](https://en.wikipedia.org/wiki/Linux)
+### Installation on [Linux](https://wikipedia.org/wiki/Linux)
 
 - #### Using NPM
 
@@ -137,7 +133,7 @@ You need **NodeJs** only to run this tool. You can install NodeJs
   npx infoooze
   ```
 
-### Installation on [Android](https://wikipedia.org/wiki/Android) [![alt tag](./images/android-icon.png)](https://en.wikipedia.org/wiki/Android)
+### Installation on [Android](https://wikipedia.org/wiki/Android) 
 
 Installation Process is same as Linux
 
@@ -145,7 +141,7 @@ Installation Process is same as Linux
  npm install -g -s infoooze
 ```
 
-### Installation on [Windows ](https://wikipedia.org/wiki/Microsoft_Windows)[![alt tag](./images/Windows-icon.png)](https://en.wikipedia.org/wiki/Microsoft_Windows)
+### Installation on [Windows ](https://wikipedia.org/wiki/Microsoft_Windows)
 
 1. Download and install NodeJs from here.
 2. Download infoooze zip file from here.
@@ -162,7 +158,7 @@ node index.js
 
 ## 🚀 Usage
 
-After installing you can run by just typing infoooze.
+After installing you can run tool by just typing infoooze.
 
 ```sh
 infoooze [options] [value]
@@ -189,7 +185,7 @@ infoooze [options] [value]
 
 ### Examples
 
-- To list all the basic options and switches use -h switch:
+- To get list of all the basic options use -h :
 
   ```sh
   infoooze -h
@@ -197,32 +193,36 @@ infoooze [options] [value]
 
 - To Get Instagram User Info:
   ```sh
-  infoooze -i indian_cyber_ops
+  infoooze -i instagam
   ```
 - To Get Domain's Whois Information:
   ```sh
-  infoooze -W google.com
+  infoooze -w google.com
   ```
 - To Get IP Information:
   ```sh
-  infoooze -I 8.8.8.8
+  infoooze -p 8.8.8.8
   ```
-  _For more examples, please refer to the [Documentation](https://example.com)_
+_For more examples, please refer to the [Documentation](https://example.com)_
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-<!-- ROADMAP -->
-<!-- ## Roadmap
+<!-- ScreenShots -->
 
-- [ ] Feature 1
-- [ ] Feature 2
-- [ ] Feature 3
-    - [ ] Nested Feature
+<h2>📸 Screenshots</h2>
+ 
+<br>
+<img src="./images/screenshot2.png" width="32%"></img>
+<img src="images/screenshot3.png" width="32%"></img>
 
-See the [open issues](https://github.com/7orp3do/infoooze/issues) for a full list of proposed features (and known issues).
+<img src="images/screenshot1.png" width="30%" ></img>
+<img src="images/screenshot5.png" width="30%" ></img> 
+<!-- <img src="images/screenshot4.png" width="32%"></img>   -->
 
-<p align="right">(<a href="#top">back to top</a>)</p> -->
+<p align="right">(<a href="#top">back to top</a>)</p>
+<hr>  
 
+ 
 <!-- CONTRIBUTING -->
 
 ## 🤝 Contributing
@@ -280,36 +280,3 @@ _Special thanks to [Biswajeet Ray](https://instagram.com/biswajeetray7) for push
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/bhps82
 [product-screenshot]: images/screenshot.png
-
-<!-- <details>
-    <summary>
-      View Output
-    </summary>
-
-  ```sh
-    $ infoooze -h
-
-    Usage: index.js [options] [command]
-
-    Commands:
-      help     Display help
-      version  Display version
-
-    Options:
-      -n, --dnslookup    domain name system lookup
-      -d, --domainage    find website Age
-      -g, --gitrecon     find github user info
-      -e, --headerinfo   find website headers
-      -h, --help         Output usage information
-      -i, --instaRecon   find Instagram users info
-      -p, --iplookup     find IP info
-      -m, --mailfinder   find email with specelse ific name
-      -t, --portscan     find open ports
-      -l, --urlexpand    long url of shorten URL
-      -u, --useragent    find browser info
-      -r, --userrecon    username reconnaissance
-      -v, --version      Output the version number
-      -w, --whoislookup  find doamin's whois info
-
-  ```
-  </details> -->

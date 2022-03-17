@@ -21,8 +21,12 @@ If applicable, add screenshots to help explain your problem.
 `;
 
 // console.log(body);
-open(
-  `https://github.com/7ORP3DO/infoooze/issues/new?assignees=&labels=&title=&body=${encodeURIComponent(
-    body,
-  )}`,
-);
+reportBug = () => {
+  open(
+    `https://github.com/7ORP3DO/infoooze/issues/new?assignees=&labels=&title=&body=${encodeURIComponent(
+      body,
+    )}`,
+  );
+};
+
+module.exports = reportBug;

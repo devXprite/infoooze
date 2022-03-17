@@ -1,7 +1,3 @@
-// const > const
-// = require( > = require(
-// ; > );
-
 const whoisJson = require('whois-json');
 const {
   list,

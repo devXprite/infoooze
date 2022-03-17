@@ -16,9 +16,10 @@ const portScanner = require('./src/portScanner');
 const headerLookup = require('./src/headerLookup');
 const urlExpander = require('./src/urlExpander');
 const gitRecon = require('./src/gitRecon');
+const domainAge = require('./src/domainAge');
 
 async function welcome() {
-  const glitchTitle = chalkAnimation.glitch('Welcome to Infoooze\n');
+  const glitchTitle = chalkAnimation.glitch('\nWelcome to Infoooze\n');
   await sleep(3000);
   glitchTitle.stop();
 }
@@ -66,7 +67,7 @@ if (flags.userrecon) {
   portScanner(flags.portscan);
 } else if (flags.domainage) {
   banner();
-  testFunction(flags.domainage);
+  domainAge(flags.domainage);
 } else if (flags.headerinfo) {
   banner();
   headerLookup(flags.headerinfo);

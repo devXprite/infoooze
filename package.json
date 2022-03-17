@@ -37,6 +37,7 @@
     "prompt-sync": "^4.2.0",
     "request": "^2.88.2",
     "sentence-case": "^3.0.4",
+    "timeago.js": "^4.0.2",
     "whois-json": "^2.0.4"
   },
   "devDependencies": {

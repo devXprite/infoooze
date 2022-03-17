@@ -12,9 +12,10 @@ const dnsLookup = require('./dnsLookup.js');
 const portScanner = require('./portScanner.js');
 const headerLookup = require('./headerLookup.js');
 const urlExpander = require('./urlExpander.js');
-
+const reportBug = require('./reportBug');
 const { sleep, input } = require('./common.js');
 const gitRecon = require('./gitRecon.js');
+const domainAge = require('./domainAge.js');
 const pkginfo = require('pkginfo')(module, 'version');
 const version = module.exports.version;
 
@@ -45,6 +46,8 @@ const takeOption = async () => {
     gitRecon(null, true);
   } else if (option == '12') {
     urlExpander(null, true);
+  } else if (option == '99') {
+    reportBug(null, true);
   } else if (option == 'exit' || option == '00' || option == '0') {
     console.log(chalk.cyan('bye!'));
   } else {
@@ -98,6 +101,10 @@ const home = async (animationDelay = 2000, i = 1) => {
   });
 
   table.newRow();
+  table.cell(chalk.whiteBright('No'), chalk.cyan('99'));
+  table.cell(chalk.whiteBright('Name'), 'Report Issues');
+  table.cell(chalk.whiteBright('Description'), chalk.gray('report a bug'));
+  table.newRow();
   table.cell(chalk.whiteBright('No'), chalk.cyan('00'));
   table.cell(chalk.whiteBright('Name'), 'exit');
   table.cell(
@@ -105,7 +112,6 @@ const home = async (animationDelay = 2000, i = 1) => {
     chalk.gray('close and exit tool'),
   );
   table.newRow();
-
   console.log(table.toString());
 
   takeOption();

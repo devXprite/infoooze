@@ -35,6 +35,7 @@ async function instaRecon(username, showHome = false, i = 1) {
             saveTo(path, key, IGData[key]);
           }
         }
+        console.log('\n');
         var showDP = await input('View Profile Picture? [Y/N]');
         if (showDP == 'y' || showDP == 'Y') {
           open(IGData['profile_pic_url_hd']);

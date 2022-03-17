@@ -90,22 +90,25 @@ async function userrecon(username, showHome = false) {
         function (error, response, body) {
           if (error) {
             console.log(
-              '['.cyan + chalk.redBright('---') + '] '.cyan + url.brightRed,
+              chalk.cyan('[') +
+                chalk.redBright('---') +
+                chalk.cyan('] ') +
+                chalk.redBright(url),
             );
           } else {
             if (response.statusCode == 200) {
               console.log(
-                '['.cyan +
+                chalk.cyan('[') +
                   chalk.greenBright(response.statusCode) +
-                  '] '.cyan +
+                  chalk.cyan('] ') +
                   chalk.greenBright(url),
               );
             } else {
               console.log(
-                '['.cyan +
+                chalk.cyan('[') +
                   chalk.redBright(response.statusCode) +
-                  '] '.cyan +
-                  url.brightRed,
+                  chalk.cyan('] ') +
+                  chalk.redBright(url),
               );
             }
           }
