@@ -159,13 +159,13 @@ infoooze [options] [value]
 
 | Short Form | Long Form     | Description                        |
 | :--------- | :------------ | :--------------------------------- |
-| -n         | --DNSLookup   | domain name system lookup          |
-| -e         | --HeaderInfo  | find website headers               |
-| -p         | --IPLookup    | find IP info                       |
-| -m         | --Mailfinder  | find email with specelse ific name |
-| -t         | --PortsScan   | find open ports                    |
-| -r         | --Userrecon   | username reconnaissance            |
-| -w         | --Whoislookup | find doamin's whois info           |
+| -n         | --dnslookup   | domain name system lookup          |
+| -e         | --headerinfo  | find website headers               |
+| -p         | --iplookup    | find IP info                       |
+| -m         | --mailfinder  | find email with specelse ific name |
+| -t         | --portscan    | find open ports                    |
+| -r         | --userrecon   | username reconnaissance            |
+| -w         | --whoislookup | find doamin's whois info           |
 | -d         | --domainAge   | find website Age                   |
 | -s         | --subdomain   | find subdomains of website         |
 | -h         | --help        | Output usage information           |
