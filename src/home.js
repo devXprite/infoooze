@@ -16,8 +16,11 @@ const reportBug = require('./reportBug');
 const { sleep, input } = require('./common.js');
 const gitRecon = require('./gitRecon.js');
 const domainAge = require('./domainAge.js');
+const subdomainScanner = require('./subdomainScanner.js');
 const pkginfo = require('pkginfo')(module, 'version');
 const version = module.exports.version;
+const updateNotifier = require('update-notifier');
+const pkg = require('./../package.json');
 
 const takeOption = async () => {
   var option = await input('Your Option ');
@@ -46,6 +49,8 @@ const takeOption = async () => {
     gitRecon(null, true);
   } else if (option == '12') {
     urlExpander(null, true);
+  } else if (option == '13') {
+    subdomainScanner(null, true);
   } else if (option == '99') {
     reportBug(null, true);
   } else if (option == 'exit' || option == '00' || option == '0') {
@@ -57,6 +62,7 @@ const takeOption = async () => {
 
 const home = async (animationDelay = 2000, i = 1) => {
   console.clear();
+  updateNotifier({pkg}).notify();
   chalkAnimation.neon(
     `
     _____        __                         
@@ -64,7 +70,8 @@ const home = async (animationDelay = 2000, i = 1) => {
      | |  _ __ | |_ ___   ___   ___ _______ 
      | | | '_ \\|  _/ _ \\ / _ \\ / _ \\_  / _ \\
     _| |_| | | | || (_) | (_) | (_) / /  __/
-   |_____|_| |_|_| \\___/ \\___/ \\___/___\\___|`,
+   |_____|_| |_|_| \\___/ \\___/ \\___/___\\___|
+                                      ${chalk.greenBright('v' + version)}`,
     '2',
   );
 
@@ -86,6 +93,7 @@ const home = async (animationDelay = 2000, i = 1) => {
     ['DNS Lookup', 'domain name system lookup'],
     ['Git Recon', 'find github user info'],
     ['Expand Url', 'long url of shorten urls'],
+    ['Subdomain', 'find subdomains of website'],
   ];
 
   var table = new EasyTable();
@@ -118,6 +126,7 @@ const home = async (animationDelay = 2000, i = 1) => {
 };
 
 const banner = () => {
+  updateNotifier({pkg}).notify();
   console.log(
     chalk.hex('#FFA500')(`
   _____        __                         

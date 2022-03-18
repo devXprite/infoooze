@@ -17,6 +17,7 @@ const headerLookup = require('./src/headerLookup');
 const urlExpander = require('./src/urlExpander');
 const gitRecon = require('./src/gitRecon');
 const domainAge = require('./src/domainAge');
+const subdomainScanner = require('./src/subdomainScanner');
 
 async function welcome() {
   const glitchTitle = chalkAnimation.glitch('\nWelcome to Infoooze\n');
@@ -40,6 +41,7 @@ args
   .option(['e', 'headerinfo'], 'find website headers')
   .option(['n', 'dnslookup'], 'domain name system lookup')
   .option(['g', 'gitrecon'], 'find github user info')
+  .option(['s', 'subdomain'], 'find subdomains of website')
   .option(['l', 'urlexpand'], 'long url of shorten URL');
 
 const flags = args.parse(process.argv);
@@ -74,6 +76,9 @@ if (flags.userrecon) {
 } else if (flags.urlexpand) {
   banner();
   urlExpander(flags.urlexpand);
+} else if (flags.subdomain) {
+  banner();
+  subdomainScanner(flags.subdomain);
 } else if (flags.gitrecon) {
   banner();
   gitRecon(flags.gitrecon);

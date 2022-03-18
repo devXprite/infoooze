@@ -12,7 +12,7 @@
 <div align="center">
   <a href="https://github.com/7orp3do/infoooze">
     <img src="./images/logo-dark.png#gh-dark-mode-only" alt="Logo" height="120px">
-    <img src="./images/logo-light.png#gh-light-mode-only" alt="Logo" height="120px">
+    <!-- <img src="./images/logo-light.png#gh-light-mode-only" alt="Logo" height="120px"> -->
   </a>
 
 <h3 align="center">Infoooze</h3>
@@ -46,36 +46,31 @@
    - [Examples](#examples)
 4. [Contributing](#-contributing)
 5. [License](#-license)
-6. [Acknowledgments](#-acknowledgments)
-7. [Contact](#-contact)
+6. [Contact](#-contact)
 
 <!-- ABOUT THE PROJECT -->
 
 ## ✨ About infoooze
 
-<!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
+### 💡 Features
 
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic
+1.  Insta Recon
+2.  Subdomain Scanner
+3.  User Recon
+4.  Mailfinder
+5.  UserAgent Lookup
+6.  Whois Lookup
+7.  IP Lookup
+8.  Ports Scan
+9.  Header Info
+10. Domain Age
+11. DNS Lookup
+12. Git Recon
+13. Expand URL
+14. Instagram DP Viwer
+15. Save Results to file
 
-<!-- <p align="right">(<a href="#top">back to top</a>)</p> -->
-
-## 💡 Features
-
-1.  User Recon
-2.  Mailfinder
-3.  UserAgent Lookup
-4.  Whois Lookup
-5.  Insta Recon
-6.  IP Lookup
-7.  Ports Scan
-8.  Header Info
-9.  Domain Age
-10. DNS Lookup
-11. Git Recon
-12. Expand URL
-13. Instagram DP Viwer
-
-## 🔨 Support
+### 🔨 Support
 
 | Linux | Termux | Windows | Mac |
 | ----- | ------ | ------- | --- |
@@ -88,8 +83,6 @@ Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
 
 ## 🚀 Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple steps.
 
 ### Prerequisites
 
@@ -108,8 +101,6 @@ You need **NodeJs** only to run this tool. You can install NodeJs
 ### Installation on [Linux](https://wikipedia.org/wiki/Linux)
 
 - #### Using NPM
-
-  This package is published on NPM so you can install it directly using [NPM](http://npm.com)
 
   ```sh
   sudo su
@@ -133,7 +124,7 @@ You need **NodeJs** only to run this tool. You can install NodeJs
   npx infoooze
   ```
 
-### Installation on [Android](https://wikipedia.org/wiki/Android) 
+### Installation on [Android](https://wikipedia.org/wiki/Android)
 
 Installation Process is same as Linux
 
@@ -143,8 +134,8 @@ Installation Process is same as Linux
 
 ### Installation on [Windows ](https://wikipedia.org/wiki/Microsoft_Windows)
 
-1. Download and install NodeJs from here.
-2. Download infoooze zip file from here.
+1. Download and install NodeJs from [here](https://nodejs.org/en/download/).
+2. Download infoooze zip file from [here](https://github.com/7ORP3DO/infoooze/zipball/master/).
 3. Open infoooze folder and type following commands :
 
 ```bash
@@ -176,6 +167,7 @@ infoooze [options] [value]
 | -r         | --Userrecon   | username reconnaissance            |
 | -w         | --Whoislookup | find doamin's whois info           |
 | -d         | --domainAge   | find website Age                   |
+| -s         | --subdomain   | find subdomains of website         |
 | -h         | --help        | Output usage information           |
 | -g         | --gitrecon    | find github user info              |
 | -i         | --instaRecon  | find Instagram users info          |
@@ -185,12 +177,14 @@ infoooze [options] [value]
 
 ### Examples
 
+- To Update Tool:
+  ```sh
+  npm update -g infoooze
+  ```
 - To get list of all the basic options use -h :
-
   ```sh
   infoooze -h
   ```
-
 - To Get Instagram User Info:
   ```sh
   infoooze -i instagam
@@ -198,6 +192,10 @@ infoooze [options] [value]
 - To Get Domain's Whois Information:
   ```sh
   infoooze -w google.com
+  ```
+- To Get Subdomains of website:
+  ```sh
+  infoooze -s google.com
   ```
 - To Get IP Information:
   ```sh
@@ -212,17 +210,17 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <h2>📸 Screenshots</h2>
  
 <br>
-<img src="./images/screenshot2.png" width="32%"></img>
-<img src="images/screenshot3.png" width="32%"></img>
+<img src="./images/screenshot2.png" width="30%"></img>
+<img src="images/screenshot3.png" width="30%"></img>
 
-<img src="images/screenshot1.png" width="30%" ></img>
-<img src="images/screenshot5.png" width="30%" ></img> 
+<img src="images/screenshot1.png" width="40%" ></img>
+<img src="images/screenshot5.png" width="40%" ></img>
+
 <!-- <img src="images/screenshot4.png" width="32%"></img>   -->
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-<hr>  
+<hr>
 
- 
 <!-- CONTRIBUTING -->
 
 ## 🤝 Contributing
@@ -250,7 +248,6 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 <!-- ## 👍 Acknowledgments
 
-_Special thanks to [Biswajeet Ray](https://instagram.com/biswajeetray7) for pushing me to keep working._ -->
 
 <!-- CONTACT -->
 

@@ -29,6 +29,7 @@
     "chalk": "^4.1.0",
     "chalk-animation": "^1.6.0",
     "easy-table": "^1.2.0",
+    "jsdom": "^19.0.0",
     "lodash": "^4.17.21",
     "moment": "^2.29.1",
     "open": "^8.4.0",
@@ -37,7 +38,7 @@
     "prompt-sync": "^4.2.0",
     "request": "^2.88.2",
     "sentence-case": "^3.0.4",
-    "timeago.js": "^4.0.2",
+    "update-notifier": "^5.1.0",
     "whois-json": "^2.0.4"
   },
   "devDependencies": {

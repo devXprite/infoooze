@@ -26,7 +26,9 @@ const headerLookup = async (website, showHome = false, i = 1) => {
         saveTo(path, key, responseData[key]);
       }
     }
-    goBack();
+    if (showHome) {
+      goBack();
+    }
   });
 };
 
