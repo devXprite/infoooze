@@ -18,6 +18,7 @@ const urlExpander = require('./src/urlExpander');
 const gitRecon = require('./src/gitRecon');
 const domainAge = require('./src/domainAge');
 const subdomainScanner = require('./src/subdomainScanner');
+const exifMetadata = require('./src/exif');
 
 async function welcome() {
   const glitchTitle = chalkAnimation.glitch('\nWelcome to Infoooze\n');
@@ -25,13 +26,9 @@ async function welcome() {
   glitchTitle.stop();
 }
 
-function testFunction(x) {
-  console.log('your arg value is ' + x);
-}
-
 args
   .option(['r', 'userrecon'], 'username reconnaissance')
-  .option(['m', 'mailfinder'], 'find email with specelse ific name')
+  .option(['m', 'mailfinder'], 'find email with specific name')
   .option(['u', 'useragent'], 'find browser info')
   .option(['w', 'whoislookup'], "find doamin's whois info")
   .option(['i', 'instaRecon'], 'find Instagram users info')
@@ -42,6 +39,7 @@ args
   .option(['n', 'dnslookup'], 'domain name system lookup')
   .option(['g', 'gitrecon'], 'find github user info')
   .option(['s', 'subdomain'], 'find subdomains of website')
+  .option(['x', 'exif'], 'extracts Exif metadata from image')
   .option(['l', 'urlexpand'], 'long url of shorten URL');
 
 const flags = args.parse(process.argv);
@@ -82,6 +80,9 @@ if (flags.userrecon) {
 } else if (flags.gitrecon) {
   banner();
   gitRecon(flags.gitrecon);
+} else if (flags.exif) {
+  banner();
+  exifMetadata(flags.exif);
 } else if (flags.dnslookup) {
   banner();
   dnsLookup(flags.dnslookup);

@@ -4,8 +4,7 @@
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url] -->
+[![MIT License][license-shield]][license-url] -->
 
 <!-- PROJECT LOGO -->
 <br />
@@ -41,6 +40,7 @@
      - [Using NPX](#using-npx)
    - [Installation on Android](#-getting-started)
    - [Installation on Windows](#-getting-started)
+   - [Uninstall](#uninstall)
 3. [Usage](#-usage)
    - [Options](#options)
    - [Examples](#examples)
@@ -56,19 +56,20 @@
 
 1.  Insta Recon
 2.  Subdomain Scanner
-3.  User Recon
-4.  Mailfinder
-5.  UserAgent Lookup
-6.  Whois Lookup
-7.  IP Lookup
-8.  Ports Scan
+3.  Ports Scan
+4.  User Recon
+5.  Mail finder
+6.  Exif metadata extract
+7.  Whois Lookup
+8.  IP Lookup
 9.  Header Info
 10. Domain Age
 11. DNS Lookup
-12. Git Recon
-13. Expand URL
-14. Instagram DP Viwer
-15. Save Results to file
+12. UserAgent Lookup
+13. Git Recon
+14. Expand URL
+15. Instagram DP Viwer
+16. Save Results to file
 
 ### 🔨 Support
 
@@ -86,13 +87,14 @@
 
 ### Prerequisites
 
-You need **NodeJs** only to run this tool. You can install NodeJs
+You need **NodeJs** 10 or later to run this tool. You can install NodeJs
 
 - On Linux
   ```sh
   sudo su
-  apt-get install nodejs python
+  apt-get install nodejs
   ```
+  > Although there is no need to install NodeJs on Kali Linux, as its packages are already present in Kali Linux.
 - On Termux
   ```sh
   pkg install nodejs-lts python
@@ -110,15 +112,12 @@ You need **NodeJs** only to run this tool. You can install NodeJs
 - #### Using GIT
 
   ```sh
-  git clone https://github.com/7ORP3DO/infoooze.git
-  cd infoooze
-  npm install
-  node index.js
+  npm install git+ssh://git@github.com/7ORP3DO/infoooze.git -g
   ```
 
 - #### Using NPX
 
-  run without install it locally.
+  Try without install it locally.
 
   ```sh
   npx infoooze
@@ -143,13 +142,20 @@ npm install
 node index.js
 ```
 
+### Uninstall
+
+```sh
+npm remove infoooze -g
+```
+
+
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- USAGE EXAMPLES -->
 
 ## 🚀 Usage
 
-After installing you can run tool by just typing infoooze.
+After installing you can run tool by just typing `infoooze`.
 
 ```sh
 infoooze [options] [value]
@@ -157,23 +163,24 @@ infoooze [options] [value]
 
 ### Options:
 
-| Short Form | Long Form     | Description                        |
-| :--------- | :------------ | :--------------------------------- |
-| -n         | --dnslookup   | domain name system lookup          |
-| -e         | --headerinfo  | find website headers               |
-| -p         | --iplookup    | find IP info                       |
-| -m         | --mailfinder  | find email with specelse ific name |
-| -t         | --portscan    | find open ports                    |
-| -r         | --userrecon   | username reconnaissance            |
-| -w         | --whoislookup | find doamin's whois info           |
-| -d         | --domainAge   | find website Age                   |
-| -s         | --subdomain   | find subdomains of website         |
-| -h         | --help        | Output usage information           |
-| -g         | --gitrecon    | find github user info              |
-| -i         | --instaRecon  | find Instagram users info          |
-| -u         | --useragent   | find browser info                  |
-| -l         | --urlexpand   | long url of shorten URL            |
-| -v         | --version     | Output the version number          |
+| Short Form | Long Form     | Description                       |
+| :--------- | :------------ | :-------------------------------- |
+| -n         | --dnslookup   | domain name system lookup         |
+| -e         | --headerinfo  | find website headers              |
+| -p         | --iplookup    | find IP info                      |
+| -m         | --mailfinder  | find email with specific name     |
+| -t         | --portscan    | find open ports                   |
+| -x         | --exif        | extracts Exif metadata from image |
+| -r         | --userrecon   | username reconnaissance           |
+| -w         | --whoislookup | find doamin's whois info          |
+| -d         | --domainAge   | find website Age                  |
+| -s         | --subdomain   | find subdomains of website        |
+| -h         | --help        | Output usage information          |
+| -g         | --gitrecon    | find github user info             |
+| -i         | --instaRecon  | find Instagram users info         |
+| -u         | --useragent   | find browser info                 |
+| -l         | --urlexpand   | long url of shorten URL           |
+| -v         | --version     | Output the version number         |
 
 ### Examples
 
@@ -210,14 +217,16 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 <h2>📸 Screenshots</h2>
  
 <br>
-<img src="./images/screenshot2.png" width="30%"></img>
-<img src="images/screenshot3.png" width="30%"></img>
 
-<img src="images/screenshot1.png" width="40%" ></img>
+<img src="./images/screenshot1.png" width="40%"></img>
+<img src="./images/screenshot2.png" width="40%"></img>
+
+<img src="images/screenshot4.png" width="40%" ></img>
 <img src="images/screenshot5.png" width="40%" ></img>
 
-<!-- <img src="images/screenshot4.png" width="32%"></img>   -->
+<img src="images/screenshot3.png" width="80%" ></img> 
 
+<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://github.com/7orp3do/infoooz" width="0%" height="0%"> 
 <p align="right">(<a href="#top">back to top</a>)</p>
 <hr>
 

@@ -21,6 +21,7 @@ const pkginfo = require('pkginfo')(module, 'version');
 const version = module.exports.version;
 const updateNotifier = require('update-notifier');
 const pkg = require('./../package.json');
+const exifMetadata = require('./exif.js');
 
 const takeOption = async () => {
   var option = await input('Your Option ');
@@ -51,6 +52,8 @@ const takeOption = async () => {
     urlExpander(null, true);
   } else if (option == '13') {
     subdomainScanner(null, true);
+  } else if (option == '14') {
+    exifMetadata(null, true);
   } else if (option == '99') {
     reportBug(null, true);
   } else if (option == 'exit' || option == '00' || option == '0') {
@@ -62,7 +65,7 @@ const takeOption = async () => {
 
 const home = async (animationDelay = 2000, i = 1) => {
   console.clear();
-  updateNotifier({pkg}).notify();
+  updateNotifier({ pkg }).notify();
   chalkAnimation.neon(
     `
     _____        __                         
@@ -81,19 +84,20 @@ const home = async (animationDelay = 2000, i = 1) => {
   await sleep(500);
 
   var optionsData = [
-    ['User Recon', 'username reconnaissance'],
-    ['Mail Finder ', 'find email with specific name'],
-    ['Useragent', 'find browser info'],
-    ['Whoislookup', "find doamin's whois info"],
-    ['InstaRecon', 'find Instagram users info'],
-    ['IP Lookup', 'find IP info'],
-    ['Ports Scan', 'find open ports'],
-    ['Domain Age', 'find website Age'],
-    ['Header Info', 'find website headers'],
-    ['DNS Lookup', 'domain name system lookup'],
-    ['Git Recon', 'find github user info'],
-    ['Expand Url', 'long url of shorten urls'],
-    ['Subdomain', 'find subdomains of website'],
+    ['User Recon', 'Username reconnaissance'],
+    ['Mail Finder ', 'Find email with specific name'],
+    ['Useragent', 'Find browser info'],
+    ['Whoislookup', "Find doamin's whois info"],
+    ['InstaRecon', 'Find Instagram users info'],
+    ['IP Lookup', 'Find IP info'],
+    ['Ports Scan', 'Find open ports'],
+    ['Domain Age', 'Find website Age'],
+    ['Header Info', 'Find website headers'],
+    ['DNS Lookup', 'Domain name system lookup'],
+    ['Git Recon', 'Find github user info'],
+    ['Expand Url', 'Long url of shorten urls'],
+    ['Subdomain', 'Find subdomains of website'],
+    ['Exif Metadata', 'Extract Exif metadata from image'],
   ];
 
   var table = new EasyTable();
@@ -110,8 +114,11 @@ const home = async (animationDelay = 2000, i = 1) => {
 
   table.newRow();
   table.cell(chalk.whiteBright('No'), chalk.cyan('99'));
-  table.cell(chalk.whiteBright('Name'), 'Report Issues');
-  table.cell(chalk.whiteBright('Description'), chalk.gray('report a bug'));
+  table.cell(chalk.whiteBright('Name'), 'Report Bug');
+  table.cell(
+    chalk.whiteBright('Description'),
+    chalk.gray('report bug on github'),
+  );
   table.newRow();
   table.cell(chalk.whiteBright('No'), chalk.cyan('00'));
   table.cell(chalk.whiteBright('Name'), 'exit');
@@ -126,7 +133,7 @@ const home = async (animationDelay = 2000, i = 1) => {
 };
 
 const banner = () => {
-  updateNotifier({pkg}).notify();
+  updateNotifier({ pkg }).notify();
   console.log(
     chalk.hex('#FFA500')(`
   _____        __                         

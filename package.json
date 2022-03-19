@@ -1,7 +1,7 @@
 {
   "name": "infoooze",
-  "version": "1.0.0",
-  "description": "A OSINT famework",
+  "version": "0.0.1",
+  "description": "A OSINT based famework",
   "main": "index.js",
   "type": "commonjs",
   "scripts": {
@@ -22,13 +22,19 @@
   "homepage": "https://7orp3do.github.io/infoooze/",
   "keywords": [
     "OSINT",
-    "NodeJs"
+    "NodeJs",
+    "cybersecurity",
+    "infosec",
+    "kali-tools",
+    "termux",
+    "information-gathering"
   ],
   "dependencies": {
     "args": "^5.0.1",
     "chalk": "^4.1.0",
     "chalk-animation": "^1.6.0",
     "easy-table": "^1.2.0",
+    "exif": "^0.6.0",
     "jsdom": "^19.0.0",
     "lodash": "^4.17.21",
     "moment": "^2.29.1",
