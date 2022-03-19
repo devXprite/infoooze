@@ -226,6 +226,7 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 
 <img src="images/screenshot3.png" width="80%" ></img> 
 
+<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://github.com/7orp3do/infoooz" width="0%" height="0%"> 
 <p align="right">(<a href="#top">back to top</a>)</p>
 <hr>
 
