@@ -10,15 +10,16 @@ const sleep = async (ms = 1000) => new Promise((r) => setTimeout(r, ms));
 
 const currentTimeStamp = () => moment().format('DDMMYYYYHHmmss');
 
-const saveTo = (path, content, content2) => {
+const saveTo = (path, value, value2) => {
   try {
     if (!fs.existsSync('./results')) {
       fs.mkdirSync('./results');
     }
-    if (content2) {
-      fs.appendFileSync(path, `\n${content} : ${content2}`);
+    value = sentenceCase(value);
+    if (value2) {
+      fs.appendFileSync(path, `\n${value} : ${value2}`);
     } else {
-      fs.appendFileSync(path, `\n${content}`);
+      fs.appendFileSync(path, `\n${value}`);
     }
   } catch (error) {
     /* n/a */
@@ -32,7 +33,6 @@ const list = async (counter, key, value) => {
   }
 
   value = value || chalk.redBright('n/a');
-
   key = sentenceCase(key);
 
   await sleep(250);
