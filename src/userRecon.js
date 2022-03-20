@@ -1,10 +1,19 @@
 const request = require('request');
 const chalk = require('chalk');
 
-const { sleep, input, currentTimeStamp, info, saveTo } = require('./common.js');
+const {
+  goBack,
+  input,
+  currentTimeStamp,
+  info,
+  saveTo,
+} = require('./common.js');
 
-async function userrecon(username, showHome = false) {
+const userrecon = async (username, showHome = false) => {
   username = username || (await input('Your Username'));
+
+  const path = `${process.cwd()}/results/infoooze_userRecon_${currentTimeStamp()}.txt`;
+  info(`Results will be saved in `, path);
 
   var urlList = [
     `https://facebook.com/${username}`,
@@ -95,6 +104,7 @@ async function userrecon(username, showHome = false) {
                 chalk.cyan('] ') +
                 chalk.redBright(url),
             );
+            saveTo(path, `---`, url);
           } else {
             if (response.statusCode == 200) {
               console.log(
@@ -103,6 +113,7 @@ async function userrecon(username, showHome = false) {
                   chalk.cyan('] ') +
                   chalk.greenBright(url),
               );
+              saveTo(path, `[${response.statusCode}]`, url);
             } else {
               console.log(
                 chalk.cyan('[') +
@@ -110,12 +121,18 @@ async function userrecon(username, showHome = false) {
                   chalk.cyan('] ') +
                   chalk.redBright(url),
               );
+              saveTo(path, `[${response.statusCode}]`, url);
             }
           }
         },
       );
     }, index * 500);
   });
-}
+  if (showHome) {
+    setTimeout(() => {
+      goBack();
+    }, urlList.length * 500 + 6000);
+  }
+};
 
 module.exports = userrecon;

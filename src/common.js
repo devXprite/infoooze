@@ -15,7 +15,9 @@ const saveTo = (path, value, value2) => {
     if (!fs.existsSync('./results')) {
       fs.mkdirSync('./results');
     }
-    value = sentenceCase(value);
+    if (value != '---') {
+      value = sentenceCase(value);
+    }
     if (value2) {
       fs.appendFileSync(path, `\n${value} : ${value2}`);
     } else {

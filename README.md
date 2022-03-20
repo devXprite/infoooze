@@ -75,7 +75,7 @@
 
 | Linux | Termux | Windows | Mac |
 | ----- | ------ | ------- | --- |
-| ✔     | ✔      | ✔       | ❔   |
+| ✔     | ✔      | ✔       | ❔  |
 
 ✔ Tested  
 ❔ - Not tested
@@ -83,7 +83,6 @@
 <!-- GETTING STARTED -->
 
 ## 🚀 Getting Started
-
 
 ### Prerequisites
 
@@ -148,7 +147,6 @@ node index.js
 npm remove infoooze -g
 ```
 
-
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- USAGE EXAMPLES -->
@@ -208,7 +206,7 @@ infoooze [options] [value]
   ```sh
   infoooze -p 8.8.8.8
   ```
-_For more examples, please refer to the [Documentation](https://example.com)_
+  _For more examples, please refer to the [Documentation](https://example.com)_
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -218,15 +216,12 @@ _For more examples, please refer to the [Documentation](https://example.com)_
  
 <br>
 
-<img src="./images/screenshot1.png" width="40%">
-<img src="./images/screenshot2.png" width="40%">
-
+<img src="./images/screenshot1.png" width="40%"> <img src="./images/screenshot2.png" width="40%">
 <img src="images/screenshot4.png" width="40%" >
 <img src="images/screenshot5.png" width="40%" >
 
-<img src="images/screenshot3.png" width="80%" > 
+<img src="images/screenshot3.png" width="80%" >
 
-<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://github.com/7orp3do/infoooz" width="0%" height="0%"> 
 <p align="right">(<a href="#top">back to top</a>)</p>
 <hr>
 
@@ -265,7 +260,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 - Twitter: [@bhps82](https://twitter.com/bhps82)
 - Github: [@7ORP3DO](https://twitter.com/bhps82)
 
-<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://github.com/7orp3do/infoooz" width="0%" height="0%"> 
+<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://github.com/7orp3do/infoooz" width="0%" height="0%">
 
 <!-- ## 🎨 Release History
 

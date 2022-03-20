@@ -1,57 +1,81 @@
 const request = require('request');
 const chalk = require('chalk');
 
-const { list, goBack, input, errorMsg, sleep } = require('./common.js');
+const {
+  goBack,
+  input,
+  currentTimeStamp,
+  info,
+  saveTo,
+} = require('./common.js');
+
 const key = require('./secret.js');
 
 async function mailfinder(username, showHome = false) {
   username = username || (await input('Your Username'));
   username.replace(' ', '');
-  const domainList = [
-    'gmail.com',
-    'yahoo.com',
-    'hotmail.com',
-    'outlook.com',
-    'yandex.com',
-  ];
+  const domainList = ['gmail.com', 'yahoo.com', 'hotmail.com', 'outlook.com'];
 
-  domainList.forEach(async (domain) => {
-    let email = `${username}@${domain}`;
-    try {
-      request(
-        {
-          url: `https://isitarealemail.com/api/email/validate?email=${email}`,
-          headers: {
-            Authorization: key('em'),
+  const path = `${process.cwd()}/results/infoooze_mailFinder_${currentTimeStamp()}.txt`;
+  info(`Results will be saved in `, path);
+
+  domainList.forEach(async (domain, index) => {
+    setTimeout(() => {
+      let email = `${username}@${domain}`;
+
+      try {
+        request(
+          {
+            url: `https://isitarealemail.com/api/email/validate?email=${email}`,
+            headers: {
+              Authorization: key('em'),
+            },
+            timeout: 5000,
+            json: true,
           },
-          timeout: 5000,
-          json: true,
-        },
-        (error, response) => {
-          if (!error && response.statusCode == 200) {
-            if (response.body.status == 'valid') {
-              console.log(
-                chalk.cyan('[') +
-                  chalk.greenBright('+') +
-                  chalk.cyan('] ') +
-                  chalk.greenBright(email),
-              );
+          (error, response) => {
+            if (!error && response.statusCode == 200) {
+              if (response.body.status == 'valid') {
+                console.log(
+                  chalk.cyan('[') +
+                    chalk.greenBright('+') +
+                    chalk.cyan('] ') +
+                    chalk.greenBright(email),
+                );
+                saveTo(path, 'valid', email);
+              } else {
+                console.log(
+                  chalk.cyan('[') +
+                    chalk.redBright('+') +
+                    chalk.cyan('] ') +
+                    chalk.redBright(email),
+                );
+                saveTo(path, 'invalid', email);
+              }
             } else {
-              console.log(
-                chalk.cyan('[') +
-                  chalk.redBright('+') +
-                  chalk.cyan('] ') +
-                  chalk.redBright(email),
-              );
+              {
+                console.log(
+                  chalk.cyan('[') +
+                    chalk.redBright('+') +
+                    chalk.cyan('] ') +
+                    chalk.redBright(email),
+                );
+                saveTo(path, 'invalid', email);
+              }
             }
-          }
-        },
-      );
-    } catch (error) {
-      errorMsg();
-    }
-    await sleep(500);
+          },
+        );
+      } catch (error) {
+        /* n/a */
+      }
+    }, index * 500);
   });
+
+  if (showHome) {
+    setTimeout(() => {
+      goBack();
+    }, domainList.length * 500 + 5000);
+  }
 }
 
 module.exports = mailfinder;

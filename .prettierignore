@@ -2,3 +2,5 @@ results
 temp
 node_modules
 src/secret.js
+*.md
+*.yml
