@@ -1,10 +1,12 @@
 <div id="top"></div>
 
-<!-- [![Contributors][contributors-shield]][contributors-url]
+
+[![Downloads][downloads]][npm]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url] -->
+[![MIT License][license-shield]][license-url]
+<!-- [![Issues][issues-shield]][issues-url] -->
+<!-- [![Contributors][contributors-shield]][contributors-url] -->
 
 <!-- PROJECT LOGO -->
 <br />
@@ -283,3 +285,6 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/bhps82
 [product-screenshot]: images/screenshot.png
+[downloads]: https://img.shields.io/npm/dt/infoooze?style=for-the-badge
+[npm]: https://www.npmjs.com/package/infoooze
+[quality]: https://img.shields.io/npms-io/quality-score/infoooze?style=for-the-badge
