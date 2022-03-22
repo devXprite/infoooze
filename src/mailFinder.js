@@ -13,12 +13,20 @@ const key = require('./secret.js');
 
 async function mailfinder(username, showHome = false) {
   username = username || (await input('Your Username'));
-  username.replace(' ', '');
-  const domainList = ['gmail.com', 'yahoo.com', 'hotmail.com', 'outlook.com'];
+  username = username.replace(/\s/g, '');
+
+  const domainList = [
+    'gmail.com',
+    'yahoo.com',
+    'hotmail.com',
+    'outlook.com',
+    'googlemail.com',
+    'yandex.com',
+    'aol.com',
+  ];
 
   const path = `${process.cwd()}/results/infoooze_mailFinder_${currentTimeStamp()}.txt`;
   info(`Results will be saved in `, path);
-
   domainList.forEach(async (domain, index) => {
     setTimeout(() => {
       let email = `${username}@${domain}`;

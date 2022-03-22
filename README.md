@@ -5,6 +5,7 @@
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![MIT License][license-shield]][license-url]
+<!-- [![version][version]][npm] -->
 <!-- [![Issues][issues-shield]][issues-url] -->
 <!-- [![Contributors][contributors-shield]][contributors-url] -->
 
@@ -208,7 +209,7 @@ infoooze [options] [value]
   ```sh
   infoooze -p 8.8.8.8
   ```
-  _For more examples, please refer to the [Documentation](https://example.com)_
+  _For more info, please refer to this [article](https://termuxtools.in/open-source-intelligence-gathering-tool-infoooze/)_
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -287,4 +288,5 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 [product-screenshot]: images/screenshot.png
 [downloads]: https://img.shields.io/npm/dt/infoooze?style=for-the-badge
 [npm]: https://www.npmjs.com/package/infoooze
+[version]: https://img.shields.io/npm/v/infoooze?style=for-the-badge
 [quality]: https://img.shields.io/npms-io/quality-score/infoooze?style=for-the-badge
