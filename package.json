@@ -1,6 +1,6 @@
 {
   "name": "infoooze",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A OSINT based famework",
   "main": "index.js",
   "type": "commonjs",
