@@ -51,9 +51,6 @@ const subdomainScanner = async (website, showHome = false, i = 1) => {
           console.log(chalk.redBright('No subdomain found'));
         }
       }
-      if (showHome) {
-        goBack();
-      }
     },
   );
 };

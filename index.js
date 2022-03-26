@@ -19,6 +19,7 @@ const gitRecon = require('./src/gitRecon');
 const domainAge = require('./src/domainAge');
 const subdomainScanner = require('./src/subdomainScanner');
 const exifMetadata = require('./src/exif');
+const scanUrl = require('./src/scanUrl');
 
 async function welcome() {
   const glitchTitle = chalkAnimation.glitch('\nWelcome to Infoooze\n');
@@ -40,6 +41,7 @@ args
   .option(['g', 'gitrecon'], 'find github user info')
   .option(['s', 'subdomain'], 'find subdomains of website')
   .option(['x', 'exif'], 'extracts Exif metadata from image')
+  .option(['a', 'webscan'], 'analyze suspicious URLs')
   .option(['l', 'urlexpand'], 'long url of shorten URL');
 
 const flags = args.parse(process.argv);
@@ -56,6 +58,9 @@ if (flags.userrecon) {
 } else if (flags.whoislookup) {
   banner();
   whois(flags.whoislookup);
+} else if (flags.webscan) {
+  banner();
+  scanUrl(flags.webscan);
 } else if (flags.instaRecon) {
   banner();
   instaRecon(flags.instaRecon);
