@@ -128,11 +128,6 @@ const userrecon = async (username, showHome = false) => {
       );
     }, index * 500);
   });
-  if (showHome) {
-    setTimeout(() => {
-      goBack();
-    }, urlList.length * 500 + 6000);
-  }
 };
 
 module.exports = userrecon;

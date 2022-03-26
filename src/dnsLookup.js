@@ -33,9 +33,6 @@ const dnsLookup = async (website, showHome = false, i = 1) => {
       } else {
         errorMsg();
       }
-      if (showHome) {
-        goBack();
-      }
     },
   );
 };

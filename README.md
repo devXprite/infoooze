@@ -62,23 +62,24 @@
 3.  Ports Scan
 4.  User Recon
 5.  Mail finder
-6.  Exif metadata extract
-7.  Whois Lookup
-8.  IP Lookup
-9.  Header Info
-10. Domain Age
-11. DNS Lookup
-12. UserAgent Lookup
-13. Git Recon
-14. Expand URL
-15. Instagram DP Viwer
-16. Save Results to file
+6.  URL Scanner
+7.  Exif metadata extract
+8.  Whois Lookup
+9.  IP Lookup
+10. Header Info
+11. Domain Age
+12. DNS Lookup
+13. UserAgent Lookup
+14. Git Recon
+15. Expand URL
+16. Instagram DP Viwer
+17. Save Results to file
 
 ### 🔨 Support
 
 | Linux | Termux | Windows | Mac |
 | ----- | ------ | ------- | --- |
-| ✔     | ✔      | ✔       | ❔  |
+| ✔     | ✔      | ✔       | ❔   |
 
 ✔ Tested  
 ❔ - Not tested
@@ -169,6 +170,7 @@ infoooze [options] [value]
 | -n         | --dnslookup   | domain name system lookup         |
 | -e         | --headerinfo  | find website headers              |
 | -p         | --iplookup    | find IP info                      |
+| -a         | --webscan     | analyze suspicious URLs           |
 | -m         | --mailfinder  | find email with specific name     |
 | -t         | --portscan    | find open ports                   |
 | -x         | --exif        | extracts Exif metadata from image |
@@ -242,7 +244,7 @@ Don't forget to give the project a star! Thanks again!
 3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
-
+ 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- LICENSE -->

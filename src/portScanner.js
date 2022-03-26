@@ -57,11 +57,6 @@ const portScanner = async (website, showHome = false, i = 0) => {
       checkPort(port, website);
     }, index * 500);
   });
-  if (showHome) {
-    setTimeout(() => {
-      goBack();
-    }, Object.keys(portsList).length * 500 + 2000);
-  }
 };
 
 module.exports = portScanner;

@@ -78,12 +78,6 @@ async function mailfinder(username, showHome = false) {
       }
     }, index * 500);
   });
-
-  if (showHome) {
-    setTimeout(() => {
-      goBack();
-    }, domainList.length * 500 + 5000);
-  }
 }
 
 module.exports = mailfinder;

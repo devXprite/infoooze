@@ -22,6 +22,7 @@ const version = module.exports.version;
 const updateNotifier = require('update-notifier');
 const pkg = require('./../package.json');
 const exifMetadata = require('./exif.js');
+const scanUrl = require('./scanUrl.js');
 
 const takeOption = async () => {
   var option = await input('Your Option ');
@@ -45,7 +46,7 @@ const takeOption = async () => {
   } else if (option == '9' || option == '09') {
     headerLookup(null, true);
   } else if (option == '10') {
-    dnsLookup(null, true);
+    scanUrl(null, true);
   } else if (option == '11') {
     gitRecon(null, true);
   } else if (option == '12') {
@@ -54,10 +55,12 @@ const takeOption = async () => {
     subdomainScanner(null, true);
   } else if (option == '14') {
     exifMetadata(null, true);
+  } else if (option == '15') {
+    dnsLookup(null, true);
   } else if (option == '99') {
     reportBug(null, true);
   } else if (option == 'exit' || option == '00' || option == '0') {
-    console.log(chalk.cyan('bye!'));
+    console.log('\n');
   } else {
     takeOption();
   }
@@ -93,11 +96,12 @@ const home = async (animationDelay = 2000, i = 1) => {
     ['Ports Scan', 'Find open ports'],
     ['Domain Age', 'Find website Age'],
     ['Header Info', 'Find website headers'],
-    ['DNS Lookup', 'Domain name system lookup'],
+    ['Website Scanner', 'Analyze suspicious URLs'],
     ['Git Recon', 'Find github user info'],
     ['Expand Url', 'Long url of shorten urls'],
     ['Subdomain', 'Find subdomains of website'],
     ['Exif Metadata', 'Extract Exif metadata from image'],
+    ['DNS Lookup', 'Domain name system lookup'],
   ];
 
   var table = new EasyTable();
