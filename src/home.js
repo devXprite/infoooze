@@ -22,7 +22,13 @@ const version = module.exports.version;
 const updateNotifier = require('update-notifier');
 const pkg = require('./../package.json');
 const exifMetadata = require('./exif.js');
+const args = require('args');
 const scanUrl = require('./scanUrl.js');
+
+const notifier = updateNotifier({
+  pkg,
+  updateCheckInterval: 1000 * 60 * 5,
+});
 
 const takeOption = async () => {
   var option = await input('Your Option ');
@@ -59,6 +65,8 @@ const takeOption = async () => {
     dnsLookup(null, true);
   } else if (option == '99') {
     reportBug(null, true);
+  } else if (option == '98') {
+    args.showHelp();
   } else if (option == 'exit' || option == '00' || option == '0') {
     console.log('\n');
   } else {
@@ -68,7 +76,6 @@ const takeOption = async () => {
 
 const home = async (animationDelay = 2000, i = 1) => {
   console.clear();
-  updateNotifier({ pkg }).notify();
   chalkAnimation.neon(
     `
     _____        __                         
@@ -83,6 +90,16 @@ const home = async (animationDelay = 2000, i = 1) => {
 
   await sleep(animationDelay);
   // console.log(chalk.hex('#FFA500')('\t     A OSINT based tool\n\n'));
+
+  if (notifier.update) {
+    console.log(
+      `\n\tUpdate available ${chalk.hex('#FFA500')(
+        pkg.version,
+      )} -> ${chalk.greenBright(notifier.update.latest)}`,
+    );
+    console.log(`\tRun ${chalk.cyan('npm i -g infoooze')} to update`);
+  }
+
   console.log('\n\n');
   await sleep(500);
 
@@ -117,15 +134,20 @@ const home = async (animationDelay = 2000, i = 1) => {
   });
 
   table.newRow();
+  table.cell(chalk.whiteBright('No'), chalk.cyan('98'));
+  table.cell(chalk.whiteBright('Name'), 'Help');
+  table.cell(chalk.whiteBright('Description'), chalk.gray('view help'));
+  table.newRow();
   table.cell(chalk.whiteBright('No'), chalk.cyan('99'));
   table.cell(chalk.whiteBright('Name'), 'Report Bug');
   table.cell(
     chalk.whiteBright('Description'),
     chalk.gray('report bug on github'),
   );
+
   table.newRow();
   table.cell(chalk.whiteBright('No'), chalk.cyan('00'));
-  table.cell(chalk.whiteBright('Name'), 'exit');
+  table.cell(chalk.whiteBright('Name'), 'Exit');
   table.cell(
     chalk.whiteBright('Description'),
     chalk.gray('close and exit tool'),
@@ -137,7 +159,6 @@ const home = async (animationDelay = 2000, i = 1) => {
 };
 
 const banner = () => {
-  updateNotifier({ pkg }).notify();
   console.log(
     chalk.hex('#FFA500')(`
   _____        __                         
@@ -149,6 +170,15 @@ const banner = () => {
                                     ${chalk.greenBright('v' + version)}
  `),
   );
+
+  if (notifier.update) {
+    console.log(
+      `\n\tUpdate available ${chalk.hex('#FFA500')(
+        pkg.version,
+      )} -> ${chalk.greenBright(notifier.update.latest)}`,
+    );
+    console.log(`\tRun ${chalk.cyan('npm i -g infoooze')} to update\n`);
+  }
 };
 
 module.exports = banner;

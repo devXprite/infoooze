@@ -20,6 +20,7 @@ const domainAge = require('./src/domainAge');
 const subdomainScanner = require('./src/subdomainScanner');
 const exifMetadata = require('./src/exif');
 const scanUrl = require('./src/scanUrl');
+const flagOptions = require('./src/flagOptions');
 
 async function welcome() {
   const glitchTitle = chalkAnimation.glitch('\nWelcome to Infoooze\n');
@@ -27,22 +28,7 @@ async function welcome() {
   glitchTitle.stop();
 }
 
-args
-  .option(['r', 'userrecon'], 'username reconnaissance')
-  .option(['m', 'mailfinder'], 'find email with specific name')
-  .option(['u', 'useragent'], 'find browser info')
-  .option(['w', 'whoislookup'], "find doamin's whois info")
-  .option(['i', 'instaRecon'], 'find Instagram users info')
-  .option(['p', 'iplookup'], 'find IP info')
-  .option(['t', 'portscan'], 'find open ports')
-  .option(['d', 'domainage'], 'find website Age')
-  .option(['e', 'headerinfo'], 'find website headers')
-  .option(['n', 'dnslookup'], 'domain name system lookup')
-  .option(['g', 'gitrecon'], 'find github user info')
-  .option(['s', 'subdomain'], 'find subdomains of website')
-  .option(['x', 'exif'], 'extracts Exif metadata from image')
-  .option(['a', 'webscan'], 'analyze suspicious URLs')
-  .option(['l', 'urlexpand'], 'long url of shorten URL');
+flagOptions();
 
 const flags = args.parse(process.argv);
 
