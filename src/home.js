@@ -17,7 +17,6 @@ const { sleep, input } = require('./common.js');
 const gitRecon = require('./gitRecon.js');
 const domainAge = require('./domainAge.js');
 const subdomainScanner = require('./subdomainScanner.js');
-const pkginfo = require('pkginfo')(module, 'version');
 const version = module.exports.version;
 const updateNotifier = require('update-notifier');
 const pkg = require('./../package.json');
@@ -27,7 +26,7 @@ const scanUrl = require('./scanUrl.js');
 
 const notifier = updateNotifier({
   pkg,
-  updateCheckInterval: 1000 * 60 * 5,
+  updateCheckInterval: 1000 * 60 * 2,
 });
 
 const takeOption = async () => {
@@ -84,7 +83,7 @@ const home = async (animationDelay = 2000, i = 1) => {
      | | | '_ \\|  _/ _ \\ / _ \\ / _ \\_  / _ \\
     _| |_| | | | || (_) | (_) | (_) / /  __/
    |_____|_| |_|_| \\___/ \\___/ \\___/___\\___|
-                                      ${chalk.greenBright('v' + version)}`,
+                                      ${chalk.greenBright('v' + pkg.version)}`,
     '2',
   );
 
@@ -167,7 +166,7 @@ const banner = () => {
    | | | '_ \\|  _/ _ \\ / _ \\ / _ \\_  / _ \\
   _| |_| | | | || (_) | (_) | (_) / /  __/
  |_____|_| |_|_| \\___/ \\___/ \\___/___\\___|
-                                    ${chalk.greenBright('v' + version)}
+                                    ${chalk.greenBright('v' + pkg.version)}
  `),
   );
 

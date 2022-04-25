@@ -1,7 +1,6 @@
 const open = require('open');
 const os = require('os');
-const pkginfo = require('pkginfo')(module, 'version');
-const version = module.exports.version;
+const pkg = require('../package.json');
 
 var body = `
 ### Describe the bug
@@ -12,7 +11,7 @@ If applicable, add screenshots to help explain your problem.
 
 ### System Information
 
-**Infoooze Version** : ${version}
+**Infoooze Version** : ${pkg.version}
 **Node Version** : ${process.version}
 **OS Type** : ${os.type()}
 **OS Version** : ${os.release()}

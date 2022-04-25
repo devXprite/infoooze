@@ -1,9 +1,9 @@
 <div id="top"></div>
 
 
-[![Downloads][downloads]][npm]
-[![Forks][forks-shield]][forks-url]
+<!-- [![Downloads][downloads]][npm] -->
 [![Stargazers][stars-shield]][stars-url]
+[![Forks][forks-shield]][forks-url]
 [![MIT License][license-shield]][license-url]
 <!-- [![version][version]][npm] -->
 <!-- [![Issues][issues-shield]][issues-url] -->

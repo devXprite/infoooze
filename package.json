@@ -39,7 +39,6 @@
     "lodash": "^4.17.21",
     "moment": "^2.29.1",
     "open": "^8.4.0",
-    "pkginfo": "^0.4.1",
     "portscanner": "^2.2.0",
     "prompt-sync": "^4.2.0",
     "request": "^2.88.2",
