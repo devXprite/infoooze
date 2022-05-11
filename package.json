@@ -8,7 +8,8 @@
     "start": "node index.js",
     "help": "node index.js -h",
     "check": "prettier --check .",
-    "fix": "prettier --write ."
+    "fix": "prettier --write .",
+    "postinstall": "node ./src/postinstall.js"
   },
   "license": "MIT",
   "author": {
@@ -50,7 +51,11 @@
     "prettier": "2.5.1"
   },
   "pre-commit": [],
-  "bin": "./index.js",
+  "bin": {
+    "infoooze": "index.js",
+    "infooze": "index.js",
+    "infoze": "index.js"
+  },
   "engines": {
     "node": ">=8.0.0"
   },

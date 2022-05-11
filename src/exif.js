@@ -33,10 +33,6 @@ const exifMetadata = async (image, showHome = false, i = 1) => {
   } catch (error) {
     errorMsg(error.message);
   }
-
-  if (showHome) {
-    goBack();
-  }
 };
 
 module.exports = exifMetadata;

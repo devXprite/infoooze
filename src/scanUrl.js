@@ -1,9 +1,16 @@
 const request = require('request');
 const chalk = require('chalk');
 const { sentenceCase } = require('sentence-case');
-const { input, info, currentTimeStamp, saveTo, errorMsg } = require('./common');
-
 const key = require('./secret');
+const {
+  input,
+  info,
+  currentTimeStamp,
+  saveTo,
+  errorMsg,
+  goBack,
+  sleep,
+} = require('./common');
 
 const list = async (counter, key, value) => {
   counter = counter <= 9 ? '0' + counter : counter;
@@ -15,6 +22,7 @@ const list = async (counter, key, value) => {
   value = value == 'Malicious' ? chalk.redBright(value) : value;
 
   key = sentenceCase(key);
+  await sleep(120);
 
   console.log(
     chalk.white('[') +
@@ -52,15 +60,16 @@ const scanUrl = async (website, showHome = false, i = 1) => {
           let analyseResult =
             response.body.data.attributes.last_analysis_results;
 
-          Object.keys(analyseResult).forEach((company, index) => {
-            setTimeout(() => {
-              list(i++, company, analyseResult[company]['result']);
-              saveTo(path, company, analyseResult[company]['result']);
-            }, 150 * index);
-          });
+          for (var key in analyseResult) {
+            await list(i++, key, analyseResult[key]['result']);
+            await saveTo(path, key, analyseResult[key]['result']);
+          }
         } else {
           errorMsg('Something went wrong! Please try again after some time.');
         }
+      }
+      if (showHome) {
+        goBack();
       }
     },
   );

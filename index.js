@@ -22,11 +22,11 @@ const exifMetadata = require('./src/exif');
 const scanUrl = require('./src/scanUrl');
 const flagOptions = require('./src/flagOptions');
 
-async function welcome() {
+const welcome = async () => {
   const glitchTitle = chalkAnimation.glitch('\nWelcome to Infoooze\n');
-  await sleep(3000);
+  await sleep(2000);
   glitchTitle.stop();
-}
+};
 
 flagOptions();
 

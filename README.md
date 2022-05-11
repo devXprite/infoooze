@@ -211,8 +211,6 @@ infoooze [options] [value]
   ```sh
   infoooze -p 8.8.8.8
   ```
-  _For more info, please refer to this [article](https://termuxtools.in/open-source-intelligence-gathering-tool-infoooze/)_
-
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- ScreenShots -->

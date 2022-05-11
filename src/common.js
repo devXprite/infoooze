@@ -10,7 +10,7 @@ const sleep = async (ms = 1000) => new Promise((r) => setTimeout(r, ms));
 
 const currentTimeStamp = () => moment().format('DDMMYYYYHHmmss');
 
-const saveTo = (path, value, value2) => {
+const saveTo = async (path, value, value2) => {
   try {
     if (!fs.existsSync('./results')) {
       fs.mkdirSync('./results');
@@ -37,7 +37,7 @@ const list = async (counter, key, value) => {
   value = value || chalk.redBright('n/a');
   key = sentenceCase(key);
 
-  await sleep(250);
+  await sleep(200);
   console.log(
     chalk.white('[') +
       chalk.hex('#FFA500')(counter) +

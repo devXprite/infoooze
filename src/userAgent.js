@@ -5,7 +5,7 @@ const { list, goBack, input, errorMsg } = require('./common.js');
 const key = require('./secret.js');
 
 async function useragent(useragent, showHome = false, i = 1) {
-  useragent = useragent || (await input('Your UserAgent'));
+  useragent = useragent || (await input('Your UserAgent String'));
 
   request(
     {

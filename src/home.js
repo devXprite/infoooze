@@ -17,7 +17,6 @@ const { sleep, input } = require('./common.js');
 const gitRecon = require('./gitRecon.js');
 const domainAge = require('./domainAge.js');
 const subdomainScanner = require('./subdomainScanner.js');
-const version = module.exports.version;
 const updateNotifier = require('update-notifier');
 const pkg = require('./../package.json');
 const exifMetadata = require('./exif.js');
@@ -67,13 +66,13 @@ const takeOption = async () => {
   } else if (option == '98') {
     args.showHelp();
   } else if (option == 'exit' || option == '00' || option == '0') {
-    console.log('\n');
+    console.log(chalk.hex('#FFA500')('\nThank You for using Infoooze'));
   } else {
     takeOption();
   }
 };
 
-const home = async (animationDelay = 2000, i = 1) => {
+const home = async (animationDelay = 1500, i = 1) => {
   console.clear();
   chalkAnimation.neon(
     `
