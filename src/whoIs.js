@@ -6,16 +6,16 @@ const {
   goBack,
   currentTimeStamp,
   saveTo,
-} = require('./common.js');
+} = require('./common');
 
 const whois = async (website, showHome = false, i = 1) => {
   website = website || (await input('Your Website'));
 
   const path = `${process.cwd()}/results/infoooze_whois_${currentTimeStamp()}.txt`;
-  info(`Results will be saved in `, path);
+  info('Results will be saved in ', path);
 
-  var whoisData = await whoisJson(website);
-  for (var key in whoisData) {
+  const whoisData = await whoisJson(website);
+  for (const key in whoisData) {
     if (!whoisData[key].includes('REDACTED')) {
       await list(i++, key, whoisData[key]);
       saveTo(path, key, whoisData[key]);

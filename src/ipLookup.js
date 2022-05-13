@@ -9,12 +9,12 @@ const {
   currentTimeStamp,
   info,
   saveTo,
-} = require('./common.js');
+} = require('./common');
 
 const IPlookup = async (ip, showHome = false, i = 1) => {
   ip = ip || (await input('Your IP'));
   const path = `${process.cwd()}/results/infoooze_IPLookup_${currentTimeStamp()}.txt`;
-  info(`Results will be saved in `, path);
+  info('Results will be saved in ', path);
   request(
     {
       url: `https://ipapi.co/${ip}/json/`,
@@ -24,10 +24,10 @@ const IPlookup = async (ip, showHome = false, i = 1) => {
       },
       json: true,
     },
-    async function (error, response) {
+    async (error, response) => {
       if (!error && response.statusCode == 200) {
-        let IPData = response.body;
-        for (var key in IPData) {
+        const IPData = response.body;
+        for (const key in IPData) {
           await list(i++, key, IPData[key]);
           saveTo(path, key, IPData[key]);
         }

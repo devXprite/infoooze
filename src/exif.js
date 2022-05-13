@@ -1,4 +1,4 @@
-const ExifImage = require('exif').ExifImage;
+const { ExifImage } = require('exif');
 const {
   list,
   input,
@@ -7,16 +7,16 @@ const {
   currentTimeStamp,
   saveTo,
   errorMsg,
-} = require('./common.js');
+} = require('./common');
 
 const exifMetadata = async (image, showHome = false, i = 1) => {
   image = image || (await input('Your Image path'));
 
   const path = `${process.cwd()}/results/infoooze_exif_${currentTimeStamp()}.txt`;
-  info(`Results will be saved in `, path);
+  info('Results will be saved in ', path);
 
   try {
-    new ExifImage({ image: image }, function async(error, response) {
+    new ExifImage({ image }, ((error, response) => {
       if (error) {
         errorMsg(error.message);
       } else {
@@ -29,7 +29,7 @@ const exifMetadata = async (image, showHome = false, i = 1) => {
           });
         });
       }
-    });
+    }));
   } catch (error) {
     errorMsg(error.message);
   }

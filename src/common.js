@@ -1,3 +1,4 @@
+/* eslint-disable global-require */
 const chalk = require('chalk');
 const fs = require('fs');
 const { sentenceCase } = require('sentence-case');
@@ -29,7 +30,7 @@ const saveTo = async (path, value, value2) => {
 };
 
 const list = async (counter, key, value) => {
-  counter = counter <= 9 ? '0' + counter : counter;
+  counter = counter <= 9 ? `0${counter}` : counter;
   if (typeof value == 'boolean') {
     value = value ? 'Yes' : 'No';
   }
@@ -39,11 +40,11 @@ const list = async (counter, key, value) => {
 
   await sleep(200);
   console.log(
-    chalk.white('[') +
-      chalk.hex('#FFA500')(counter) +
-      chalk.white('] ') +
-      chalk.cyan(key + ' : ') +
-      chalk.greenBright(value),
+    chalk.white('[')
+      + chalk.hex('#FFA500')(counter)
+      + chalk.white('] ')
+      + chalk.cyan(`${key} : `)
+      + chalk.greenBright(value),
   );
 };
 
@@ -52,28 +53,26 @@ const goBack = async () => {
   require('./home').home();
 };
 
-const input = async (text) => {
-  return prompt(` ${chalk.cyanBright('>')} ${chalk.bold(text)} : `);
-};
+const input = async (text) => prompt(` ${chalk.cyanBright('>')} ${chalk.bold(text)} : `);
 
 const errorMsg = async (
   msg = 'Something went wrong! Please check your internet.',
 ) => {
   console.log(
-    chalk.white('[') +
-      chalk.redBright('!') +
-      chalk.white('] ') +
-      chalk.hex('#FFA500')(msg),
+    chalk.white('[')
+      + chalk.redBright('!')
+      + chalk.white('] ')
+      + chalk.hex('#FFA500')(msg),
   );
 };
 
 const info = async (msg, path = '') => {
   console.log(
-    chalk.white('\n[') +
-      chalk.cyan('!') +
-      chalk.white('] ') +
-      chalk.cyan(msg) +
-      chalk.hex('#FFA500')(path),
+    chalk.white('\n[')
+      + chalk.cyan('!')
+      + chalk.white('] ')
+      + chalk.cyan(msg)
+      + chalk.hex('#FFA500')(path),
   );
   console.log('\n');
 };

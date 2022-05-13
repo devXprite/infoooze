@@ -1,6 +1,6 @@
 const portscanner = require('portscanner');
 const chalk = require('chalk');
-const { goBack, input, errorMsg } = require('./common.js');
+const { goBack, input, errorMsg } = require('./common');
 
 const portsList = {
   21: 'FTP',
@@ -29,7 +29,7 @@ const portsList = {
 };
 
 async function checkPort(port, website) {
-  portscanner.checkPortStatus(port, website, function (error, status) {
+  portscanner.checkPortStatus(port, website, (error, status) => {
     if (!error) {
       if (status == 'open') {
         console.log(

@@ -1,10 +1,10 @@
 <div id="top"></div>
 
 
-<!-- [![Downloads][downloads]][npm] -->
+<!-- [![Downloads][downloads]][npm]
 [![Stargazers][stars-shield]][stars-url]
 [![Forks][forks-shield]][forks-url]
-[![MIT License][license-shield]][license-url]
+[![MIT License][license-shield]][license-url] -->
 <!-- [![version][version]][npm] -->
 <!-- [![Issues][issues-shield]][issues-url] -->
 <!-- [![Contributors][contributors-shield]][contributors-url] -->
@@ -13,26 +13,30 @@
 <br />
 <div align="center">
   <a href="https://github.com/7orp3do/infoooze">
-    <img src="./images/logo-dark.png#gh-dark-mode-only" alt="Logo" height="120px">
-    <!-- <img src="./images/logo-light.png#gh-light-mode-only" alt="Logo" height="120px"> -->
+    <img src="./images/logo-main.png" alt="Logo" height="160px">
   </a>
 
-<h3 align="center">Infoooze</h3>
+<h2 align="center">Infoooze</h2>
 
   <p align="center">
-    <a href="https://github.com/7orp3do/infoooze">View Demo</a>
-    ·
-    <a href="https://github.com/7orp3do/infoooze/issues">Report Bug</a>
+    <a href="https://github.com/7ORP3DO/infoooze/issues/new?assignees=&labels=bug&template=bug_report.md&title=">Report Bug</a>
     ·
     <a href="https://github.com/7orp3do/infoooze/issues">Request Feature</a>
   </p>
+  <img alt="npm" src="https://img.shields.io/npm/dw/infoooze">  
+  <img alt="npm" src="https://img.shields.io/github/stars/7orp3do/infoooze">
+  <img alt="npm" src="https://img.shields.io/npm/v/infoooze?color=green&label=version">
+  <img alt="npm" src="https://img.shields.io/github/forks/7orp3do/infoooze"> 
+<br />
+<br />
+
 </div>
 
 <!-- TABLE OF CONTENTS -->
 
 ## 📚 Table of Content
 
-1. [About infoooze](#-about-infoooze)
+1. [About Infoooze](#-about-infoooze)
    - [Features](#-features)
    - [Support](#-support)
 2. [Getting Started](#-getting-started)
@@ -42,7 +46,6 @@
      - [Using GIT](#using-git)
      - [Using NPX](#using-npx)
    - [Installation on Android](#-getting-started)
-   - [Installation on Windows](#-getting-started)
    - [Uninstall](#uninstall)
 3. [Usage](#-usage)
    - [Options](#options)
@@ -53,7 +56,9 @@
 
 <!-- ABOUT THE PROJECT -->
 
-## ✨ About infoooze
+## ✨ About Infoooze
+
+Infoooze is a New OSINT tool in NodeJs. It helps you to quickly find information about "something" effectively. Its a Global package so that you can easily use it independently from any directory. All you need is to input info such as website, ip, username... and it will take take care of rest. 
 
 ### 💡 Features
 
@@ -134,17 +139,6 @@ Installation Process is same as Linux
  npm install -g -s infoooze
 ```
 
-### Installation on [Windows ](https://wikipedia.org/wiki/Microsoft_Windows)
-
-1. Download and install NodeJs from [here](https://nodejs.org/en/download/).
-2. Download infoooze zip file from [here](https://github.com/7ORP3DO/infoooze/zipball/master/).
-3. Open infoooze folder and type following commands :
-
-```bash
-npm install
-node index.js
-```
-
 ### Uninstall
 
 ```sh
@@ -158,10 +152,11 @@ npm remove infoooze -g
 ## 🚀 Usage
 
 After installing you can run tool by just typing `infoooze`.
-
 ```sh
 infoooze [options] [value]
 ```
+> You can also use **infooze** & **infoze**.
+
 
 ### Options:
 
@@ -251,11 +246,6 @@ Don't forget to give the project a star! Thanks again!
 
 Distributed under the MIT License. See `LICENSE.txt` for more information.
 
-<!-- ACKNOWLEDGMENTS -->
-
-<!-- ## 👍 Acknowledgments
-
-
 <!-- CONTACT -->
 
 ## 📧 Contact
@@ -263,12 +253,6 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 - Twitter: [@bhps82](https://twitter.com/bhps82)
 - Github: [@7ORP3DO](https://twitter.com/bhps82)
 
-<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://github.com/7orp3do/infoooz" width="0%" height="0%">
-
-<!-- ## 🎨 Release History
-
-- 🔖 1.0.0
-  - 🚧 Work in progress -->
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
@@ -286,7 +270,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/bhps82
 [product-screenshot]: images/screenshot.png
-[downloads]: https://img.shields.io/npm/dt/infoooze?style=for-the-badge
+[downloads]: https://img.shields.io/npm/dw/infoooze?style=for-the-badge
 [npm]: https://www.npmjs.com/package/infoooze
 [version]: https://img.shields.io/npm/v/infoooze?style=for-the-badge
 [quality]: https://img.shields.io/npms-io/quality-score/infoooze?style=for-the-badge

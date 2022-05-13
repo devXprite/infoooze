@@ -1,27 +1,26 @@
 const chalk = require('chalk');
 const chalkAnimation = require('chalk-animation');
 const EasyTable = require('easy-table');
-const open = require('open');
-const userrecon = require('./userRecon.js');
-const mailfinder = require('./mailFinder.js');
-const useragent = require('./userAgent.js');
-const instaRecon = require('./instaRecon.js');
-const whois = require('./whoIs.js');
-const IPlookup = require('./ipLookup.js');
-const dnsLookup = require('./dnsLookup.js');
-const portScanner = require('./portScanner.js');
-const headerLookup = require('./headerLookup.js');
-const urlExpander = require('./urlExpander.js');
-const reportBug = require('./reportBug');
-const { sleep, input } = require('./common.js');
-const gitRecon = require('./gitRecon.js');
-const domainAge = require('./domainAge.js');
-const subdomainScanner = require('./subdomainScanner.js');
 const updateNotifier = require('update-notifier');
-const pkg = require('./../package.json');
-const exifMetadata = require('./exif.js');
 const args = require('args');
-const scanUrl = require('./scanUrl.js');
+const userrecon = require('./userRecon');
+const mailfinder = require('./mailFinder');
+const useragent = require('./userAgent');
+const instaRecon = require('./instaRecon');
+const whois = require('./whoIs');
+const IPlookup = require('./ipLookup');
+const dnsLookup = require('./dnsLookup');
+const portScanner = require('./portScanner');
+const headerLookup = require('./headerLookup');
+const urlExpander = require('./urlExpander');
+const reportBug = require('./reportBug');
+const { sleep, input } = require('./common');
+const gitRecon = require('./gitRecon');
+const domainAge = require('./domainAge');
+const subdomainScanner = require('./subdomainScanner');
+const pkg = require('../package.json');
+const exifMetadata = require('./exif');
+const scanUrl = require('./scanUrl');
 
 const notifier = updateNotifier({
   pkg,
@@ -29,7 +28,7 @@ const notifier = updateNotifier({
 });
 
 const takeOption = async () => {
-  var option = await input('Your Option ');
+  const option = await input('Your Option ');
 
   if (option == '1' || option == '01') {
     userrecon(null, true);
@@ -72,7 +71,7 @@ const takeOption = async () => {
   }
 };
 
-const home = async (animationDelay = 1500, i = 1) => {
+const home = async (animationDelay = 1500) => {
   console.clear();
   chalkAnimation.neon(
     `
@@ -82,7 +81,7 @@ const home = async (animationDelay = 1500, i = 1) => {
      | | | '_ \\|  _/ _ \\ / _ \\ / _ \\_  / _ \\
     _| |_| | | | || (_) | (_) | (_) / /  __/
    |_____|_| |_|_| \\___/ \\___/ \\___/___\\___|
-                                      ${chalk.greenBright('v' + pkg.version)}`,
+                                      ${chalk.greenBright(`v${pkg.version}`)}`,
     '2',
   );
 
@@ -101,7 +100,7 @@ const home = async (animationDelay = 1500, i = 1) => {
   console.log('\n\n');
   await sleep(500);
 
-  var optionsData = [
+  const optionsData = [
     ['User Recon', 'Username reconnaissance'],
     ['Mail Finder ', 'Find email with specific name'],
     ['Useragent', 'Find browser info'],
@@ -119,12 +118,12 @@ const home = async (animationDelay = 1500, i = 1) => {
     ['DNS Lookup', 'Domain name system lookup'],
   ];
 
-  var table = new EasyTable();
+  const table = new EasyTable();
 
   optionsData.forEach((details, index) => {
     table.cell(
       chalk.whiteBright('No'),
-      chalk.cyan(index < 9 ? '0' + (index + 1) : index + 1),
+      chalk.cyan(index < 9 ? `0${index + 1}` : index + 1),
     );
     table.cell(chalk.whiteBright('Name'), details[0]);
     table.cell(chalk.whiteBright('Description'), chalk.gray(details[1]));
@@ -165,7 +164,7 @@ const banner = () => {
    | | | '_ \\|  _/ _ \\ / _ \\ / _ \\_  / _ \\
   _| |_| | | | || (_) | (_) | (_) / /  __/
  |_____|_| |_|_| \\___/ \\___/ \\___/___\\___|
-                                    ${chalk.greenBright('v' + pkg.version)}
+                                    ${chalk.greenBright(`v${pkg.version}`)}
  `),
   );
 

@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 
-const chalk = require('chalk');
 const args = require('args');
 const chalkAnimation = require('chalk-animation');
 const { home, banner } = require('./src/home');
@@ -81,5 +80,5 @@ if (flags.userrecon) {
   (async function () {
     await welcome();
     await home();
-  })();
+  }());
 }

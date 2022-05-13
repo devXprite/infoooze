@@ -1,8 +1,10 @@
 const request = require('request');
 const chalk = require('chalk');
 
-const { list, goBack, input, errorMsg } = require('./common.js');
-const key = require('./secret.js');
+const {
+  list, goBack, input, errorMsg,
+} = require('./common');
+const key = require('./secret');
 
 async function useragent(useragent, showHome = false, i = 1) {
   useragent = useragent || (await input('Your UserAgent String'));
@@ -15,9 +17,9 @@ async function useragent(useragent, showHome = false, i = 1) {
       timeout: 5000,
       json: true,
     },
-    async function (error, response) {
+    async (error, response) => {
       if (!error && response.statusCode == 200) {
-        let data = response.body;
+        const data = response.body;
 
         try {
           await list(i++, 'Type', data.type);

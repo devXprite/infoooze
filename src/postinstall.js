@@ -3,8 +3,8 @@
 const chalk = require('chalk');
 const chalkAnimation = require('chalk-animation');
 
-let ThanksAnimation = chalkAnimation.rainbow(
-  `Thank You for Installing Infoooze`,
+const ThanksAnimation = chalkAnimation.rainbow(
+  'Thank You for Installing Infoooze',
 );
 
 setTimeout(() => {

@@ -13,7 +13,7 @@ const {
 } = require('./common');
 
 const list = async (counter, key, value) => {
-  counter = counter <= 9 ? '0' + counter : counter;
+  counter = counter <= 9 ? `0${counter}` : counter;
   value = sentenceCase(value);
 
   value = value == 'Unrated' ? chalk.yellowBright(value) : value;
@@ -25,11 +25,11 @@ const list = async (counter, key, value) => {
   await sleep(120);
 
   console.log(
-    chalk.white('[') +
-      chalk.hex('#FFA500')(counter) +
-      chalk.white('] ') +
-      chalk.whiteBright(key + ' : ') +
-      value,
+    chalk.white('[')
+      + chalk.hex('#FFA500')(counter)
+      + chalk.white('] ')
+      + chalk.whiteBright(`${key} : `)
+      + value,
   );
 };
 
@@ -39,7 +39,7 @@ const scanUrl = async (website, showHome = false, i = 1) => {
   website = website || (await input('Your Website'));
 
   const path = `${process.cwd()}/results/infoooze_websiteScan_${currentTimeStamp()}.txt`;
-  info(`Results will be saved in `, path);
+  info('Results will be saved in ', path);
 
   request(
     {
@@ -55,18 +55,15 @@ const scanUrl = async (website, showHome = false, i = 1) => {
     async (error, response) => {
       if (error) {
         errorMsg();
-      } else {
-        if (response.statusCode == 200) {
-          let analyseResult =
-            response.body.data.attributes.last_analysis_results;
+      } else if (response.statusCode == 200) {
+        const analyseResult = response.body.data.attributes.last_analysis_results;
 
-          for (var key in analyseResult) {
-            await list(i++, key, analyseResult[key]['result']);
-            await saveTo(path, key, analyseResult[key]['result']);
-          }
-        } else {
-          errorMsg('Something went wrong! Please try again after some time.');
+        for (const key in analyseResult) {
+          await list(i++, key, analyseResult[key].result);
+          await saveTo(path, key, analyseResult[key].result);
         }
+      } else {
+        errorMsg('Something went wrong! Please try again after some time.');
       }
       if (showHome) {
         goBack();

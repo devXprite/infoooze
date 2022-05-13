@@ -10,12 +10,12 @@ const {
   currentTimeStamp,
   info,
   saveTo,
-} = require('./common.js');
+} = require('./common');
 
 async function instaRecon(username, showHome = false, i = 1) {
   var username = username || (await input('Your Username'));
   const path = `${process.cwd()}/results/infoooze_InstaRecon_${currentTimeStamp()}.txt`;
-  info(`Results will be saved in `, path);
+  info('Results will be saved in ', path);
 
   request(
     {
@@ -34,20 +34,20 @@ async function instaRecon(username, showHome = false, i = 1) {
         'accept-language': 'en-US,en;q=0.9',
       },
     },
-    async function (error, response) {
+    async (error, response) => {
       if (!error && response.statusCode == 200) {
         try {
-          let IGData = response.body.graphql.user;
-          for (var key in IGData) {
+          const IGData = response.body.graphql.user;
+          for (const key in IGData) {
             if (typeof IGData[key] != 'object') {
               await list(i++, key, IGData[key]);
               saveTo(path, key, IGData[key]);
             }
           }
           console.log('\n');
-          var showDP = await input('View Profile Picture? [Y/N]');
+          const showDP = await input('View Profile Picture? [Y/N]');
           if (showDP == 'y' || showDP == 'Y') {
-            open(IGData['profile_pic_url_hd']);
+            open(IGData.profile_pic_url_hd);
           }
         } catch (error) {
           errorMsg('Something went wrong! Please try again after some time.');

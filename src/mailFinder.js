@@ -7,9 +7,9 @@ const {
   currentTimeStamp,
   info,
   saveTo,
-} = require('./common.js');
+} = require('./common');
 
-const key = require('./secret.js');
+const key = require('./secret');
 
 async function mailfinder(username, showHome = false) {
   username = username || (await input('Your Username'));
@@ -26,10 +26,10 @@ async function mailfinder(username, showHome = false) {
   ];
 
   const path = `${process.cwd()}/results/infoooze_mailFinder_${currentTimeStamp()}.txt`;
-  info(`Results will be saved in `, path);
+  info('Results will be saved in ', path);
   domainList.forEach(async (domain, index) => {
     setTimeout(() => {
-      let email = `${username}@${domain}`;
+      const email = `${username}@${domain}`;
 
       try {
         request(
@@ -45,31 +45,29 @@ async function mailfinder(username, showHome = false) {
             if (!error && response.statusCode == 200) {
               if (response.body.status == 'valid') {
                 console.log(
-                  chalk.cyan('[') +
-                    chalk.greenBright('+') +
-                    chalk.cyan('] ') +
-                    chalk.greenBright(email),
+                  chalk.cyan('[')
+                    + chalk.greenBright('+')
+                    + chalk.cyan('] ')
+                    + chalk.greenBright(email),
                 );
                 saveTo(path, 'valid', email);
               } else {
                 console.log(
-                  chalk.cyan('[') +
-                    chalk.redBright('+') +
-                    chalk.cyan('] ') +
-                    chalk.redBright(email),
+                  chalk.cyan('[')
+                    + chalk.redBright('+')
+                    + chalk.cyan('] ')
+                    + chalk.redBright(email),
                 );
                 saveTo(path, 'invalid', email);
               }
             } else {
-              {
-                console.log(
-                  chalk.cyan('[') +
-                    chalk.redBright('+') +
-                    chalk.cyan('] ') +
-                    chalk.redBright(email),
-                );
-                saveTo(path, 'invalid', email);
-              }
+              console.log(
+                chalk.cyan('[')
+                    + chalk.redBright('+')
+                    + chalk.cyan('] ')
+                    + chalk.redBright(email),
+              );
+              saveTo(path, 'invalid', email);
             }
           },
         );

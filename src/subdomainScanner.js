@@ -1,4 +1,7 @@
 const request = require('request');
+
+const jsdom = require('jsdom');
+const chalk = require('chalk');
 const {
   goBack,
   input,
@@ -7,22 +10,20 @@ const {
   info,
   saveTo,
   sleep,
-} = require('./common.js');
+} = require('./common');
 
-const jsdom = require('jsdom');
-const chalk = require('chalk');
 const { JSDOM } = jsdom;
 
 const list = async (counter, subdomain, path) => {
-  counter = counter <= 9 ? '0' + counter : counter;
+  counter = counter <= 9 ? `0${counter}` : counter;
 
   await sleep(100);
 
   console.log(
-    chalk.white('[') +
-      chalk.hex('#FFA500')(counter) +
-      chalk.white('] ') +
-      chalk.greenBright(subdomain),
+    chalk.white('[')
+      + chalk.hex('#FFA500')(counter)
+      + chalk.white('] ')
+      + chalk.greenBright(subdomain),
   );
   saveTo(path, subdomain);
 };
@@ -30,7 +31,7 @@ const list = async (counter, subdomain, path) => {
 const subdomainScanner = async (website, showHome = false, i = 1) => {
   website = website || (await input('Your Website'));
   const path = `${process.cwd()}/results/infoooze_subdomainScanner_${currentTimeStamp()}.txt`;
-  info(`Results will be saved in `, path);
+  info('Results will be saved in ', path);
 
   request(
     `https://www.pagesinventory.com/search/?s=${website}`,
@@ -38,14 +39,14 @@ const subdomainScanner = async (website, showHome = false, i = 1) => {
       if (error) {
         errorMsg();
       } else {
-        let responseData = response.body;
-        let dom = new JSDOM(responseData);
-        let subdomainsObj = dom.window.document.querySelectorAll(
+        const responseData = response.body;
+        const dom = new JSDOM(responseData);
+        const subdomainsObj = dom.window.document.querySelectorAll(
           'tr > td:nth-child(1)  a',
         );
 
-        for (var key in subdomainsObj) {
-          await list(i++, subdomainsObj[key]['textContent'], path);
+        for (const key in subdomainsObj) {
+          await list(i++, subdomainsObj[key].textContent, path);
         }
 
         if (

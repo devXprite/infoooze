@@ -9,7 +9,7 @@ const {
   currentTimeStamp,
   info,
   saveTo,
-} = require('./common.js');
+} = require('./common');
 
 const headersList = {
   Accept: '*/*',
@@ -20,7 +20,7 @@ const headersList = {
 const gitRecon = async (username, showHome = false, i = 1) => {
   username = username || (await input('Enter Github Username'));
   const path = `${process.cwd()}/results/infoooze_GitRecon_${currentTimeStamp()}.txt`;
-  info(`Results will be saved in `, path);
+  info('Results will be saved in ', path);
   request(
     {
       url: `https://api.github.com/users/${username}`,
@@ -28,10 +28,10 @@ const gitRecon = async (username, showHome = false, i = 1) => {
       json: true,
       headers: headersList,
     },
-    async function (error, response) {
+    async (error, response) => {
       if (!error && response.statusCode == 200) {
-        let data = response.body;
-        for (var key in data) {
+        const data = response.body;
+        for (const key in data) {
           if (!key.includes('documentation_url')) {
             await list(i++, key, data[key]);
             saveTo(path, key, data[key]);
