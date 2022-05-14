@@ -13,7 +13,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/7orp3do/infoooze">
-    <img src="./images/logo-main.png" alt="Logo" height="160px">
+    <img src="./images/logo-main.png" alt="Logo" height="135px">
   </a>
 
 <h2 align="center">Infoooze</h2>
