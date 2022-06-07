@@ -1,6 +1,6 @@
 {
   "name": "infoooze",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "description": "A OSINT based famework",
   "main": "index.js",
   "type": "commonjs",
@@ -9,8 +9,8 @@
     "help": "node index.js -h",
     "check": "prettier --check .",
     "format": "prettier --write .",
-    "fix":"eslint . --ext .js  --ignore-pattern temp/ --ignore-pattern src/secret.js  --fix",
-    "lint" :"eslint --ignore-pattern temp/ --ignore-pattern src/secret.js",
+    "fix": "eslint . --ext .js  --ignore-pattern temp/ --ignore-pattern src/secret.js  --fix",
+    "lint": "eslint --ignore-pattern temp/ --ignore-pattern src/secret.js",
     "postinstall": "node ./src/postinstall.js"
   },
   "license": "MIT",
