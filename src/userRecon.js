@@ -6,7 +6,7 @@ const {
   currentTimeStamp,
   info,
   saveTo,
-} = require('./common');
+} = require('./helper');
 
 const userrecon = async (username) => {
   username = username || (await input('Your Username'));

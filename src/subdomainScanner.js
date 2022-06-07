@@ -10,7 +10,7 @@ const {
   info,
   saveTo,
   sleep,
-} = require('./common');
+} = require('./helper');
 
 const { JSDOM } = jsdom;
 

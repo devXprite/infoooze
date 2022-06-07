@@ -7,7 +7,7 @@ const {
   currentTimeStamp,
   info,
   saveTo,
-} = require('./common');
+} = require('./helper');
 
 const dnsLookup = async (website, i = 1) => {
   website = website || (await input('Your Website'));

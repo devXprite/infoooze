@@ -6,7 +6,7 @@ const {
   goBack,
   currentTimeStamp,
   saveTo,
-} = require('./common');
+} = require('./helper');
 
 const whois = async (website, showHome = false, i = 1) => {
   website = website || (await input('Your Website'));

@@ -9,7 +9,7 @@ const {
   currentTimeStamp,
   info,
   saveTo,
-} = require('./common');
+} = require('./helper');
 
 const IPlookup = async (ip, showHome = false, i = 1) => {
   ip = ip || (await input('Your IP'));

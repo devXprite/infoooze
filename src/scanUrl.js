@@ -10,7 +10,7 @@ const {
   errorMsg,
   goBack,
   sleep,
-} = require('./common');
+} = require('./helper');
 
 const list = async (counter, key, value) => {
   counter = counter <= 9 ? `0${counter}` : counter;

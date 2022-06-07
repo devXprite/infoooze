@@ -10,7 +10,7 @@ const {
   currentTimeStamp,
   info,
   saveTo,
-} = require('./common');
+} = require('./helper');
 
 async function instaRecon(username, showHome = false, i = 1) {
   var username = username || (await input('Your Username'));

@@ -1,3 +1,4 @@
+/* eslint-disable no-new */
 const { ExifImage } = require('exif');
 const {
   list,
@@ -7,7 +8,7 @@ const {
   currentTimeStamp,
   saveTo,
   errorMsg,
-} = require('./common');
+} = require('./helper');
 
 const exifMetadata = async (image, showHome = false, i = 1) => {
   image = image || (await input('Your Image path'));

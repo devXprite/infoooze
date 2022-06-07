@@ -3,7 +3,7 @@ const chalk = require('chalk');
 
 const {
   list, goBack, input, errorMsg,
-} = require('./common');
+} = require('./helper');
 const key = require('./secret');
 
 async function useragent(useragent, showHome = false, i = 1) {

@@ -7,7 +7,7 @@ const {
   currentTimeStamp,
   info,
   saveTo,
-} = require('./common');
+} = require('./helper');
 
 const headerLookup = async (website, showHome = false, i = 1) => {
   website = website || (await input('Your Website'));

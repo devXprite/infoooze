@@ -1,6 +1,6 @@
 const portscanner = require('portscanner');
 const chalk = require('chalk');
-const { goBack, input, errorMsg } = require('./common');
+const { goBack, input, errorMsg } = require('./helper');
 
 const portsList = {
   21: 'FTP',

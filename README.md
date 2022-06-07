@@ -34,33 +34,33 @@
 
 <!-- TABLE OF CONTENTS -->
 
-## 📚 Table of Content
+## Table of Content
 
-1. [About Infoooze](#-about-infoooze)
-   - [Features](#-features)
-   - [Support](#-support)
-2. [Getting Started](#-getting-started)
+1. [About Infoooze](#about-infoooze)
+   - [Features](#features)
+   - [Support](#support)
+2. [Getting Started](#getting-started)
    - [Prerequisites](#prerequisites)
-   - [Installation on Linux](#-getting-started)
+   - [Installation on Linux](#getting-started)
      - [Using NPM](#using-npm)
      - [Using GIT](#using-git)
-     - [Using NPX](#using-npx)
-   - [Installation on Android](#-getting-started)
+   - [Installation on Android](#getting-started)
    - [Uninstall](#uninstall)
-3. [Usage](#-usage)
+3. [Usage](#usage)
    - [Options](#options)
    - [Examples](#examples)
-4. [Contributing](#-contributing)
-5. [License](#-license)
-6. [Contact](#-contact)
+4. [Run in Gitpod](#run-with-gitpod)
+5. [Contributing](#contributing)
+6. [License](#license)
+7. [Contact](#contact)
 
 <!-- ABOUT THE PROJECT -->
 
-## ✨ About Infoooze
+## About Infoooze
 
 Infoooze is a New OSINT tool in NodeJs. It helps you to quickly find information about "something" effectively. Its a Global package so that you can easily use it independently from any directory. All you need is to input info such as website, ip, username... and it will take take care of rest. 
 
-### 💡 Features
+### Features
 
 1.  Insta Recon
 2.  Subdomain Scanner
@@ -80,7 +80,7 @@ Infoooze is a New OSINT tool in NodeJs. It helps you to quickly find information
 16. Instagram DP Viwer
 17. Save Results to file
 
-### 🔨 Support
+### Support
 
 | Linux | Termux | Windows | Mac |
 | ----- | ------ | ------- | --- |
@@ -91,7 +91,7 @@ Infoooze is a New OSINT tool in NodeJs. It helps you to quickly find information
 
 <!-- GETTING STARTED -->
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -123,13 +123,6 @@ You need **NodeJs** 10 or later to run this tool. You can install NodeJs
   npm install git+ssh://git@github.com/7ORP3DO/infoooze.git -g
   ```
 
-- #### Using NPX
-
-  Try without install it locally.
-
-  ```sh
-  npx infoooze
-  ```
 
 ### Installation on [Termux](https://github.com/termux/termux-app#f-droid)
 
@@ -149,7 +142,7 @@ npm remove infoooze -g
 
 <!-- USAGE EXAMPLES -->
 
-## 🚀 Usage
+## Usage
 
 After installing you can run tool by just typing `infoooze`.
 ```sh
@@ -208,9 +201,18 @@ infoooze [options] [value]
   ```
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+<!-- GitPod -->
+
+## Run with Gitpod
+
+Click this button to run your project on Gitpod which comes with pre-configured environment you need.
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/7ORP3DO/infoooze)
+
+
 <!-- ScreenShots -->
 
-<h2>📸 Screenshots</h2>
+<h2> Screenshots</h2>
  
 <br>
 
@@ -225,7 +227,7 @@ infoooze [options] [value]
 
 <!-- CONTRIBUTING -->
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
@@ -242,13 +244,13 @@ Don't forget to give the project a star! Thanks again!
 
 <!-- LICENSE -->
 
-## 📝 License
+## License
 
 Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 <!-- CONTACT -->
 
-## 📧 Contact
+## Contact
 
 - Twitter: [@bhps82](https://twitter.com/bhps82)
 - Github: [@7ORP3DO](https://twitter.com/bhps82)

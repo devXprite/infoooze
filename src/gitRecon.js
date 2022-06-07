@@ -9,7 +9,7 @@ const {
   currentTimeStamp,
   info,
   saveTo,
-} = require('./common');
+} = require('./helper');
 
 const headersList = {
   Accept: '*/*',

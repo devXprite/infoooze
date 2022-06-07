@@ -10,7 +10,8 @@
     "check": "prettier --check .",
     "format": "prettier --write .",
     "fix":"eslint . --ext .js  --ignore-pattern temp/ --ignore-pattern src/secret.js  --fix",
-    "lint" :"eslint --ignore-pattern temp/ --ignore-pattern src/secret.js"
+    "lint" :"eslint --ignore-pattern temp/ --ignore-pattern src/secret.js",
+    "postinstall": "node ./src/postinstall.js"
   },
   "license": "MIT",
   "author": {

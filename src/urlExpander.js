@@ -1,7 +1,7 @@
 const request = require('request');
 const {
   goBack, input, errorMsg, info, list,
-} = require('./common');
+} = require('./helper');
 
 const urlExpander = async (website, showHome = false) => {
   website = website || (await input('Your Short Url'));

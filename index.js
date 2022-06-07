@@ -3,7 +3,7 @@
 const args = require('args');
 const chalkAnimation = require('chalk-animation');
 const { home, banner } = require('./src/home');
-const { sleep } = require('./src/common');
+const { sleep } = require('./src/helper');
 const userrecon = require('./src/userRecon');
 const mailfinder = require('./src/mailFinder');
 const useragent = require('./src/userAgent');
