@@ -9,7 +9,8 @@
         "**/CVS": false,
         "**/Thumbs.db": false,
         "CNAME": true,
-        ".gitattributes":true
+        ".gitattributes":true,
+        "node_modules":true
     },
     "workbench.commandPalette.history": 50,
     "workbench.commandPalette.preserveInput": true,

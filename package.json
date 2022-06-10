@@ -34,8 +34,10 @@
   ],
   "dependencies": {
     "args": "^5.0.1",
+    "boxen": "^5.1.2",
     "chalk": "^4.1.0",
     "chalk-animation": "^1.6.0",
+    "cli-boxes": "^3.0.0",
     "easy-table": "^1.2.0",
     "exif": "^0.6.0",
     "jsdom": "^19.0.0",

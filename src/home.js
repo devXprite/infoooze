@@ -24,7 +24,7 @@ const scanUrl = require('./scanUrl');
 
 const notifier = updateNotifier({
   pkg,
-  updateCheckInterval: 1000 * 60 * 2,
+  updateCheckInterval: 1000 * 60,
 });
 
 const takeOption = async () => {
