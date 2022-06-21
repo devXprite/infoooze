@@ -28,46 +28,85 @@ const notifier = updateNotifier({
 });
 
 const takeOption = async () => {
-  const option = await input('Your Option ');
+  const option = parseInt(await input('Your Option '));
 
-  if (option == '1' || option == '01') {
-    userrecon(null, true);
-  } else if (option == '2' || option == '02') {
-    mailfinder(null, true);
-  } else if (option == '3' || option == '03') {
-    useragent(null, true);
-  } else if (option == '4' || option == '04') {
-    whois(null, true);
-  } else if (option == '5' || option == '05') {
-    instaRecon(null, true);
-  } else if (option == '6' || option == '06') {
-    IPlookup(null, true);
-  } else if (option == '7' || option == '07') {
-    portScanner(null, true);
-  } else if (option == '8' || option == '08') {
-    domainAge(null, true);
-  } else if (option == '9' || option == '09') {
-    headerLookup(null, true);
-  } else if (option == '10') {
-    scanUrl(null, true);
-  } else if (option == '11') {
-    gitRecon(null, true);
-  } else if (option == '12') {
-    urlExpander(null, true);
-  } else if (option == '13') {
-    subdomainScanner(null, true);
-  } else if (option == '14') {
-    exifMetadata(null, true);
-  } else if (option == '15') {
-    dnsLookup(null, true);
-  } else if (option == '99') {
-    reportBug(null, true);
-  } else if (option == '98') {
-    args.showHelp();
-  } else if (option == 'exit' || option == '00' || option == '0') {
-    console.log(chalk.hex('#FFA500')('\nThank You for using Infoooze'));
-  } else {
-    takeOption();
+  switch (option) {
+    case 1:
+      userrecon(null, true);
+      break;
+    
+    case 2:
+      mailfinder(null, true);
+      break;
+
+    case 3:
+      useragent(null, true);
+      break;
+    
+    case 4:
+      whois(null, true);
+      break;
+    
+    case 5:
+      instaRecon(null, true);
+      break;
+    
+    case 6:
+      IPlookup(null, true);
+      break;
+    
+    case 7:
+      portScanner(null, true);
+      break;
+    
+    case 8:
+      domainAge(null, true);
+      break;
+    
+    case 9:
+      headerLookup(null, true);
+      break;
+    
+    case 10:
+      scanUrl(null, true);
+      break;
+    
+    case 11:
+      gitRecon(null, true);
+      break;
+    
+    case 12:
+      urlExpander(null, true);
+      break;
+    
+    case 13:
+      subdomainScanner(null, true);
+      break;
+    
+    case 14:
+      exifMetadata(null, true);
+      break;
+    
+    case 15:
+      dnsLookup(null, true);
+      break;
+    
+    case 98:
+      args.showHelp();
+      break;
+    
+    case 99:
+      reportBug(null, true);
+      break;
+    
+    case 0:
+    case NaN:
+      console.log(chalk.hex('#FFA500')('\nThank You for using Infoooze'));
+      break;
+    
+    default:
+      takeOption();
+      break;  
   }
 };
 
