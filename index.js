@@ -4,8 +4,8 @@ const args = require('args');
 const chalkAnimation = require('chalk-animation');
 const { home, banner } = require('./src/home');
 const { sleep } = require('./src/helper');
-const userrecon = require('./src/userRecon');
-const mailfinder = require('./src/mailFinder');
+const userRecon = require('./src/userRecon');
+const mailFinder = require('./src/mailFinder');
 const useragent = require('./src/userAgent');
 const instaRecon = require('./src/instaRecon');
 const whois = require('./src/whoIs');
@@ -31,54 +31,88 @@ flagOptions();
 
 const flags = args.parse(process.argv);
 
-if (flags.userrecon) {
-  banner();
-  userrecon(flags.userrecon);
-} else if (flags.mailfinder) {
-  banner();
-  mailfinder(flags.mailfinder);
-} else if (flags.useragent) {
-  banner();
-  useragent(flags.useragent);
-} else if (flags.whoislookup) {
-  banner();
-  whois(flags.whoislookup);
-} else if (flags.webscan) {
-  banner();
-  scanUrl(flags.webscan);
-} else if (flags.instaRecon) {
-  banner();
-  instaRecon(flags.instaRecon);
-} else if (flags.iplookup) {
-  banner();
-  IPlookup(flags.iplookup);
-} else if (flags.portscan) {
-  banner();
-  portScanner(flags.portscan);
-} else if (flags.domainage) {
-  banner();
-  domainAge(flags.domainage);
-} else if (flags.headerinfo) {
-  banner();
-  headerLookup(flags.headerinfo);
-} else if (flags.urlexpand) {
-  banner();
-  urlExpander(flags.urlexpand);
-} else if (flags.subdomain) {
-  banner();
-  subdomainScanner(flags.subdomain);
-} else if (flags.gitrecon) {
-  banner();
-  gitRecon(flags.gitrecon);
-} else if (flags.exif) {
-  banner();
-  exifMetadata(flags.exif);
-} else if (flags.dnslookup) {
-  banner();
-  dnsLookup(flags.dnslookup);
-} else {
-  (async function () {
-    await welcome();
-    await home();
-  }());
+
+switch (flags) {
+  case flags.userrecon:
+    banner();
+    userRecon(flags.userrecon);
+    break;
+  
+  case flags.mailfinder:
+    banner();
+    mailFinder(flags.mailfinder);
+    break;
+  
+  case flags.useragent:
+    banner();
+    useragent(flags.useragent);
+    break;
+  
+  case flags.whoislookup:
+    banner();
+    whois(flags.whoislookup);
+    break;
+  
+  case flags.webscan:
+    banner();
+    scanUrl(flags.webscan);
+    break;
+  
+  case flags.instaRecon:
+    banner();
+    instaRecon(flags.instaRecon);
+    break;
+  
+  case flags.iplookup:
+    banner();
+    IPlookup(flags.iplookup);
+    break;
+  
+  case flags.portscan:
+    banner();
+    portScanner(flags.portscan);
+    break;
+  
+  case flags.domainage:
+    banner();
+    domainAge(flags.domainage);
+    break;
+  
+  case flags.headerinfo:
+    banner();
+    headerLookup(flags.headerinfo);
+    break
+
+  case flags.urlexpand:
+    banner();
+    urlExpander(flags.urlexpand);
+
+  case flags.subdomain:
+    banner();
+    subdomainScanner(flags.subdomain);
+    break;
+  
+  case flags.gitrecon:
+    banner();
+    gitRecon(flags.gitrecon);
+    break;
+
+  case flags.exif:
+    banner();
+    exifMetadata(flags.exif);
+    break;
+  
+  case flags.dnslookup:
+    banner();
+    dnsLookup(flags.dnslookup);
+    break;
+
+  default:
+    (async function () {
+      await welcome();
+      await home();
+    }());
+    break;
 }
+
+
