@@ -30,79 +30,79 @@ const welcome = async () => {
 flagOptions();
 
 const flags = args.parse(process.argv);
+const optionKey = Object.keys(flags)[1]
 
-
-switch (flags) {
-  case flags.userrecon:
+switch (optionKey) {
+  case 'userrecon':
     banner();
     userRecon(flags.userrecon);
     break;
-  
-  case flags.mailfinder:
+
+  case 'mailfinder':
     banner();
     mailFinder(flags.mailfinder);
     break;
-  
-  case flags.useragent:
+
+  case 'useragent':
     banner();
     useragent(flags.useragent);
     break;
-  
-  case flags.whoislookup:
+
+  case 'whoislookup':
     banner();
     whois(flags.whoislookup);
     break;
-  
-  case flags.webscan:
+
+  case 'webscan':
     banner();
     scanUrl(flags.webscan);
     break;
-  
-  case flags.instaRecon:
+
+  case 'instaRecon':
     banner();
     instaRecon(flags.instaRecon);
     break;
-  
-  case flags.iplookup:
+
+  case 'iplookup':
     banner();
     IPlookup(flags.iplookup);
     break;
-  
-  case flags.portscan:
+
+  case 'portscan':
     banner();
     portScanner(flags.portscan);
     break;
-  
-  case flags.domainage:
+
+  case 'domainage':
     banner();
     domainAge(flags.domainage);
     break;
-  
-  case flags.headerinfo:
+
+  case 'headerinfo':
     banner();
     headerLookup(flags.headerinfo);
-    break
+    break;
 
-  case flags.urlexpand:
+  case 'urlexpand':
     banner();
     urlExpander(flags.urlexpand);
 
-  case flags.subdomain:
+  case 'subdomain':
     banner();
     subdomainScanner(flags.subdomain);
     break;
-  
-  case flags.gitrecon:
+
+  case 'gitrecon':
     banner();
     gitRecon(flags.gitrecon);
     break;
 
-  case flags.exif:
+  case 'exif':
     banner();
     exifMetadata(flags.exif);
     break;
-  
-  case flags.dnslookup:
+
+  case 'dnslookup':
     banner();
     dnsLookup(flags.dnslookup);
     break;
@@ -111,8 +111,6 @@ switch (flags) {
     (async function () {
       await welcome();
       await home();
-    }());
+    })();
     break;
 }
-
-
