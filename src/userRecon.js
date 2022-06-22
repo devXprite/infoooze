@@ -1,14 +1,9 @@
-const request = require('request');
+const axios = require('axios');
 const chalk = require('chalk');
 
-const {
-  input,
-  currentTimeStamp,
-  info,
-  saveTo,
-} = require('./helper');
+const { input, currentTimeStamp, info, saveTo } = require('./helper');
 
-const userrecon = async (username) => {
+const userRecon = async (username) => {
   username = username || (await input('Your Username'));
 
   const path = `${process.cwd()}/results/infoooze_userRecon_${currentTimeStamp()}.txt`;
@@ -87,44 +82,42 @@ const userrecon = async (username) => {
     `https://www.trip.skyscanner.com/user/${username}`,
     `http://www.zone-h.org/archive/notifier=${username}`,
   ];
-
-  urlList.forEach((url, index) => {
-    setTimeout(() => {
-      request(
-        {
-          url,
-          timeout: 5000,
-        },
-        (error, response) => {
-          if (error) {
+  Promise.all(
+    urlList.map((url) => {
+      axios
+        .get(url)
+        .then((response) => {
+          if (response.status === 200) {
             console.log(
-              chalk.cyan('[')
-                + chalk.redBright('---')
-                + chalk.cyan('] ')
-                + chalk.redBright(url),
+              chalk.cyan('[') +
+                chalk.greenBright(response.status) +
+                chalk.cyan('] ') +
+                chalk.greenBright(url),
             );
-            saveTo(path, '---', url);
-          } else if (response.statusCode == 200) {
+            saveTo(path, `[${response.status}]`, url);
+          }
+        })
+        .catch((error) => {
+          if (error?.response) {
             console.log(
-              chalk.cyan('[')
-                  + chalk.greenBright(response.statusCode)
-                  + chalk.cyan('] ')
-                  + chalk.greenBright(url),
+              chalk.cyan('[') +
+                chalk.redBright(error.response.status) +
+                chalk.cyan('] ') +
+                chalk.redBright(url),
             );
-            saveTo(path, `[${response.statusCode}]`, url);
+            saveTo(path, `[${error.response.status}]`, url);
           } else {
             console.log(
-              chalk.cyan('[')
-                  + chalk.redBright(response.statusCode)
-                  + chalk.cyan('] ')
-                  + chalk.redBright(url),
+              chalk.cyan('[') +
+                chalk.redBright('---') +
+                chalk.cyan('] ') +
+                chalk.redBright(url),
             );
-            saveTo(path, `[${response.statusCode}]`, url);
+            saveTo(path, '---', url);
           }
-        },
-      );
-    }, index * 500);
-  });
+        });
+    }),
+  );
 };
 
-module.exports = userrecon;
+module.exports = userRecon;
