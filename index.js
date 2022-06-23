@@ -20,6 +20,7 @@ const subdomainScanner = require('./src/subdomainScanner');
 const exifMetadata = require('./src/exif');
 const scanUrl = require('./src/scanUrl');
 const flagOptions = require('./src/flagOptions');
+const subdomainRecon = require('./src/subdomainRecon');
 
 const welcome = async () => {
   const glitchTitle = chalkAnimation.glitch('\nWelcome to Infoooze\n');
@@ -105,6 +106,11 @@ switch (optionKey) {
   case 'dnslookup':
     banner();
     dnsLookup(flags.dnslookup);
+    break;
+  
+  case 'subdomainrecon':
+    banner();
+    subdomainRecon(flags.subdomainrecon);
     break;
 
   default:
