@@ -16,7 +16,8 @@ const flagOptions = () => {
     .option(['s', 'subdomain'], 'find subdomains of website')
     .option(['x', 'exif'], 'extracts Exif metadata from image')
     .option(['a', 'webscan'], 'analyze suspicious URLs')
-    .option(['l', 'urlexpand'], 'long url of shorten URL');
+    .option(['l', 'urlexpand'], 'long url of shorten URL')
+    .option(['c', 'subdomainrecon'], 'find subdomains passively');
 
   args
     .example(
