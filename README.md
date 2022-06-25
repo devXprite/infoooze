@@ -1,14 +1,5 @@
 <div id="top"></div>
 
-
-<!-- [![Downloads][downloads]][npm]
-[![Stargazers][stars-shield]][stars-url]
-[![Forks][forks-shield]][forks-url]
-[![MIT License][license-shield]][license-url] -->
-<!-- [![version][version]][npm] -->
-<!-- [![Issues][issues-shield]][issues-url] -->
-<!-- [![Contributors][contributors-shield]][contributors-url] -->
-
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
@@ -23,10 +14,11 @@
     ·
     <a href="https://github.com/7orp3do/infoooze/issues">Request Feature</a>
   </p>
-  <img alt="npm" src="https://img.shields.io/npm/dw/infoooze">  
-  <img alt="npm" src="https://img.shields.io/github/stars/7orp3do/infoooze">
-  <img alt="npm" src="https://img.shields.io/npm/v/infoooze?color=green&label=version">
-  <img alt="npm" src="https://img.shields.io/github/forks/7orp3do/infoooze"> 
+
+  <img alt="npm" src="https://img.shields.io/npm/dw/infoooze?style=plastic">
+  <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/7orp3do/infoooze?style=plastic">
+  <img alt="npm version" src="https://img.shields.io/npm/v/infoooze?color=green&label=version&style=plastic">
+   <img alt="GitHub Repo forks" src="https://img.shields.io/github/forks/7orp3do/infoooze?style=plastic">
 <br />
 <br />
 
@@ -132,6 +124,15 @@ Installation Process is same as Linux
  npm install -g -s infoooze
 ```
 
+### Install locally
+
+```bash
+git clone https://github.com/7ORP3DO/infoooze.git
+cd infoooze
+npm install
+node index.js
+```
+
 ### Uninstall
 
 ```sh
@@ -153,25 +154,26 @@ infoooze [options] [value]
 
 ### Options:
 
-| Short Form | Long Form     | Description                       |
-| :--------- | :------------ | :-------------------------------- |
-| -n         | --dnslookup   | domain name system lookup         |
-| -e         | --headerinfo  | find website headers              |
-| -p         | --iplookup    | find IP info                      |
-| -a         | --webscan     | analyze suspicious URLs           |
-| -m         | --mailfinder  | find email with specific name     |
-| -t         | --portscan    | find open ports                   |
-| -x         | --exif        | extracts Exif metadata from image |
-| -r         | --userrecon   | username reconnaissance           |
-| -w         | --whoislookup | find doamin's whois info          |
-| -d         | --domainAge   | find website Age                  |
-| -s         | --subdomain   | find subdomains of website        |
-| -h         | --help        | Output usage information          |
-| -g         | --gitrecon    | find github user info             |
-| -i         | --instaRecon  | find Instagram users info         |
-| -u         | --useragent   | find browser info                 |
-| -l         | --urlexpand   | long url of shorten URL           |
-| -v         | --version     | Output the version number         |
+| Short Form | Long Form        | Description                       |
+| :--------- | :--------------- | :-------------------------------- |
+| -n         | --dnslookup      | domain name system lookup         |
+| -e         | --headerinfo     | find website headers              |
+| -p         | --iplookup       | find IP info                      |
+| -a         | --webscan        | analyze suspicious URLs           |
+| -m         | --mailfinder     | find email with specific name     |
+| -t         | --portscan       | find open ports                   |
+| -x         | --exif           | extracts Exif metadata from image |
+| -r         | --userrecon      | username reconnaissance           |
+| -w         | --whoislookup    | find doamin's whois info          |
+| -d         | --domainAge      | find website Age                  |
+| -s         | --subdomain      | find subdomains of website        |
+| -h         | --help           | Output usage information          |
+| -c         | --subdomainrecon | find subdomains passively         |
+| -g         | --gitrecon       | find github user info             |
+| -i         | --instaRecon     | find Instagram users info         |
+| -u         | --useragent      | find browser info                 |
+| -l         | --urlexpand      | long url of shorten URL           |
+| -v         | --version        | Output the version number         |
 
 ### Examples
 
@@ -234,7 +236,7 @@ If you have a suggestion that would make this better, please fork the repo and c
 Don't forget to give the project a star! Thanks again!
 
 1. Fork the Project
-2. Create your Feature Branch 
+2. Create your Branch 
 3. Commit your Changes 
 4. Push to the Branch 
 5. Open a Pull Request
@@ -253,6 +255,9 @@ Don't forget to give the project a star! Thanks again!
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+## Special Thanks
+
+- [Daniel Azulay](https://github.com/DanielAzulayy)
 
 ## License
 

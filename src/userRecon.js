@@ -1,7 +1,10 @@
+/* eslint-disable array-callback-return */
 const axios = require('axios');
 const chalk = require('chalk');
 
-const { input, currentTimeStamp, info, saveTo } = require('./helper');
+const {
+  input, currentTimeStamp, info, saveTo,
+} = require('./helper');
 
 const userRecon = async (username) => {
   username = username || (await input('Your Username'));
@@ -89,10 +92,10 @@ const userRecon = async (username) => {
         .then((response) => {
           if (response.status === 200) {
             console.log(
-              chalk.cyan('[') +
-                chalk.greenBright(response.status) +
-                chalk.cyan('] ') +
-                chalk.greenBright(url),
+              chalk.cyan('[')
+                + chalk.greenBright(response.status)
+                + chalk.cyan('] ')
+                + chalk.greenBright(url),
             );
             saveTo(path, `[${response.status}]`, url);
           }
@@ -100,18 +103,18 @@ const userRecon = async (username) => {
         .catch((error) => {
           if (error?.response) {
             console.log(
-              chalk.cyan('[') +
-                chalk.redBright(error.response.status) +
-                chalk.cyan('] ') +
-                chalk.redBright(url),
+              chalk.cyan('[')
+                + chalk.redBright(error.response.status)
+                + chalk.cyan('] ')
+                + chalk.redBright(url),
             );
             saveTo(path, `[${error.response.status}]`, url);
           } else {
             console.log(
-              chalk.cyan('[') +
-                chalk.redBright('---') +
-                chalk.cyan('] ') +
-                chalk.redBright(url),
+              chalk.cyan('[')
+                + chalk.redBright('---')
+                + chalk.cyan('] ')
+                + chalk.redBright(url),
             );
             saveTo(path, '---', url);
           }

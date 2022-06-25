@@ -31,7 +31,7 @@ const welcome = async () => {
 flagOptions();
 
 const flags = args.parse(process.argv);
-const optionKey = Object.keys(flags)[1]
+const optionKey = Object.keys(flags)[1];
 
 switch (optionKey) {
   case 'userrecon':
@@ -87,6 +87,7 @@ switch (optionKey) {
   case 'urlexpand':
     banner();
     urlExpander(flags.urlexpand);
+    break;
 
   case 'subdomain':
     banner();
@@ -107,7 +108,7 @@ switch (optionKey) {
     banner();
     dnsLookup(flags.dnslookup);
     break;
-  
+
   case 'subdomainrecon':
     banner();
     subdomainRecon(flags.subdomainrecon);
@@ -117,6 +118,6 @@ switch (optionKey) {
     (async function () {
       await welcome();
       await home();
-    })();
+    }());
     break;
 }

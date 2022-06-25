@@ -2,21 +2,26 @@
 
 const boxen = require('boxen');
 const chalk = require('chalk');
+const pkg = require('../package.json');
+const { sleep } = require('./helper');
 
-setTimeout(() => {
+(async () => {
   console.log(
-    `\n${boxen(
+    `\n\n\n${boxen(
       `${chalk.hex('#FFA500')(
-        `Thank You for Installing ${chalk.greenBright('Infoooze')}.`,
+        `Thank You for Installing Infoooze@${pkg.version}`,
       )} \n ${chalk.gray(
-        `Type ${chalk.green('infoooze -h')} for Help Menu.`,
+        `\nType ${chalk.cyanBright('infoooze -h')} for Help Menu \nDon't forget to give the project a star!`,
       )}`,
       {
         padding: 1,
-        borderColor: 'greenBright',
+        borderColor: 'cyanBright',
         textAlignment: 'center',
         margin: 1,
+        borderStyle: 'round',
+
       },
-    )}\n`,
+    )}\n\n\n`,
   );
-}, 2000);
+  await sleep('2500');
+})();

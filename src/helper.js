@@ -1,9 +1,9 @@
 /* eslint-disable global-require */
-const chalk = require('chalk');
 const fs = require('fs');
-const { sentenceCase } = require('sentence-case');
-const PromptSync = require('prompt-sync');
+const chalk = require('chalk');
 const moment = require('moment');
+const PromptSync = require('prompt-sync');
+const { sentenceCase } = require('sentence-case');
 
 const prompt = PromptSync();
 

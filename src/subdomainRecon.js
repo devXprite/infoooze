@@ -1,5 +1,7 @@
 const { spawn } = require('child_process');
-const { input, errorMsg, currentTimeStamp, info, goBack } = require('./helper');
+const {
+  input, errorMsg, currentTimeStamp, info, goBack,
+} = require('./helper');
 
 const subdomainRecon = async (host, showHome = false) => {
   host = host || (await input('Enter your host (example.com):'));
@@ -14,7 +16,7 @@ const subdomainRecon = async (host, showHome = false) => {
   });
   command.on('error', (err) => {
     errorMsg(
-      `amass might not be installed, try installing it: go install -v github.com/OWASP/Amass/v3/...@master`,
+      'amass might not be installed, try installing it: go install -v github.com/OWASP/Amass/v3/...@master',
     );
   });
 };

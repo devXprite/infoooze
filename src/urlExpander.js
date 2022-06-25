@@ -6,7 +6,7 @@ const {
 const urlExpander = async (website, showHome = false) => {
   website = website || (await input('Your Short Url'));
   website = !website.includes('://') ? `http://${website}` : website;
-  var afterRedirect = request(
+  const afterRedirect = request(
     {
       url: website,
       timeout: 5000,
