@@ -13,7 +13,7 @@ const key = require('./secret');
 
 async function mailfinder(username, showHome = false) {
   username = username || (await input('Your Username'));
-  username = username.replace(/\s/g, '');
+  username = username.replace(/\s/g, '').split('@')[0];
 
   const domainList = [
     'gmail.com',
