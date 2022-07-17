@@ -164,7 +164,7 @@ infoooze [options] [value]
 | -t         | --portscan       | find open ports                   |
 | -x         | --exif           | extracts Exif metadata from image |
 | -r         | --userrecon      | username reconnaissance           |
-| -w         | --whoislookup    | find doamin's whois info          |
+| -w         | --whoislookup    | find domain's whois info          |
 | -d         | --domainAge      | find website Age                  |
 | -s         | --subdomain      | find subdomains of website        |
 | -h         | --help           | Output usage information          |
