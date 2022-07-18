@@ -22,7 +22,7 @@ If applicable, add screenshots to help explain your problem.
 // console.log(body);
 const reportBug = () => {
   open(
-    `https://github.com/7ORP3DO/infoooze/issues/new?assignees=&labels=bug&title=&body=${encodeURIComponent(
+    `https://github.com/devXprite/infoooze/issues/new?assignees=&labels=bug&title=&body=${encodeURIComponent(
       body,
     )}`,
   );

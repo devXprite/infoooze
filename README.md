@@ -3,22 +3,22 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/7orp3do/infoooze">
+  <a href="https://github.com/devXprite/infoooze">
     <img src="./images/logo-main.png" alt="Logo" height="135px">
   </a>
 
 <h2 align="center">Infoooze</h2>
 
   <p align="center">
-    <a href="https://github.com/7ORP3DO/infoooze/issues/new?assignees=&labels=bug&template=bug_report.md&title=">Report Bug</a>
+    <a href="https://github.com/devXprite/infoooze/issues/new?assignees=&labels=bug&template=bug_report.md&title=">Report Bug</a>
     ·
-    <a href="https://github.com/7orp3do/infoooze/issues">Request Feature</a>
+    <a href="https://github.com/devXprite/infoooze/issues">Request Feature</a>
   </p>
 
   <img alt="npm" src="https://img.shields.io/npm/dw/infoooze?style=plastic">
-  <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/7orp3do/infoooze?style=plastic">
+  <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/devXprite/infoooze?style=plastic">
   <img alt="npm version" src="https://img.shields.io/npm/v/infoooze?color=green&label=version&style=plastic">
-   <img alt="GitHub Repo forks" src="https://img.shields.io/github/forks/7orp3do/infoooze?style=plastic">
+   <img alt="GitHub Repo forks" src="https://img.shields.io/github/forks/devXprite/infoooze?style=plastic">
 <br />
 <br />
 
@@ -112,7 +112,7 @@ You need **NodeJs** 10 or later to run this tool. You can install NodeJs
 - #### Using GIT
 
   ```sh
-  npm install git+ssh://git@github.com/7ORP3DO/infoooze.git -g
+  npm install git+ssh://git@github.com/devXprite/infoooze.git -g
   ```
 
 
@@ -127,7 +127,7 @@ Installation Process is same as Linux
 ### Install locally
 
 ```bash
-git clone https://github.com/7ORP3DO/infoooze.git
+git clone https://github.com/devXprite/infoooze.git
 cd infoooze
 npm install
 node index.js
@@ -209,7 +209,7 @@ infoooze [options] [value]
 
 Click this button to run your project on Gitpod which comes with pre-configured environment you need.
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/7ORP3DO/infoooze)
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/devXprite/infoooze)
 
 
 <!-- ScreenShots -->
@@ -248,10 +248,10 @@ Don't forget to give the project a star! Thanks again!
 ## Supporters
 
 ### Stargazers:
-[![Stargazers repo roster for @7ORP3DO/infoooze][stangers-img-url]](https://github.com/7ORP3DO/infoooze/stargazers)  
+[![Stargazers repo roster for @devXprite/infoooze][stangers-img-url]](https://github.com/devXprite/infoooze/stargazers)  
 
 ### Forkers
-[![Forkers repo roster for @7ORP3DO/infoooze][forker-img-url]](https://github.com/7ORP3DO/infoooze/network/members)
+[![Forkers repo roster for @devXprite/infoooze][forker-img-url]](https://github.com/devXprite/infoooze/network/members)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -267,27 +267,27 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 <!-- ## Contact
 
-- Twitter: [@bhps82](https://twitter.com/bhps82)
-- Github: [@7ORP3DO](https://twitter.com/bhps82) -->
+- Twitter: [@devXprite](https://twitter.com/devXprite)
+- Github: [@devXprite](https://twitter.com/devXprite) -->
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-[contributors-shield]: https://img.shields.io/github/contributors/7orp3do/infoooze.svg?style=for-the-badge
-[contributors-url]: https://github.com/7orp3do/infoooze/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/7orp3do/infoooze.svg?style=for-the-badge
-[forks-url]: https://github.com/7orp3do/infoooze/network/members
-[stars-shield]: https://img.shields.io/github/stars/7orp3do/infoooze.svg?style=for-the-badge
-[stars-url]: https://github.com/7orp3do/infoooze/stargazers
-[issues-shield]: https://img.shields.io/github/issues/7orp3do/infoooze.svg?style=for-the-badge
-[issues-url]: https://github.com/7orp3do/infoooze/issues
-[license-shield]: https://img.shields.io/github/license/7orp3do/infoooze.svg?style=for-the-badge
-[license-url]: https://github.com/7orp3do/infoooze/blob/master/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/devXprite/infoooze.svg?style=for-the-badge
+[contributors-url]: https://github.com/devXprite/infoooze/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/devXprite/infoooze.svg?style=for-the-badge
+[forks-url]: https://github.com/devXprite/infoooze/network/members
+[stars-shield]: https://img.shields.io/github/stars/devXprite/infoooze.svg?style=for-the-badge
+[stars-url]: https://github.com/devXprite/infoooze/stargazers
+[issues-shield]: https://img.shields.io/github/issues/devXprite/infoooze.svg?style=for-the-badge
+[issues-url]: https://github.com/devXprite/infoooze/issues
+[license-shield]: https://img.shields.io/github/license/devXprite/infoooze.svg?style=for-the-badge
+[license-url]: https://github.com/devXprite/infoooze/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/bhps82
-[stangers-img-url]: https://reporoster.com/stars/dark/7ORP3DO/infoooze
-[forker-img-url]: https://reporoster.com/forks/dark/7ORP3DO/infoooze
+[linkedin-url]: https://linkedin.com/in/devXprite
+[stangers-img-url]: https://reporoster.com/stars/dark/devXprite/infoooze
+[forker-img-url]: https://reporoster.com/forks/dark/devXprite/infoooze
 [product-screenshot]: images/screenshot.png
 [downloads]: https://img.shields.io/npm/dw/infoooze?style=for-the-badge
 [npm]: https://www.npmjs.com/package/infoooze
