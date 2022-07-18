@@ -16,5 +16,6 @@
     "workbench.commandPalette.preserveInput": true,
     "window.autoDetectColorScheme": false,
     "eslint.alwaysShowStatus": false,
-    "eslint.format.enable": true
+    "eslint.format.enable": true,
+    "files.eol": "\n"
 }
