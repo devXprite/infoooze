@@ -7,6 +7,7 @@ const {
   goBack,
   currentTimeStamp,
   saveTo,
+  exit,
 } = require('./helper');
 
 const domainAge = async (website, showHome = false, i = 1) => {
@@ -46,6 +47,8 @@ const domainAge = async (website, showHome = false, i = 1) => {
   }
   if (showHome) {
     goBack();
+  } else {
+    exit();
   }
 };
 module.exports = domainAge;

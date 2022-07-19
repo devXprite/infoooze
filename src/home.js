@@ -34,7 +34,7 @@ const takeOption = async () => {
     case 1:
       userrecon(null, true);
       break;
-    
+
     case 2:
       mailfinder(null, true);
       break;
@@ -42,75 +42,75 @@ const takeOption = async () => {
     case 3:
       useragent(null, true);
       break;
-    
+
     case 4:
       whois(null, true);
       break;
-    
+
     case 5:
       instaRecon(null, true);
       break;
-    
+
     case 6:
       IPlookup(null, true);
       break;
-    
+
     case 7:
       portScanner(null, true);
       break;
-    
+
     case 8:
       domainAge(null, true);
       break;
-    
+
     case 9:
       headerLookup(null, true);
       break;
-    
+
     case 10:
       scanUrl(null, true);
       break;
-    
+
     case 11:
       gitRecon(null, true);
       break;
-    
+
     case 12:
       urlExpander(null, true);
       break;
-    
+
     case 13:
       subdomainScanner(null, true);
       break;
-    
+
     case 14:
       exifMetadata(null, true);
       break;
-    
+
     case 15:
       dnsLookup(null, true);
       break;
-    
+
     case 98:
       args.showHelp();
       break;
-    
+
     case 99:
       reportBug(null, true);
       break;
-    
+
     case 0:
     case NaN:
       console.log(chalk.hex('#FFA500')('\nThank You for using Infoooze'));
       break;
-    
+
     default:
       takeOption();
-      break;  
+      break;
   }
 };
 
-const home = async (animationDelay = 1500) => {
+const home = async (animationDelay = 300) => {
   console.clear();
   chalkAnimation.neon(
     `

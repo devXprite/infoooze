@@ -2,7 +2,7 @@ const request = require('request');
 const chalk = require('chalk');
 
 const {
-  list, goBack, input, errorMsg,
+  list, goBack, input, errorMsg, exit,
 } = require('./helper');
 const key = require('./secret');
 
@@ -43,6 +43,8 @@ async function useragent(useragent, showHome = false, i = 1) {
       }
       if (showHome) {
         goBack();
+      } else {
+        exit();
       }
     },
   );

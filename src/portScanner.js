@@ -1,6 +1,8 @@
 const portscanner = require('portscanner');
 const chalk = require('chalk');
-const { goBack, input, errorMsg } = require('./helper');
+const {
+  goBack, input, errorMsg, sleep, exit,
+} = require('./helper');
 
 const portsList = {
   21: 'FTP',
@@ -28,35 +30,44 @@ const portsList = {
   8080: 'HTTP',
 };
 
-async function checkPort(port, website) {
-  portscanner.checkPortStatus(port, website, (error, status) => {
-    if (!error) {
-      if (status == 'open') {
-        console.log(
-          ` ${chalk.cyan('-')} ${chalk.greenBright(port)} \t${chalk.greenBright(
-            status,
-          )} \t${chalk.greenBright(portsList[port])}`,
-        );
-      } else {
-        console.log(
-          ` ${chalk.cyan('-')} ${chalk.redBright(port)} \t${chalk.redBright(
-            status,
-          )} \t${chalk.redBright(portsList[port])}`,
-        );
+const checkPort = async (port, website) => new Promise(
+  (resolve, reject) => {
+    portscanner.checkPortStatus(port, website, (error, status) => {
+      if (!error) {
+        if (status == 'open') {
+          console.log(
+            ` ${chalk.cyan('-')} ${chalk.greenBright(port)} \t${chalk.greenBright(
+              status,
+            )} \t${chalk.greenBright(portsList[port])}`,
+          );
+        } else {
+          console.log(
+            ` ${chalk.cyan('-')} ${chalk.redBright(port)} \t${chalk.redBright(
+              status,
+            )} \t${chalk.redBright(portsList[port])}`,
+          );
+        }
       }
-    }
-  });
-}
+      resolve();
+    });
+  },
+);
 
 const portScanner = async (website, showHome = false, i = 0) => {
   website = website || (await input('Your Website'));
   console.log('\n');
 
-  Object.keys(portsList).forEach((port, index) => {
-    setTimeout(() => {
-      checkPort(port, website);
-    }, index * 500);
-  });
+  await Promise.allSettled(
+    Object.keys(portsList).map(async (port, index) => {
+      await sleep(index * 400);
+      await checkPort(port, website);
+    }),
+  );
+  if (showHome) {
+    goBack();
+  } else {
+    exit();
+  }
 };
 
 module.exports = portScanner;

@@ -1,6 +1,6 @@
 const request = require('request');
 const {
-  goBack, input, errorMsg, info, list,
+  goBack, input, errorMsg, info, list, exit,
 } = require('./helper');
 
 const urlExpander = async (website, showHome = false) => {
@@ -24,6 +24,8 @@ const urlExpander = async (website, showHome = false) => {
       }
       if (showHome) {
         goBack();
+      } else {
+        exit();
       }
     },
   );

@@ -9,6 +9,7 @@ const {
   currentTimeStamp,
   info,
   saveTo,
+  exit,
 } = require('./helper');
 
 const IPlookup = async (ip, showHome = false, i = 1) => {
@@ -36,6 +37,8 @@ const IPlookup = async (ip, showHome = false, i = 1) => {
       }
       if (showHome) {
         goBack();
+      } else {
+        exit();
       }
     },
   );

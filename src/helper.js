@@ -4,6 +4,7 @@ const chalk = require('chalk');
 const moment = require('moment');
 const PromptSync = require('prompt-sync');
 const { sentenceCase } = require('sentence-case');
+const { includes } = require('lodash');
 
 const prompt = PromptSync();
 
@@ -69,12 +70,33 @@ const errorMsg = async (
 const info = async (msg, path = '') => {
   console.log(
     chalk.white('\n[')
-      + chalk.cyan('!')
-      + chalk.white('] ')
-      + chalk.cyan(msg)
-      + chalk.hex('#FFA500')(path),
+    + chalk.cyan('!')
+    + chalk.white('] ')
+    + chalk.cyan(msg)
+    + chalk.hex('#FFA500')(path),
   );
   console.log('\n');
+};
+const print = (colorVal, prefix, body) => {
+  if (colorVal.includes('#')) {
+    console.log(
+      chalk.cyan('[')
+          + chalk.hex(colorVal)(prefix)
+          + chalk.cyan('] ')
+          + chalk.hex(colorVal)(body),
+    );
+  } else {
+    console.log(
+      chalk.cyan('[')
+          + chalk[colorVal](prefix)
+          + chalk.cyan('] ')
+          + chalk[colorVal](body),
+    );
+  }
+};
+
+const exit = () => {
+  console.log(chalk.hex('#FFA500')('\nThank You for using Infoooze.'));
 };
 
 module.exports = {
@@ -86,4 +108,6 @@ module.exports = {
   saveTo,
   errorMsg,
   info,
+  exit,
+  print,
 };

@@ -10,6 +10,7 @@ const {
   info,
   saveTo,
   sleep,
+  exit,
 } = require('./helper');
 
 const { JSDOM } = jsdom;
@@ -57,6 +58,8 @@ const subdomainScanner = async (website, showHome = false, i = 1) => {
         }
         if (showHome) {
           goBack();
+        } else {
+          exit();
         }
       }
     },

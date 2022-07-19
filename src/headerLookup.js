@@ -7,6 +7,7 @@ const {
   currentTimeStamp,
   info,
   saveTo,
+  exit,
 } = require('./helper');
 
 const headerLookup = async (website, showHome = false, i = 1) => {
@@ -28,6 +29,8 @@ const headerLookup = async (website, showHome = false, i = 1) => {
     }
     if (showHome) {
       goBack();
+    } else {
+      exit();
     }
   });
 };
