@@ -9,6 +9,7 @@ const {
   currentTimeStamp,
   info,
   saveTo,
+  exit,
 } = require('./helper');
 
 const headersList = {
@@ -42,6 +43,8 @@ const gitRecon = async (username, showHome = false, i = 1) => {
       }
       if (showHome) {
         goBack();
+      } else {
+        exit();
       }
     },
   );

@@ -3,10 +3,10 @@ const axios = require('axios');
 const chalk = require('chalk');
 
 const {
-  input, currentTimeStamp, info, saveTo,
+  input, currentTimeStamp, info, saveTo, goBack, exit, print,
 } = require('./helper');
 
-const userRecon = async (username) => {
+const userRecon = async (username, showHome = false) => {
   username = username || (await input('Your Username'));
 
   const path = `${process.cwd()}/results/infoooze_userRecon_${currentTimeStamp()}.txt`;
@@ -85,42 +85,37 @@ const userRecon = async (username) => {
     `https://www.trip.skyscanner.com/user/${username}`,
     `http://www.zone-h.org/archive/notifier=${username}`,
   ];
-  Promise.all(
-    urlList.map((url) => {
-      axios
-        .get(url)
-        .then((response) => {
-          if (response.status === 200) {
-            console.log(
-              chalk.cyan('[')
-                + chalk.greenBright(response.status)
-                + chalk.cyan('] ')
-                + chalk.greenBright(url),
-            );
-            saveTo(path, `[${response.status}]`, url);
-          }
-        })
-        .catch((error) => {
-          if (error?.response) {
-            console.log(
-              chalk.cyan('[')
-                + chalk.redBright(error.response.status)
-                + chalk.cyan('] ')
-                + chalk.redBright(url),
-            );
-            saveTo(path, `[${error.response.status}]`, url);
-          } else {
-            console.log(
-              chalk.cyan('[')
-                + chalk.redBright('---')
-                + chalk.cyan('] ')
-                + chalk.redBright(url),
-            );
-            saveTo(path, '---', url);
-          }
-        });
-    }),
+
+  await Promise.allSettled(
+    urlList.map((url) => new Promise(
+      (resolve, reject) => {
+        axios
+          .get(url, { timeout: 5000 })
+          .then((response) => {
+            if (response.status === 200) {
+              print('greenBright', response.status, url);
+              saveTo(path, `[${response.status}]`, url);
+            }
+          })
+          .catch((error) => {
+            if (error?.response) {
+              print('redBright', error.response.status, url);
+              saveTo(path, `[${error.response.status}]`, url);
+            } else {
+              print('gray', '---', url);
+              saveTo(path, '---', url);
+            }
+          }).then(() => {
+            resolve();
+          });
+      },
+    )),
   );
+  if (showHome) {
+    goBack();
+  } else {
+    exit();
+  }
 };
 
 module.exports = userRecon;

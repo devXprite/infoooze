@@ -10,6 +10,7 @@ const {
   currentTimeStamp,
   info,
   saveTo,
+  exit,
 } = require('./helper');
 
 async function instaRecon(username, showHome = false, i = 1) {
@@ -60,6 +61,8 @@ async function instaRecon(username, showHome = false, i = 1) {
       }
       if (showHome) {
         goBack();
+      } else {
+        exit();
       }
     },
   );

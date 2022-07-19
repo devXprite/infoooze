@@ -10,6 +10,7 @@ const {
   errorMsg,
   goBack,
   sleep,
+  exit,
 } = require('./helper');
 
 const list = async (counter, key, value) => {
@@ -67,6 +68,8 @@ const scanUrl = async (website, showHome = false, i = 1) => {
       }
       if (showHome) {
         goBack();
+      } else {
+        exit();
       }
     },
   );

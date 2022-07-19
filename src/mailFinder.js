@@ -1,12 +1,17 @@
+/* eslint-disable no-undef */
+/* eslint-disable prefer-destructuring */
 const request = require('request');
 const chalk = require('chalk');
 
+const { default: axios } = require('axios');
 const {
   goBack,
   input,
   currentTimeStamp,
   info,
   saveTo,
+  exit,
+  print,
 } = require('./helper');
 
 const key = require('./secret');
@@ -27,55 +32,40 @@ async function mailfinder(username, showHome = false) {
 
   const path = `${process.cwd()}/results/infoooze_mailFinder_${currentTimeStamp()}.txt`;
   info('Results will be saved in ', path);
-  domainList.forEach(async (domain, index) => {
-    setTimeout(() => {
-      const email = `${username}@${domain}`;
 
-      try {
-        request(
-          {
-            url: `https://isitarealemail.com/api/email/validate?email=${email}`,
+  const emailList = domainList.map((domain) => `${username}@${domain}`);
+
+  await Promise.allSettled(
+    emailList.map((email) => new Promise(
+      (resolve, reject) => {
+        axios
+          .get(`https://isitarealemail.com/api/email/validate?email=${email}`, {
             headers: {
               Authorization: key('em'),
             },
             timeout: 5000,
-            json: true,
-          },
-          (error, response) => {
-            if (!error && response.statusCode == 200) {
-              if (response.body.status == 'valid') {
-                console.log(
-                  chalk.cyan('[')
-                    + chalk.greenBright('+')
-                    + chalk.cyan('] ')
-                    + chalk.greenBright(email),
-                );
-                saveTo(path, 'valid', email);
-              } else {
-                console.log(
-                  chalk.cyan('[')
-                    + chalk.redBright('+')
-                    + chalk.cyan('] ')
-                    + chalk.redBright(email),
-                );
-                saveTo(path, 'invalid', email);
-              }
+          })
+          .then((response) => {
+            if (response.data.status == 'valid') {
+              print('greenBright', '+', email);
+              saveTo(path, 'valid', email);
             } else {
-              console.log(
-                chalk.cyan('[')
-                    + chalk.redBright('+')
-                    + chalk.cyan('] ')
-                    + chalk.redBright(email),
-              );
+              print('redBright', '-', email);
               saveTo(path, 'invalid', email);
             }
-          },
-        );
-      } catch (error) {
-        /* n/a */
-      }
-    }, index * 500);
-  });
+          }).catch((error) => {
+            print('redBright', '-', email);
+          }).then(() => {
+            resolve();
+          });
+      },
+    )),
+  );
+  if (showHome) {
+    goBack();
+  } else {
+    exit();
+  }
 }
 
 module.exports = mailfinder;
