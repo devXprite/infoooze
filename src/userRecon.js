@@ -90,7 +90,7 @@ const userRecon = async (username, showHome = false) => {
     urlList.map((url) => new Promise(
       (resolve, reject) => {
         axios
-          .get(url, { timeout: 5000 })
+          .get(url, { timeout: 60000 })
           .then((response) => {
             if (response.status === 200) {
               print('greenBright', response.status, url);

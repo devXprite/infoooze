@@ -20,7 +20,7 @@ async function instaRecon(username, showHome = false, i = 1) {
 
   request(
     {
-      url: `https://www.instagram.com/${username}/?__a=1`,
+      url: `https://www.instagram.com/${username}/?__a=1&__d=dis`,
       timeout: 5000,
       json: true,
       headers: {

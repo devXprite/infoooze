@@ -131,5 +131,5 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
-results/*.txt
+results
 result_*.txt
