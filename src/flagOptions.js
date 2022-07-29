@@ -27,5 +27,7 @@ const flagOptions = () => {
     .example('infoooze -w google.com', "find doamin's whois info")
     .example('infoooze -i therock', 'find instagram username info')
     .example('infoooze -p 1.1.1.1', 'find IP address details');
+
+  // args.parse(process.argv, { mainColor: ['cyan'] });
 };
 module.exports = flagOptions;

@@ -112,20 +112,16 @@ const takeOption = async () => {
 
 const home = async (animationDelay = 300) => {
   console.clear();
-  chalkAnimation.neon(
-    `
-    _____        __                         
-   |_   _|      / _|                        
-     | |  _ __ | |_ ___   ___   ___ _______ 
-     | | | '_ \\|  _/ _ \\ / _ \\ / _ \\_  / _ \\
-    _| |_| | | | || (_) | (_) | (_) / /  __/
-   |_____|_| |_|_| \\___/ \\___/ \\___/___\\___|
-                                      ${chalk.greenBright(`v${pkg.version}`)}`,
-    '2',
-  );
 
-  await sleep(animationDelay);
-  // console.log(chalk.hex('#FFA500')('\t     A OSINT based tool\n\n'));
+  console.log(chalk.hex('#D546F2')(`
+   _____        __
+  |_   _|      / _|
+    | |  _ __ | |_ ___   ___   ___ _______
+    | | | '_ \\|  _/ _ \\ / _ \\ / _ \\_  / _ \\
+   _| |_| | | | || (_) | (_) | (_) / /  __/
+  |_____|_| |_|_| \\___/ \\___/ \\___/___\\___|
+                                     ${chalk.greenBright(`v${pkg.version}`)}
+  `));
 
   if (notifier.update) {
     console.log(
@@ -137,7 +133,7 @@ const home = async (animationDelay = 300) => {
   }
 
   console.log('\n\n');
-  await sleep(500);
+  await sleep(800);
 
   const optionsData = [
     ['User Recon', 'Username reconnaissance'],

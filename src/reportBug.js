@@ -16,7 +16,6 @@ If applicable, add screenshots to help explain your problem.
 **OS Type** : ${os.type()}
 **OS Version** : ${os.release()}
 **OS Plateform** : ${os.platform()}
-**Current Directory** : ${process.cwd()}
 `;
 
 // console.log(body);

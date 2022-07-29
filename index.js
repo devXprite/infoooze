@@ -22,12 +22,6 @@ const scanUrl = require('./src/scanUrl');
 const flagOptions = require('./src/flagOptions');
 const subdomainRecon = require('./src/subdomainRecon');
 
-const welcome = async () => {
-  const glitchTitle = chalkAnimation.glitch('\nWelcome to Infoooze\n');
-  await sleep(2000);
-  glitchTitle.stop();
-};
-
 flagOptions();
 
 const flags = args.parse(process.argv);
@@ -116,7 +110,9 @@ switch (optionKey) {
 
   default:
     (async function () {
-      await welcome();
+      const glitchTitle = chalkAnimation.glitch('\nStarting Infoooze\n');
+      await sleep(1500);
+      glitchTitle.stop();
       await home();
     }());
     break;
