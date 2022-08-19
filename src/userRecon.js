@@ -98,7 +98,7 @@ const userRecon = async (username, showHome = false) => {
             }
           })
           .catch((error) => {
-            if (error?.response) {
+            if (error && error.response) {
               print('redBright', error.response.status, url);
               saveTo(path, `[${error.response.status}]`, url);
             } else {
