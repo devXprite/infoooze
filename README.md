@@ -15,7 +15,7 @@
     <a href="https://github.com/devXprite/infoooze/issues">Request Feature</a>
   </p>
 
-  <img alt="npm" src="https://img.shields.io/npm/dw/infoooze?style=plastic">
+  <img alt="npm" src="https://img.shields.io/npm/dm/infoooze?style=plastic">
   <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/devXprite/infoooze?style=plastic">
   <img alt="npm version" src="https://img.shields.io/npm/v/infoooze?color=green&label=version&style=plastic">
    <img alt="GitHub Repo forks" src="https://img.shields.io/github/forks/devXprite/infoooze?style=plastic">
