@@ -91,13 +91,12 @@ You need **NodeJs** 10 or later to run this tool. You can install NodeJs
 
 - On Linux
   ```sh
-  sudo su
-  apt-get install nodejs
+  sudo apt-get install nodejs
   ```
   > Although there is no need to install NodeJs on Kali Linux, as its packages are already present in Kali Linux.
 - On Termux
   ```sh
-  pkg install nodejs-lts python
+  pkg install nodejs-lts 
   ```
 
 ### Installation on [Linux](https://wikipedia.org/wiki/Linux)
@@ -105,20 +104,17 @@ You need **NodeJs** 10 or later to run this tool. You can install NodeJs
 - #### Using NPM
 
   ```sh
-  sudo su
-  npm install -g -s infoooze
+  sudo npm install infoooze -g -s
   ```
 
 - #### Using GIT
 
   ```sh
-  npm install git+ssh://git@github.com/devXprite/infoooze.git -g
+  sudo npm install git+ssh://git@github.com/devXprite/infoooze.git -g
   ```
 
 
 ### Installation on [Termux](https://github.com/termux/termux-app#f-droid)
-
-Installation Process is same as Linux
 
 ```sh
  npm install -g -s infoooze
