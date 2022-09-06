@@ -37,7 +37,7 @@
     "axios": "^0.27.2",
     "boxen": "^5.1.2",
     "chalk": "^4.1.0",
-    "chalk-animation": "^1.6.0",
+    "chalk-animation": "^2.0.2",
     "cli-boxes": "^3.0.0",
     "easy-table": "^1.2.0",
     "exif": "^0.6.0",
