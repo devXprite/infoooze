@@ -15,12 +15,11 @@
     <a href="https://github.com/devXprite/infoooze/issues">Request Feature</a>
   </p>
 
-  <img alt="npm" src="https://img.shields.io/npm/dm/infoooze?style=flat">
   <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/devXprite/infoooze?style=flat">
-  <img alt="npm version" src="https://img.shields.io/npm/v/infoooze?color=green&label=version&style=flat"> <br>
-  <img alt="Libraries.io SourceRank" src="https://img.shields.io/librariesio/sourcerank/npm/infoooze">
-  <img alt="npm bundle size" src="https://img.shields.io/bundlephobia/min/infoooze">
   <img alt="npms.io (final)" src="https://img.shields.io/npms-io/quality-score/infoooze">
+  <img alt="npm version" src="https://img.shields.io/npm/v/infoooze?color=green&label=version&style=flat"> <br>
+  <img alt="npm" src="https://img.shields.io/npm/dm/infoooze?style=flat">
+  <img alt="Libraries.io SourceRank" src="https://img.shields.io/librariesio/sourcerank/npm/infoooze">
 <br />
 <br />
 
