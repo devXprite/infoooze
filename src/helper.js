@@ -39,7 +39,7 @@ const list = async (counter, key, value) => {
   value = value || chalk.redBright('n/a');
   key = sentenceCase(key);
 
-  await sleep(200);
+  await sleep(150);
   console.log(
     chalk.white('[')
       + chalk.hex('#FFA500')(counter)
@@ -50,7 +50,7 @@ const list = async (counter, key, value) => {
 };
 
 const goBack = async () => {
-  await prompt(chalk.cyan.italic('\npress enter to go back...'));
+  await prompt(chalk.cyan.inverse('\npress enter to go back '));
   require('./home').home();
 };
 
@@ -96,7 +96,7 @@ const print = (colorVal, prefix, body) => {
 };
 
 const exit = () => {
-  console.log(chalk.hex('#FFA500')('\nThank You for using Infoooze.'));
+  console.log(chalk.hex('#FFA500')('\nThank You for using Infoooze'));
 };
 
 module.exports = {

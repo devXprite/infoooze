@@ -37,7 +37,6 @@
     "axios": "^0.27.2",
     "boxen": "^5.1.2",
     "chalk": "^4.1.0",
-    "chalk-animation": "^2.0.2",
     "cli-boxes": "^3.0.0",
     "easy-table": "^1.2.0",
     "exif": "^0.6.0",
@@ -49,7 +48,7 @@
     "prompt-sync": "^4.2.0",
     "request": "^2.88.2",
     "sentence-case": "^3.0.4",
-    "update-notifier": "^6.0.2",
+    "update-notifier": "^5.1.0",
     "whois-json": "^2.0.4"
   },
   "devDependencies": {

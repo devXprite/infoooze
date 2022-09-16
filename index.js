@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 
 const args = require('args');
-const chalkAnimation = require('chalk-animation');
 const { home, banner } = require('./src/home');
 const { sleep } = require('./src/helper');
 const userRecon = require('./src/userRecon');
@@ -21,6 +20,7 @@ const exifMetadata = require('./src/exif');
 const scanUrl = require('./src/scanUrl');
 const flagOptions = require('./src/flagOptions');
 const subdomainRecon = require('./src/subdomainRecon');
+const youtubeLookup = require('./src/youtubeLookup');
 
 flagOptions();
 
@@ -108,11 +108,13 @@ switch (optionKey) {
     subdomainRecon(flags.subdomainrecon);
     break;
 
+  case 'youtubelookup':
+    banner();
+    youtubeLookup(flags.youtubelookup);
+    break;
+
   default:
     (async function () {
-      const glitchTitle = chalkAnimation.glitch('\nStarting Infoooze\n');
-      await sleep(1500);
-      glitchTitle.stop();
       await home();
     }());
     break;

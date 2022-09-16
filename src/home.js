@@ -1,5 +1,4 @@
 const chalk = require('chalk');
-const chalkAnimation = require('chalk-animation');
 const EasyTable = require('easy-table');
 const updateNotifier = require('update-notifier');
 const args = require('args');
@@ -21,6 +20,7 @@ const subdomainScanner = require('./subdomainScanner');
 const pkg = require('../package.json');
 const exifMetadata = require('./exif');
 const scanUrl = require('./scanUrl');
+const youtubeLookup = require('./youtubeLookup');
 
 const notifier = updateNotifier({
   pkg,
@@ -28,7 +28,7 @@ const notifier = updateNotifier({
 });
 
 const takeOption = async () => {
-  const option = parseInt(await input('Your Option '));
+  const option = parseInt(await input('Your Option '), 10);
 
   switch (option) {
     case 1:
@@ -91,6 +91,10 @@ const takeOption = async () => {
       dnsLookup(null, true);
       break;
 
+    case 16:
+      youtubeLookup(null, true);
+      break;
+
     case 98:
       args.showHelp();
       break;
@@ -100,7 +104,6 @@ const takeOption = async () => {
       break;
 
     case 0:
-    case NaN:
       console.log(chalk.hex('#FFA500')('\nThank You for using Infoooze'));
       break;
 
@@ -137,20 +140,21 @@ const home = async (animationDelay = 300) => {
 
   const optionsData = [
     ['User Recon', 'Username reconnaissance'],
-    ['Mail Finder ', 'Find email with specific name'],
-    ['Useragent', 'Find browser info'],
+    ['Mail Finder ', 'Find email with specific UserName'],
+    ['Useragent', 'Find Browser UserAgent info'],
     ['Whoislookup', "Find doamin's whois info"],
     ['InstaRecon', 'Find Instagram users info'],
     ['IP Lookup', 'Find IP info'],
-    ['Ports Scan', 'Find open ports'],
-    ['Domain Age', 'Find website Age'],
-    ['Header Info', 'Find website headers'],
-    ['Website Scanner', 'Analyze suspicious URLs'],
-    ['Git Recon', 'Find github user info'],
-    ['Expand Url', 'Long url of shorten urls'],
+    ['Ports Scan', 'Find Open Ports'],
+    ['Domain Age', 'Find Website Age'],
+    ['Header Info', 'Find Website Headers'],
+    ['Website Scanner', 'Analyze Suspicious URL'],
+    ['Git Recon', 'Find Github user info'],
+    ['Expand Url', 'Long Url of shorten urls'],
     ['Subdomain', 'Find subdomains of website'],
     ['Exif Metadata', 'Extract Exif metadata from image'],
     ['DNS Lookup', 'Domain name system lookup'],
+    ['Youtube Lookup', 'Find Youtube Video Metadata'],
   ];
 
   const table = new EasyTable();
