@@ -13,7 +13,7 @@ const portScanner = require('./portScanner');
 const headerLookup = require('./headerLookup');
 const urlExpander = require('./urlExpander');
 const reportBug = require('./reportBug');
-const { sleep, input } = require('./helper');
+const { input } = require('./helper');
 const gitRecon = require('./gitRecon');
 const domainAge = require('./domainAge');
 const subdomainScanner = require('./subdomainScanner');
@@ -113,7 +113,7 @@ const takeOption = async () => {
   }
 };
 
-const home = async (animationDelay = 300) => {
+const home = async () => {
   console.clear();
 
   console.log(chalk.hex('#D546F2')(`
@@ -136,7 +136,6 @@ const home = async (animationDelay = 300) => {
   }
 
   console.log('\n\n');
-  await sleep(800);
 
   const optionsData = [
     ['User Recon', 'Username reconnaissance'],

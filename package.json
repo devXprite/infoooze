@@ -2,11 +2,11 @@
   "name": "infoooze",
   "version": "1.2.1",
   "description": "A OSINT based famework",
-  "main": "index.js",
+  "main": "bin/infoooze.js",
   "type": "commonjs",
   "scripts": {
-    "start": "node index.js",
-    "help": "node index.js -h",
+    "start": "node bin/infoooze.js",
+    "help": "node bin/infoooze.js -h",
     "check": "prettier --check .",
     "format": "prettier --write .",
     "fix": "eslint . --ext .js  --ignore-pattern temp/ --ignore-pattern src/secret.js  --fix",
@@ -38,6 +38,7 @@
     "boxen": "^5.1.2",
     "chalk": "^4.1.0",
     "cli-boxes": "^3.0.0",
+    "cli-spinner": "^0.2.10",
     "easy-table": "^1.2.0",
     "exif": "^0.6.0",
     "jsdom": "^19.0.0",
@@ -59,9 +60,9 @@
   },
   "pre-commit": [],
   "bin": {
-    "infoooze": "index.js",
-    "infooze": "index.js",
-    "infoze": "index.js"
+    "infoooze": "bin/infoooze.js",
+    "infooze": "bin/infoooze.js",
+    "infoze": "bin/infoooze.js"
   },
   "engines": {
     "node": ">=8.0.0"

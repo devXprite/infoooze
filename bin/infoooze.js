@@ -1,26 +1,28 @@
 #!/usr/bin/env node
 
 const args = require('args');
-const { home, banner } = require('./src/home');
-const { sleep } = require('./src/helper');
-const userRecon = require('./src/userRecon');
-const mailFinder = require('./src/mailFinder');
-const useragent = require('./src/userAgent');
-const instaRecon = require('./src/instaRecon');
-const whois = require('./src/whoIs');
-const IPlookup = require('./src/ipLookup');
-const dnsLookup = require('./src/dnsLookup');
-const portScanner = require('./src/portScanner');
-const headerLookup = require('./src/headerLookup');
-const urlExpander = require('./src/urlExpander');
-const gitRecon = require('./src/gitRecon');
-const domainAge = require('./src/domainAge');
-const subdomainScanner = require('./src/subdomainScanner');
-const exifMetadata = require('./src/exif');
-const scanUrl = require('./src/scanUrl');
-const flagOptions = require('./src/flagOptions');
-const subdomainRecon = require('./src/subdomainRecon');
-const youtubeLookup = require('./src/youtubeLookup');
+const { Spinner } = require('cli-spinner');
+const chalk = require('chalk');
+const { home, banner } = require('../src/home');
+const { sleep } = require('../src/helper');
+const userRecon = require('../src/userRecon');
+const mailFinder = require('../src/mailFinder');
+const useragent = require('../src/userAgent');
+const instaRecon = require('../src/instaRecon');
+const whois = require('../src/whoIs');
+const IPlookup = require('../src/ipLookup');
+const dnsLookup = require('../src/dnsLookup');
+const portScanner = require('../src/portScanner');
+const headerLookup = require('../src/headerLookup');
+const urlExpander = require('../src/urlExpander');
+const gitRecon = require('../src/gitRecon');
+const domainAge = require('../src/domainAge');
+const subdomainScanner = require('../src/subdomainScanner');
+const exifMetadata = require('../src/exif');
+const scanUrl = require('../src/scanUrl');
+const flagOptions = require('../src/flagOptions');
+const subdomainRecon = require('../src/subdomainRecon');
+const youtubeLookup = require('../src/youtubeLookup');
 
 flagOptions();
 
@@ -114,8 +116,12 @@ switch (optionKey) {
     break;
 
   default:
-    (async function () {
+    (async () => {
+      const spinner = new Spinner(`${chalk.bold.hex('FFA500')('%s')} Starting Infoooze`);
+      spinner.setSpinnerString('⠋⠙⠹⠸⠼⠴⠦⠧⠇⠏').start();
+      await sleep(2000);
+      spinner.stop();
       await home();
-    }());
+    })();
     break;
 }
