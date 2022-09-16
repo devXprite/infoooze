@@ -15,10 +15,12 @@
     <a href="https://github.com/devXprite/infoooze/issues">Request Feature</a>
   </p>
 
-  <img alt="npm" src="https://img.shields.io/npm/dm/infoooze?style=flat-square">
-  <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/devXprite/infoooze?style=flat-square">
-  <img alt="npm version" src="https://img.shields.io/npm/v/infoooze?color=green&label=version&style=flat-square">
-   <img alt="GitHub Repo forks" src="https://img.shields.io/github/forks/devXprite/infoooze?style=flat-square">
+  <img alt="npm" src="https://img.shields.io/npm/dm/infoooze?style=flat">
+  <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/devXprite/infoooze?style=flat">
+  <img alt="npm version" src="https://img.shields.io/npm/v/infoooze?color=green&label=version&style=flat"> <br>
+  <img alt="Libraries.io SourceRank" src="https://img.shields.io/librariesio/sourcerank/npm/infoooze">
+  <img alt="npm bundle size" src="https://img.shields.io/bundlephobia/min/infoooze">
+  <img alt="npms.io (final)" src="https://img.shields.io/npms-io/quality-score/infoooze">
 <br />
 <br />
 
@@ -69,8 +71,9 @@ Infoooze is a New OSINT tool in NodeJs. It helps you to quickly find information
 13. UserAgent Lookup
 14. Git Recon
 15. Expand URL
-16. Instagram DP Viwer
-17. Save Results to file
+16. Youtube Lookup
+17. Instagram DP Viwer
+18. Save Results to file
 
 ### Support
 
@@ -120,14 +123,14 @@ You need **NodeJs** 10 or later to run this tool. You can install NodeJs
  npm install -g -s infoooze
 ```
 
-### Install locally
+<!-- ### Install locally
 
 ```bash
 git clone https://github.com/devXprite/infoooze.git
 cd infoooze
 npm install
 node index.js
-```
+``` -->
 
 ### Uninstall
 
@@ -169,6 +172,7 @@ infoooze [options] [value]
 | -i         | --instaRecon     | find Instagram users info         |
 | -u         | --useragent      | find browser info                 |
 | -l         | --urlexpand      | long url of shorten URL           |
+| -y         | --youtubelookup  | find video metadata               |
 | -v         | --version        | Output the version number         |
 
 ### Examples
