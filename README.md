@@ -15,10 +15,10 @@
     <a href="https://github.com/devXprite/infoooze/issues">Request Feature</a>
   </p>
 
-  <img alt="npm" src="https://img.shields.io/npm/dm/infoooze?style=plastic">
-  <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/devXprite/infoooze?style=plastic">
-  <img alt="npm version" src="https://img.shields.io/npm/v/infoooze?color=green&label=version&style=plastic">
-   <img alt="GitHub Repo forks" src="https://img.shields.io/github/forks/devXprite/infoooze?style=plastic">
+  <img alt="npm" src="https://img.shields.io/npm/dm/infoooze?style=flat-square">
+  <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/devXprite/infoooze?style=flat-square">
+  <img alt="npm version" src="https://img.shields.io/npm/v/infoooze?color=green&label=version&style=flat-square">
+   <img alt="GitHub Repo forks" src="https://img.shields.io/github/forks/devXprite/infoooze?style=flat-square">
 <br />
 <br />
 
@@ -251,20 +251,14 @@ Don't forget to give the project a star! Thanks again!
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-## Special Thanks
-
-- [Daniel Azulay](https://github.com/DanielAzulayy)
+## Contributors
+Thank you so much all for spending your time to improve Infoooze.  
+  
+[![Contributors](https://contrib.rocks/image?repo=devXprite/infoooze)](https://github.com/devXprite/infoooze/graphs/contributors)
 
 ## License
 
 Distributed under the MIT License. See `LICENSE.txt` for more information.
-
-<!-- CONTACT -->
-
-<!-- ## Contact
-
-- Twitter: [@devXprite](https://twitter.com/devXprite)
-- Github: [@devXprite](https://twitter.com/devXprite) -->
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
