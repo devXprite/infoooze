@@ -11,7 +11,9 @@ const { sleep } = require('./helper');
       `${chalk.hex('#FFA500')(
         `Thank You for Installing Infoooze@${pkg.version}`,
       )} \n ${chalk.gray(
-        `\nType ${chalk.cyanBright('infoooze -h')} for Help Menu \nDon't forget to give this project a star!`,
+        `\nType ${chalk.cyanBright(
+          'infoooze -h',
+        )} for Help Menu \nDon't forget to give this project a star!`,
       )}`,
       {
         padding: 1,
@@ -19,7 +21,6 @@ const { sleep } = require('./helper');
         textAlignment: 'center',
         margin: 1,
         borderStyle: 'round',
-
       },
     )}\n\n\n`,
   );

@@ -1,21 +1,21 @@
 {
-    "env": {
-        "browser": false,
-        "commonjs": true,
-        "es2021": true
-    },
-    "extends": [
-        "airbnb-base"
-    ],
-    "parserOptions": {
-        "ecmaVersion": "latest"
-    },
-    "rules": {
-        "eqeqeq": "off",
-        "no-promise-executor-return": "off",
-        "no-param-reassign": "off",
-        "no-unused-vars": "off",
-        "no-plusplus": "off",
-        "no-console": "off"
-    }
+  "env": {
+    "browser": false,
+    "commonjs": true,
+    "es2021": true
+  },
+  "extends": ["airbnb-base"],
+  "parserOptions": {
+    "ecmaVersion": "latest"
+  },
+  "rules": {
+    "eqeqeq": "off",
+    "no-promise-executor-return": "off",
+    "no-param-reassign": "off",
+    "no-unused-vars": "off",
+    "no-restricted-syntax": "off",
+    "guard-for-in": "off",
+    "no-plusplus": "off",
+    "no-console": "off"
+  }
 }

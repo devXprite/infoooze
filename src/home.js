@@ -28,7 +28,14 @@ const notifier = updateNotifier({
 });
 
 const takeOption = async () => {
-  const option = parseInt(await input('Your Option '), 10);
+  const option = parseInt(
+    await input(
+      'Your Option ',
+      'select',
+      [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 98, 99],
+    ),
+    10,
+  );
 
   switch (option) {
     case 1:
@@ -116,7 +123,8 @@ const takeOption = async () => {
 const home = async () => {
   console.clear();
 
-  console.log(chalk.hex('#D546F2')(`
+  console.log(
+    chalk.hex('#D546F2')(`
    _____        __
   |_   _|      / _|
     | |  _ __ | |_ ___   ___   ___ _______
@@ -124,7 +132,8 @@ const home = async () => {
    _| |_| | | | || (_) | (_) | (_) / /  __/
   |_____|_| |_|_| \\___/ \\___/ \\___/___\\___|
                                      ${chalk.greenBright(`v${pkg.version}`)}
-  `));
+  `),
+  );
 
   if (notifier.update) {
     console.log(
@@ -138,22 +147,22 @@ const home = async () => {
   console.log('\n\n');
 
   const optionsData = [
-    ['User Recon', 'Username reconnaissance'],
-    ['Mail Finder ', 'Find email with specific UserName'],
-    ['Useragent', 'Find Browser UserAgent info'],
-    ['Whoislookup', "Find doamin's whois info"],
-    ['InstaRecon', 'Find Instagram users info'],
-    ['IP Lookup', 'Find IP info'],
-    ['Ports Scan', 'Find Open Ports'],
-    ['Domain Age', 'Find Website Age'],
-    ['Header Info', 'Find Website Headers'],
-    ['Website Scanner', 'Analyze Suspicious URL'],
-    ['Git Recon', 'Find Github user info'],
-    ['Expand Url', 'Long Url of shorten urls'],
-    ['Subdomain', 'Find subdomains of website'],
-    ['Exif Metadata', 'Extract Exif metadata from image'],
-    ['DNS Lookup', 'Domain name system lookup'],
-    ['Youtube Lookup', 'Find Youtube Video Metadata'],
+    ['User Recon', 'Search for a username across multiple platforms'],
+    ['Email Finder ', 'Search for an email associated with a specific username'],
+    ['Useragent', 'Finds browser information'],
+    ['Whois Info', 'Find registration information for a specific domain'],
+    ['Insta Recon', 'Find information of Instagram user'],
+    ['IP Lookup', 'Find information of a specific IP address'],
+    ['Ports Scan', 'Find Open Ports of a website'],
+    ['Website Age', 'Find out how long a website has been active'],
+    ['Header Info', 'View HTTP headers of a website'],
+    ['Website Scan', 'Analyze Suspicious URL'],
+    ['Git Recon', 'Find information of Github user'],
+    ['URL Expander', 'Expand shortened URLs to see the full destination'],
+    ['Subdomain', 'Find and enumerate the subdomains of a website'],
+    ['Exif Metadata', 'Extract Exif metadata from images'],
+    ['DNS Records', 'View DNS records for a specific domain'],
+    ['Youtube Metadata', 'View the metadata of a YouTube video'],
   ];
 
   const table = new EasyTable();
@@ -221,4 +230,3 @@ module.exports = {
   banner,
   home,
 };
-// module.exports = home;

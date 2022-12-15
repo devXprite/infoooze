@@ -1,12 +1,63 @@
+/* eslint-disable no-useless-escape */
+/* eslint-disable default-param-last */
 /* eslint-disable global-require */
 const fs = require('fs');
 const chalk = require('chalk');
 const moment = require('moment');
-const PromptSync = require('prompt-sync');
 const { sentenceCase } = require('sentence-case');
 const { includes } = require('lodash');
+const { prompt } = require('enquirer');
 
-const prompt = PromptSync();
+const input = async (question, questionType = 'input', options) => {
+  const response = await prompt({
+    type: 'input',
+    name: 'value',
+    message: question,
+    required: true,
+
+    validate: (value) => {
+      if (value == '') {
+        return 'Please enter a value';
+      }
+
+      if (questionType == 'url') {
+        if (value.match(/.\../)) {
+          return true;
+        }
+        return 'Please enter a valid url';
+      }
+      if (questionType == 'number') {
+        if (Number.isInteger(Number(value))) {
+          return true;
+        }
+        return 'Please enter a valid number';
+      }
+      if (questionType == 'ip') {
+        if (value.match(/^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$/)) {
+          return true;
+        }
+        return 'Please enter a valid ip';
+      }
+      if (questionType == 'username') {
+        if (value.match(/^[a-z\d](?:[a-z\d]|-(?=[a-z\d])){0,38}$/i)) {
+          return true;
+        }
+        return 'Please enter a valid username';
+      }
+
+      if (questionType == 'select') {
+        if (includes(options, Number(value)) || includes(options, value)) {
+          return true;
+        }
+
+        return 'Please enter a valid option';
+      }
+
+      return true;
+    },
+  });
+  return response.value;
+};
 
 const sleep = async (ms = 1000) => new Promise((r) => setTimeout(r, ms));
 
@@ -30,7 +81,7 @@ const saveTo = async (path, value, value2) => {
   }
 };
 
-const list = async (counter, key, value) => {
+const list = (counter, key, value) => {
   counter = counter <= 9 ? `0${counter}` : counter;
   if (typeof value == 'boolean') {
     value = value ? 'Yes' : 'No';
@@ -39,7 +90,6 @@ const list = async (counter, key, value) => {
   value = value || chalk.redBright('n/a');
   key = sentenceCase(key);
 
-  await sleep(150);
   console.log(
     chalk.white('[')
       + chalk.hex('#FFA500')(counter)
@@ -50,11 +100,18 @@ const list = async (counter, key, value) => {
 };
 
 const goBack = async () => {
-  await prompt(chalk.cyan.inverse('\npress enter to go back '));
-  require('./home').home();
-};
+  console.log('\n\n');
 
-const input = async (text) => prompt(` ${chalk.cyanBright('>')} ${chalk.bold(text)} : `);
+  const response = await prompt({
+    type: 'confirm',
+    name: 'value',
+    message: 'Go back to home?',
+    initial: true,
+  });
+  if (response.value) {
+    require('./home').home();
+  }
+};
 
 const errorMsg = async (
   msg = 'Something went wrong! Please check your internet.',
@@ -70,10 +127,10 @@ const errorMsg = async (
 const info = async (msg, path = '') => {
   console.log(
     chalk.white('\n[')
-    + chalk.cyan('!')
-    + chalk.white('] ')
-    + chalk.cyan(msg)
-    + chalk.hex('#FFA500')(path),
+      + chalk.cyan('!')
+      + chalk.white('] ')
+      + chalk.cyan(msg)
+      + chalk.hex('#FFA500')(path),
   );
   console.log('\n');
 };
@@ -81,16 +138,16 @@ const print = (colorVal, prefix, body) => {
   if (colorVal.includes('#')) {
     console.log(
       chalk.cyan('[')
-          + chalk.hex(colorVal)(prefix)
-          + chalk.cyan('] ')
-          + chalk.hex(colorVal)(body),
+        + chalk.hex(colorVal)(prefix)
+        + chalk.cyan('] ')
+        + chalk.hex(colorVal)(body),
     );
   } else {
     console.log(
       chalk.cyan('[')
-          + chalk[colorVal](prefix)
-          + chalk.cyan('] ')
-          + chalk[colorVal](body),
+        + chalk[colorVal](prefix)
+        + chalk.cyan('] ')
+        + chalk[colorVal](body),
     );
   }
 };

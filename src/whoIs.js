@@ -1,3 +1,5 @@
+/* eslint-disable no-restricted-syntax */
+/* eslint-disable no-await-in-loop */
 const whoisJson = require('whois-json');
 const {
   list,
@@ -11,7 +13,7 @@ const {
 } = require('./helper');
 
 const whois = async (website, showHome = false, i = 1) => {
-  website = website || (await input('Your Website'));
+  website = website || (await input('Please enter a website', 'url'));
 
   const path = `${process.cwd()}/results/infoooze_whois_${currentTimeStamp()}.txt`;
   info('Results will be saved in ', path);
@@ -24,14 +26,14 @@ const whois = async (website, showHome = false, i = 1) => {
         saveTo(path, key, whoisData[key]);
       }
     }
+
+    if (!showHome) exit();
   } catch (error) {
     errorMsg();
   }
 
   if (showHome) {
     goBack();
-  } else {
-    exit();
   }
 };
 

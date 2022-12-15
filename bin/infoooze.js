@@ -117,7 +117,9 @@ switch (optionKey) {
 
   default:
     (async () => {
-      const spinner = new Spinner(`${chalk.bold.hex('FFA500')('%s')} Starting Infoooze`);
+      const spinner = new Spinner(
+        `${chalk.bold.hex('FFA500')('%s')} Starting Infoooze`,
+      );
       spinner.setSpinnerString('⠋⠙⠹⠸⠼⠴⠦⠧⠇⠏').start();
       await sleep(2000);
       spinner.stop();

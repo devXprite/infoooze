@@ -30,31 +30,31 @@ const portsList = {
   8080: 'HTTP',
 };
 
-const checkPort = async (port, website) => new Promise(
-  (resolve, reject) => {
-    portscanner.checkPortStatus(port, website, (error, status) => {
-      if (!error) {
-        if (status == 'open') {
-          console.log(
-            ` ${chalk.cyan('-')} ${chalk.greenBright(port)} \t${chalk.greenBright(
-              status,
-            )} \t${chalk.greenBright(portsList[port])}`,
-          );
-        } else {
-          console.log(
-            ` ${chalk.cyan('-')} ${chalk.redBright(port)} \t${chalk.redBright(
-              status,
-            )} \t${chalk.redBright(portsList[port])}`,
-          );
-        }
+const checkPort = async (port, website) => new Promise((resolve, reject) => {
+  portscanner.checkPortStatus(port, website, (error, status) => {
+    if (!error) {
+      if (status == 'open') {
+        console.log(
+          ` ${chalk.cyan('-')} ${chalk.greenBright(
+            port,
+          )} \t${chalk.greenBright(status)} \t${chalk.greenBright(
+            portsList[port],
+          )}`,
+        );
+      } else {
+        console.log(
+          ` ${chalk.cyan('-')} ${chalk.redBright(port)} \t${chalk.redBright(
+            status,
+          )} \t${chalk.redBright(portsList[port])}`,
+        );
       }
-      resolve();
-    });
-  },
-);
+    }
+    resolve();
+  });
+});
 
 const portScanner = async (website, showHome = false, i = 0) => {
-  website = website || (await input('Your Website'));
+  website = website || (await input('Your Website', 'url'));
   console.log('\n');
 
   await Promise.allSettled(

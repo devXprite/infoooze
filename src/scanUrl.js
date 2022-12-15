@@ -1,6 +1,6 @@
-const request = require('request');
 const chalk = require('chalk');
 const { sentenceCase } = require('sentence-case');
+const { default: axios } = require('axios');
 const key = require('./secret');
 const {
   input,
@@ -37,42 +37,36 @@ const list = async (counter, key, value) => {
 const bs = (data) => Buffer.from(data).toString('base64').replace(/[=]/g, '');
 
 const scanUrl = async (website, showHome = false, i = 1) => {
-  website = website || (await input('Your Website'));
+  website = website || (await input('Your Website', 'url'));
 
   const path = `${process.cwd()}/results/infoooze_websiteScan_${currentTimeStamp()}.txt`;
   info('Results will be saved in ', path);
 
-  request(
-    {
-      method: 'GET',
-      url: `https://www.virustotal.com/api/v3/urls/${bs(website)}`,
-      headers: {
-        Accept: 'application/json',
-        'x-apikey': key('vt'),
+  try {
+    const response = await axios.get(
+      `https://www.virustotal.com/api/v3/urls/${bs(website)}`,
+      {
+        headers: {
+          Accept: 'application/json',
+          'x-apikey': key('vt'),
+        },
+        timeout: 5000,
       },
-      timeout: 5000,
-      json: true,
-    },
-    async (error, response) => {
-      if (error) {
-        errorMsg();
-      } else if (response.statusCode == 200) {
-        const analyseResult = response.body.data.attributes.last_analysis_results;
+    );
 
-        for (const key in analyseResult) {
-          await list(i++, key, analyseResult[key].result);
-          await saveTo(path, key, analyseResult[key].result);
-        }
-      } else {
-        errorMsg('Something went wrong! Please try again after some time.');
-      }
-      if (showHome) {
-        goBack();
-      } else {
-        exit();
-      }
-    },
-  );
+    const analyseResult = response.data.data.attributes.last_analysis_results;
+
+    for (const key in analyseResult) {
+      await list(i++, key, analyseResult[key].result);
+      await saveTo(path, key, analyseResult[key].result);
+    }
+
+    if (!showHome) exit();
+  } catch (error) {
+    errorMsg();
+  }
+
+  if (showHome) goBack();
 };
 
 module.exports = scanUrl;

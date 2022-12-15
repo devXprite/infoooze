@@ -17,7 +17,7 @@ const exifMetadata = async (image, showHome = false, i = 1) => {
   info('Results will be saved in ', path);
 
   try {
-    new ExifImage({ image }, ((error, response) => {
+    new ExifImage({ image }, (error, response) => {
       if (error) {
         errorMsg(error.message);
       } else {
@@ -30,7 +30,7 @@ const exifMetadata = async (image, showHome = false, i = 1) => {
           });
         });
       }
-    }));
+    });
   } catch (error) {
     errorMsg(error.message);
   }

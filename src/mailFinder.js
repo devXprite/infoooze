@@ -1,6 +1,5 @@
 /* eslint-disable no-undef */
 /* eslint-disable prefer-destructuring */
-const request = require('request');
 const chalk = require('chalk');
 
 const { default: axios } = require('axios');
@@ -17,8 +16,9 @@ const {
 const key = require('./secret');
 
 async function mailfinder(username, showHome = false) {
-  username = username || (await input('Your Username'));
-  username = username.replace(/\s/g, '').split('@')[0];
+  username = (username || (await input('Your Username')))
+    .replace(/\s/g, '')
+    .split('@')[0];
 
   const domainList = [
     'gmail.com',
@@ -36,15 +36,18 @@ async function mailfinder(username, showHome = false) {
   const emailList = domainList.map((domain) => `${username}@${domain}`);
 
   await Promise.allSettled(
-    emailList.map((email) => new Promise(
-      (resolve, reject) => {
+    emailList.map(
+      (email) => new Promise((resolve, reject) => {
         axios
-          .get(`https://isitarealemail.com/api/email/validate?email=${email}`, {
-            headers: {
-              Authorization: key('em'),
+          .get(
+            `https://isitarealemail.com/api/email/validate?email=${email}`,
+            {
+              headers: {
+                Authorization: key('em'),
+              },
+              timeout: 5000,
             },
-            timeout: 5000,
-          })
+          )
           .then((response) => {
             if (response.data.status == 'valid') {
               print('greenBright', '+', email);
@@ -53,13 +56,15 @@ async function mailfinder(username, showHome = false) {
               print('redBright', '-', email);
               saveTo(path, 'invalid', email);
             }
-          }).catch((error) => {
+          })
+          .catch((error) => {
             print('redBright', '-', email);
-          }).then(() => {
+          })
+          .then(() => {
             resolve();
           });
-      },
-    )),
+      }),
+    ),
   );
   if (showHome) {
     goBack();

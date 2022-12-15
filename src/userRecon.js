@@ -3,7 +3,14 @@ const axios = require('axios');
 const chalk = require('chalk');
 
 const {
-  input, currentTimeStamp, info, saveTo, goBack, exit, print,
+  input,
+  currentTimeStamp,
+  info,
+  saveTo,
+  goBack,
+  exit,
+  print,
+  errorMsg,
 } = require('./helper');
 
 const userRecon = async (username, showHome = false) => {
@@ -86,35 +93,41 @@ const userRecon = async (username, showHome = false) => {
     `http://www.zone-h.org/archive/notifier=${username}`,
   ];
 
-  await Promise.allSettled(
-    urlList.map((url) => new Promise(
-      (resolve, reject) => {
-        axios
-          .get(url, { timeout: 60000 })
-          .then((response) => {
-            if (response.status === 200) {
-              print('greenBright', response.status, url);
-              saveTo(path, `[${response.status}]`, url);
-            }
-          })
-          .catch((error) => {
-            if (error && error.response) {
-              print('redBright', error.response.status, url);
-              saveTo(path, `[${error.response.status}]`, url);
-            } else {
-              print('gray', '---', url);
-              saveTo(path, '---', url);
-            }
-          }).then(() => {
-            resolve();
-          });
-      },
-    )),
-  );
+  try {
+    await Promise.allSettled(
+      urlList.map(
+        (url) => new Promise((resolve, reject) => {
+          axios
+            .get(url, { timeout: 60000 })
+            .then((response) => {
+              if (response.status === 200) {
+                print('greenBright', response.status, url);
+                saveTo(path, `[${response.status}]`, url);
+              }
+            })
+            .catch((error) => {
+              if (error && error.response) {
+                print('redBright', error.response.status, url);
+                saveTo(path, `[${error.response.status}]`, url);
+              } else {
+                print('gray', '---', url);
+                saveTo(path, '---', url);
+              }
+            })
+            .then(() => {
+              resolve();
+            });
+        }),
+      ),
+    );
+
+    if (!goBack) exit();
+  } catch (error) {
+    errorMsg();
+  }
+
   if (showHome) {
     goBack();
-  } else {
-    exit();
   }
 };
 

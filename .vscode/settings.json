@@ -1,21 +1,21 @@
 {
-    "files.exclude": {
-        "_config.yml": true,
-        "_includes": true,
-        ".github": true,
-        "**/.DS_Store": false,
-        "**/.hg": false,
-        "**/.svn": false,
-        "**/CVS": false,
-        "**/Thumbs.db": false,
-        "CNAME": true,
-        ".gitattributes":true,
-        "node_modules":true
-    },
-    "workbench.commandPalette.history": 50,
-    "workbench.commandPalette.preserveInput": true,
-    "window.autoDetectColorScheme": false,
-    "eslint.alwaysShowStatus": false,
-    "eslint.format.enable": true,
-    "files.eol": "\n"
+  "files.exclude": {
+    "_config.yml": true,
+    "_includes": true,
+    ".github": true,
+    "**/.DS_Store": false,
+    "**/.hg": false,
+    "**/.svn": false,
+    "**/CVS": false,
+    "**/Thumbs.db": false,
+    "CNAME": true,
+    ".gitattributes": true,
+    "node_modules": true
+  },
+  "workbench.commandPalette.history": 50,
+  "workbench.commandPalette.preserveInput": true,
+  "window.autoDetectColorScheme": false,
+  "eslint.alwaysShowStatus": false,
+  "eslint.format.enable": true,
+  "files.eol": "\n"
 }

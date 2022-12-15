@@ -1,34 +1,29 @@
-const request = require('request');
+const { default: axios } = require('axios');
 const {
   goBack, input, errorMsg, info, list, exit,
 } = require('./helper');
 
 const urlExpander = async (website, showHome = false) => {
-  website = website || (await input('Your Short Url'));
+  website = website || (await input('Your Short Url', 'url'));
   website = !website.includes('://') ? `http://${website}` : website;
-  const afterRedirect = request(
-    {
-      url: website,
+
+  try {
+    const response = await axios.get(website, {
       timeout: 5000,
       followAllRedirects: true,
-    },
-    async (error, response) => {
-      if (!error) {
-        if (website.includes(afterRedirect.uri.hostname)) {
-          info(`${website} is already a long url.`);
-        } else {
-          list('+', 'Expanded Url', afterRedirect.uri.href);
-        }
-      } else {
-        errorMsg();
-      }
-      if (showHome) {
-        goBack();
-      } else {
-        exit();
-      }
-    },
-  );
+    });
+    if (website.includes(response.request.res.responseUrl)) {
+      info(`${website} is already a long url.`);
+    } else {
+      list('+', 'Expanded Url', response.request.res.responseUrl);
+    }
+
+    if (!showHome) exit();
+  } catch (error) {
+    errorMsg();
+  }
+
+  if (showHome) goBack();
 };
 
 module.exports = urlExpander;
