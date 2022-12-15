@@ -35,8 +35,6 @@
 2. [Getting Started](#getting-started)
    - [Prerequisites](#prerequisites)
    - [Installation on Linux](#getting-started)
-     - [Using NPM](#using-npm)
-     - [Using GIT](#using-git)
    - [Installation on Android](#getting-started)
    - [Uninstall](#uninstall)
 3. [Usage](#usage)
@@ -51,34 +49,39 @@
 
 ## About Infoooze
 
-Infoooze is a New OSINT tool in NodeJs. It helps you to quickly find information about "something" effectively. Its a Global package so that you can easily use it independently from any directory. All you need is to input info such as website, ip, username... and it will take take care of rest. 
+
+Infoooze is a powerful and user-friendly OSINT (Open-Source Intelligence) tool that allows you to quickly and easily gather information about a specific target. With Infoooze, you can easily search for information about websites, IP addresses, usernames, and more, all from the convenience of a simple command-line interface.  
+  
+One of the key features of Infoooze is its ability to work as a global package, allowing you to use it from any directory on your computer.It also has ability to automatically save the results of your searches to a text file. This means that you can easily access and refer to the information you have gathered at a later time.  
+  
+Infoooze is easy to install and use, making it an ideal tool for anyone looking to gather information quickly and efficiently. 
 
 ### Features
 
-1.  Insta Recon
+1.  InstaGram Recon
 2.  Subdomain Scanner
 3.  Ports Scan
 4.  User Recon
 5.  Mail finder
 6.  URL Scanner
-7.  Exif metadata extract
+7.  Exif metadata
 8.  Whois Lookup
 9.  IP Lookup
 10. Header Info
-11. Domain Age
+11. Website Age
 12. DNS Lookup
 13. UserAgent Lookup
 14. Git Recon
-15. Expand URL
+15. URL Expander
 16. Youtube Lookup
 17. Instagram DP Viwer
 18. Save Results to file
 
 ### Support
 
-| Linux | Termux | Windows | Mac |
-| ----- | ------ | ------- | --- |
-| ✔     | ✔      | ✔       | ❔   |
+| Linux | Termux | Windows |
+| :---: | :----: | :-----: |
+|   ✔   |   ✔    |    ✔    |
 
 ✔ Tested  
 ❔ - Not tested
@@ -89,32 +92,32 @@ Infoooze is a New OSINT tool in NodeJs. It helps you to quickly find information
 
 ### Prerequisites
 
-You need **NodeJs** 10 or later to run this tool. You can install NodeJs
+You need **NodeJs** 12 or later to run this tool.  
+To install Node.js, follow the instructions for your operating system:
 
-- On Linux
-  ```sh
+- Linux
+  ```bash
   sudo apt-get install nodejs
   ```
-  > Although there is no need to install NodeJs on Kali Linux, as its packages are already present in Kali Linux.
-- On Termux
-  ```sh
+  > On many distros NodeJs is installed by default. 
+
+- Termux
+  ```bash
   pkg install nodejs-lts 
   ```
 
+- Windows
+  - Download the latest LTS version from [NodeJs](https://nodejs.org/en/download/).
+  - Run the installer.
+  - Follow the prompts in the installer (Accept the license agreement, click the NEXT button a bunch of times and accept the default installation settings).
+  - Restart your computer. You won't be able to run Node.js until you restart your computer.
+
 ### Installation on [Linux](https://wikipedia.org/wiki/Linux)
 
-- #### Using NPM
 
-  ```sh
-  sudo npm install infoooze -g -s
-  ```
-
-- #### Using GIT
-
-  ```sh
-  sudo npm install git+ssh://git@github.com/devXprite/infoooze.git -g
-  ```
-
+```sh
+sudo npm install infoooze -g -s
+```
 
 ### Installation on [Termux](https://github.com/termux/termux-app#f-droid)
 
@@ -122,16 +125,8 @@ You need **NodeJs** 10 or later to run this tool. You can install NodeJs
  npm install -g -s infoooze
 ```
 
-<!-- ### Install locally
-
-```bash
-git clone https://github.com/devXprite/infoooze.git
-cd infoooze
-npm install
-node index.js
-``` -->
-
 ### Uninstall
+To uninstall Infoooze from your system, run the following command:
 
 ```sh
 npm remove infoooze -g
@@ -143,36 +138,34 @@ npm remove infoooze -g
 
 ## Usage
 
-After installing you can run tool by just typing `infoooze`.
+After installing the tool, you can run it by typing `infoooze` in your terminal.
+
 ```sh
 infoooze [options] [value]
 ```
-> You can also use **infooze** & **infoze**.
-
+> You can also use `infoze` or `infoooze` as a command.
 
 ### Options:
 
-| Short Form | Long Form        | Description                       |
-| :--------- | :--------------- | :-------------------------------- |
-| -n         | --dnslookup      | domain name system lookup         |
-| -e         | --headerinfo     | find website headers              |
-| -p         | --iplookup       | find IP info                      |
-| -a         | --webscan        | analyze suspicious URLs           |
-| -m         | --mailfinder     | find email with specific name     |
-| -t         | --portscan       | find open ports                   |
-| -x         | --exif           | extracts Exif metadata from image |
-| -r         | --userrecon      | username reconnaissance           |
-| -w         | --whoislookup    | find domain's whois info          |
-| -d         | --domainAge      | find website Age                  |
-| -s         | --subdomain      | find subdomains of website        |
-| -h         | --help           | Output usage information          |
-| -c         | --subdomainrecon | find subdomains passively         |
-| -g         | --gitrecon       | find github user info             |
-| -i         | --instaRecon     | find Instagram users info         |
-| -u         | --useragent      | find browser info                 |
-| -l         | --urlexpand      | long url of shorten URL           |
-| -y         | --youtubelookup  | find video metadata               |
-| -v         | --version        | Output the version number         |
+| Short Form | Long Form       | Description                                                                                            |
+| :--------- | :-------------- | :----------------------------------------------------------------------------------------------------- |
+| -r         | --userrecon     | Search for a username across multiple social media platforms to gather information on a specific user. |
+| -m         | --mailfinder    | Search for an email address associated with a specific username or domain.                             |
+| -u         | --useragent     | Quickly and easily identify the browser and device type.                                               |
+| -w         | --whoislookup   | Find registration information for a specific domain.                                                   |
+| -i         | --instaRecon    | Gather information on an Instagram user, such as their posts, followers, and more.                     |
+| -p         | --iplookup      | Find information on a specific IP address, such as its location and hostname.                          |
+| -t         | --portscan      | Search for open ports.                                                                                 |
+| -d         | --domainage     | Find out how long a website has been registered and active on the internet.                            |
+| -e         | --headerinfo    | View and analyze the HTTP headers of a website.                                                        |
+| -n         | --dnslookup     | View DNS records for a specific domain and see how it is configured.                                   |
+| -g         | --gitrecon      | Gather information on a GitHub user, such as their repositories, contributions, and more.              |
+| -s         | --subdomain     | Find and enumerate the subdomains of a given website.                                                  |
+| -x         | --exif          | Extract Exif metadata from images, such as camera make and model, date and time, and more.             |
+| -a         | --webscan       | Analyze the suspicious URLs.                                                                           |
+| -l         | --urlexpand     | Expand shortened URLs and see the full destination of a link.                                          |
+| -y         | --youtubelookup | View the metadata of a YouTube video, such as the title, description, and tags.                        |
+
 
 ### Examples
 
@@ -234,11 +227,12 @@ Contributions are what make the open source community such an amazing place to l
 If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
 Don't forget to give the project a star! Thanks again!
 
-1. Fork the Project
-2. Create your Branch 
-3. Commit your Changes 
-4. Push to the Branch 
-5. Open a Pull Request
+1. First, fork the this repository on GitHub. This will create your own copy of the code that you can modify.
+2. Next, clone the forked repository to your local machine. This will allow you to make changes to the code and test them.
+3. Create a new branch for your changes. This helps to keep your changes separate from the main codebase until they are ready to be merged.
+4. Make the necessary changes to the code and test them to ensure that they work as expected.
+5. When you're happy with your changes, commit them to your forked repository and push them to GitHub.
+6. Finally, submit a pull request to the this repository on GitHub. 
  
 <p align="right">(<a href="#top">back to top</a>)</p>
 
