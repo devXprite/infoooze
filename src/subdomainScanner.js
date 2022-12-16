@@ -46,7 +46,7 @@ const subdomainScanner = async (website, showHome = false, i = 1) => {
     );
 
     for (const key in subdomainsObj) {
-      list(i++, subdomainsObj[key].textContent, path);
+      await list(i++, subdomainsObj[key].textContent, path);
     }
 
     if (
