@@ -38,12 +38,12 @@ const input = async (question, questionType = 'input', options) => {
         }
         return 'Please enter a valid ip';
       }
-      if (questionType == 'username') {
-        if (value.match(/^[a-z\d](?:[a-z\d]|-(?=[a-z\d])){0,38}$/i)) {
-          return true;
-        }
-        return 'Please enter a valid username';
-      }
+      // if (questionType == 'username') {
+      //   if (value.match(/^[a-z\d](?:[a-z\d]|-._(?=[a-z\d])){0,38}$/i)) {
+      //     return true;
+      //   }
+      //   return 'Please enter a valid username';
+      // }
 
       if (questionType == 'select') {
         if (includes(options, Number(value)) || includes(options, value)) {
