@@ -91,6 +91,7 @@ const userRecon = async (username, showHome = false) => {
     `https://www.okcupid.com/profile/${username}`,
     `https://www.trip.skyscanner.com/user/${username}`,
     `http://www.zone-h.org/archive/notifier=${username}`,
+    `http://old.reddit.com/user/${username}`,
   ];
 
   try {
