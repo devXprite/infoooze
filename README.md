@@ -179,7 +179,7 @@ infoooze [options] [value]
   ```
 - To Get Instagram User Info:
   ```sh
-  infoooze -i instagam
+  infoooze -i instagram
   ```
 - To Get Domain's Whois Information:
   ```sh
