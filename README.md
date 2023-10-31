@@ -236,18 +236,6 @@ Don't forget to give the project a star! Thanks again!
  
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-<!-- LICENSE -->
-
-## Supporters
-
-### Stargazers:
-[![Stargazers repo roster for @devXprite/infoooze][stangers-img-url]](https://github.com/devXprite/infoooze/stargazers)  
-
-### Forkers
-[![Forkers repo roster for @devXprite/infoooze][forker-img-url]](https://github.com/devXprite/infoooze/network/members)
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
 ## Contributors
 Thank you so much all for spending your time to improve Infoooze.  
   
